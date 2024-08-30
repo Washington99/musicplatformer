@@ -99,5 +99,4 @@ shape = SubResource("CapsuleShape2D_2ktv1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, -5)
 sprite_frames = SubResource("SpriteFrames_krifi")
-animation = &"Idle"
-frame_progress = 0.0421171
+animation = &"Run"
