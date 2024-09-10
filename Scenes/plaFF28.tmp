@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cjyf3dk4bye4q"]
+[gd_scene load_steps=22 format=3 uid="uid://cjyf3dk4bye4q"]
 
 [ext_resource type="Texture2D" uid="uid://b26vjup1wjn78" path="res://Assets/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="1_8iiul"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pgw2l"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://cak4sxf2mavlq" path="res://Assets/Warrior/Individual Sprite/Run/Warrior_Run_6.png" id="15_7rdce"]
 [ext_resource type="Texture2D" uid="uid://5gihnldbyfjk" path="res://Assets/Warrior/Individual Sprite/Run/Warrior_Run_7.png" id="16_fp8fc"]
 [ext_resource type="Texture2D" uid="uid://cws0tviemq41a" path="res://Assets/Warrior/Individual Sprite/Run/Warrior_Run_8.png" id="17_ebhv8"]
-[ext_resource type="Script" path="res://Scripts/music_node.gd" id="19_g4ssi"]
 [ext_resource type="Texture2D" uid="uid://uqqj0c6wya6r" path="res://Assets/music note.svg" id="19_rq1lh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ktv1"]
@@ -92,9 +91,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nmpi7"]
-radius = 50.0
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_pgw2l")
 
@@ -106,20 +102,7 @@ position = Vector2(5, -5)
 sprite_frames = SubResource("SpriteFrames_krifi")
 animation = &"Run"
 
-[node name="MusicNode" type="Node2D" parent="."]
-script = ExtResource("19_g4ssi")
-
-[node name="Sprite2D" type="Sprite2D" parent="MusicNode"]
+[node name="MusicNote" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -25)
+show_behind_parent = true
 texture = ExtResource("19_rq1lh")
-
-[node name="Area2D" type="Area2D" parent="MusicNode"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicNode/Area2D"]
-shape = SubResource("CircleShape2D_nmpi7")
-
-[node name="Timer" type="Timer" parent="MusicNode"]
-one_shot = true
-
-[connection signal="timeout" from="MusicNode/Timer" to="MusicNode" method="_on_timer_timeout"]
