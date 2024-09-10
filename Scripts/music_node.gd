@@ -8,7 +8,10 @@ var animation_playing: bool = false
 
 func _draw() -> void:
 	if animation_playing:
+		$Area2D/CollisionShape2D.disabled = false
 		draw_circle(Vector2(0,0), 50, $Area2D/CollisionShape2D.debug_color)
+	else:
+		$Area2D/CollisionShape2D.disabled = true
 
 func _process(_delta: float) -> void:
 	
