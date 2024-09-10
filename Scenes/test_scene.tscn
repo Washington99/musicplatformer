@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://cj72s0jxrbj6v"]
+[gd_scene load_steps=12 format=4 uid="uid://cj72s0jxrbj6v"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_3u1c2"]
 [ext_resource type="Texture2D" uid="uid://iy5cwyr5fl3t" path="res://Assets/Dungeon Tile Set.png" id="2_2604u"]
 [ext_resource type="Script" path="res://Scripts/music_node.gd" id="2_gnpmi"]
 [ext_resource type="Texture2D" uid="uid://diusx406ladht" path="res://Assets/music-notes-glyph-style-set.png" id="3_dhgg8"]
 [ext_resource type="Texture2D" uid="uid://uqqj0c6wya6r" path="res://Assets/music note.svg" id="3_ka186"]
+[ext_resource type="Script" path="res://Scripts/instrument_node.gd" id="4_lbjbj"]
 [ext_resource type="Script" path="res://Scripts/sample_interactable.gd" id="5_dq177"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpbrx"]
@@ -184,6 +185,38 @@ disabled = true
 [node name="Timer" type="Timer" parent="Player/MusicNode"]
 one_shot = true
 
+[node name="InstrumentNode" type="Node2D" parent="."]
+position = Vector2(84, 59)
+script = ExtResource("4_lbjbj")
+
+[node name="Control" type="Control" parent="InstrumentNode"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 133.0
+offset_right = 116.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Guitar" type="Button" parent="InstrumentNode/Control"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 31.0
+text = "Guitar"
+
+[node name="Piano" type="Button" parent="InstrumentNode/Control"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 2.0
+offset_right = 113.0
+offset_bottom = 33.0
+text = "Piano"
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAUAAUAAAACAAEAAAATAAUAAAACAAEAAAASAAUAAAACAAEAAAARAAUAAAACAAEAAAAQAAUAAAACAAEAAAAPAAUAAAACAAEAAAAOAAUAAAACAAEAAAAMAAUAAAACAAEAAAALAAUAAAACAAEAAAAKAAUAAAACAAEAAAAJAAUAAAACAAEAAAAIAAUAAAACAAEAAAAHAAUAAAACAAEAAAAGAAUAAAACAAEAAAAFAAUAAAACAAEAAAAEAAUAAAACAAEAAAADAAUAAAACAAEAAAACAAUAAAACAAEAAAABAAUAAAACAAEAAAAAAAUAAAACAAEAAAD//wUAAAACAAEAAAAVAAUAAAACAAEAAAAWAAUAAAACAAEAAAAXAAUAAAACAAEAAAD//wQAAAADAAIAAAD//wMAAAADAAIAAAD//wIAAAADAAIAAAD//wEAAAADAAIAAAD//wAAAAADAAIAAAD/////AAADAAIAAAANAAUAAAACAAEAAAAIAAIAAAACAAEAAAAJAAIAAAACAAEAAAAKAAIAAAACAAEAAAALAAIAAAACAAEAAAAMAAIAAAACAAEAAAANAAIAAAACAAEAAAAOAAIAAAACAAEAAAAPAAIAAAACAAEAAAAQAAIAAAACAAEAAAARAAIAAAACAAEAAAASAAIAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_70pi1")
@@ -205,3 +238,7 @@ shape = SubResource("RectangleShape2D_2lcuh")
 [connection signal="area_entered" from="Player/MusicNode/Area2D" to="SampleInteractable" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Player/MusicNode/Area2D" to="SampleInteractable" method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Player/MusicNode/Timer" to="Player/MusicNode" method="_on_timer_timeout"]
+[connection signal="pressed" from="InstrumentNode/Control/Guitar" to="SampleInteractable" method="_on_guitar_pressed"]
+[connection signal="pressed" from="InstrumentNode/Control/Guitar" to="InstrumentNode" method="_on_guitar_pressed"]
+[connection signal="pressed" from="InstrumentNode/Control/Piano" to="SampleInteractable" method="_on_piano_pressed"]
+[connection signal="pressed" from="InstrumentNode/Control/Piano" to="InstrumentNode" method="_on_piano_pressed"]

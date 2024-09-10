@@ -55,10 +55,3 @@ func resolve_music_key () -> void:
 		#)
 		#await tween.finished
 		#tween.stop()
-		
-		
-	
-	
-			
-
-	
