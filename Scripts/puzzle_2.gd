@@ -19,7 +19,6 @@ func _on_switch_1_switch_on(name: String) -> void:
 
 func _on_switch_2_switch_on(name: String) -> void:
 	if current_order.size() == 1:
-		print("hio")
 		current_order.append(true)
 	else:
 		current_order = []
