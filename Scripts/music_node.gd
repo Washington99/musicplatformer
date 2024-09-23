@@ -14,7 +14,6 @@ func _draw() -> void:
 		$Area2D/CollisionShape2D.disabled = true
 
 func _process(_delta: float) -> void:
-	
 	if Input.is_action_just_pressed("play_note") and !animation_playing:
 		queue_redraw()
 		$Sprite2D.show()
