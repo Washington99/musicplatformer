@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://qkjd7gmxk5n7"]
+[gd_scene load_steps=4 format=3 uid="uid://qkjd7gmxk5n7"]
 
+[ext_resource type="Script" path="res://Scripts/switch.gd" id="1_phkb5"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_t3hew"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu6mf"]
+size = Vector2(16, 16)
+
+[node name="switch" type="Area2D"]
+script = ExtResource("1_phkb5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 9, 0, 0, 0)
 tile_set = ExtResource("1_t3hew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_cu6mf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
