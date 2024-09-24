@@ -2,6 +2,9 @@ extends Node2D
 
 signal instrument_switched(instrument_name: String)
 
+func _ready() -> void:
+	instrument_switched.emit("piano")
+
 func _process(_delta: float) -> void:
 	resolve_instrument()
 		
