@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cj72s0jxrbj6v"]
+[gd_scene load_steps=17 format=4 uid="uid://cj72s0jxrbj6v"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_3u1c2"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_qlsst"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bw1n4k65t1ui5" path="res://Scenes/moving_platform.tscn" id="8_rshn3"]
 [ext_resource type="Script" path="res://Scripts/puzzle_2.gd" id="8_tn8h7"]
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="9_4ifvk"]
+[ext_resource type="Script" path="res://Scripts/puzzle_1.gd" id="9_86bug"]
+[ext_resource type="Script" path="res://Scripts/puzzle_3.gd" id="14_uam7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcuh"]
 size = Vector2(70, 50)
@@ -46,7 +48,7 @@ unique_name_in_owner = true
 script = ExtResource("4_wk4p5")
 
 [node name="Player" parent="." instance=ExtResource("1_3u1c2")]
-position = Vector2(286, 40)
+position = Vector2(945, 541)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -102,6 +104,7 @@ text = "Piano"
 
 [node name="Puzzle1" type="Node2D" parent="."]
 position = Vector2(381, 59)
+script = ExtResource("9_86bug")
 
 [node name="switch" parent="Puzzle1" instance=ExtResource("9_4ifvk")]
 position = Vector2(-215, 114)
@@ -170,6 +173,7 @@ switch_name = "5"
 
 [node name="Puzzle3" type="Node2D" parent="."]
 position = Vector2(986, 531)
+script = ExtResource("14_uam7v")
 
 [node name="moving_platform" parent="Puzzle3" instance=ExtResource("8_rshn3")]
 position = Vector2(34, 0)
@@ -188,6 +192,8 @@ position = Vector2(4, -16)
 [connection signal="area_exited" from="Player/MusicNode/Area2D" to="SampleInteractable" method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Player/MusicNode/Timer" to="Player/MusicNode" method="_on_timer_timeout"]
 [connection signal="instrument_switched" from="Player/InstrumentNode" to="MusicResolver" method="_on_instrument_node_instrument_switched"]
+[connection signal="instrument_switched" from="Player/InstrumentNode" to="Puzzle1" method="_on_instrument_node_instrument_switched"]
+[connection signal="instrument_switched" from="Player/InstrumentNode" to="Puzzle3" method="_on_instrument_node_instrument_switched"]
 [connection signal="pressed" from="Player/InstrumentNode/Control/Guitar" to="SampleInteractable" method="_on_guitar_pressed"]
 [connection signal="pressed" from="Player/InstrumentNode/Control/Guitar" to="Player/InstrumentNode" method="_on_guitar_pressed"]
 [connection signal="pressed" from="Player/InstrumentNode/Control/Piano" to="SampleInteractable" method="_on_piano_pressed"]

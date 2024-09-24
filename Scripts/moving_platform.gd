@@ -1,4 +1,5 @@
 extends Node2D
+class_name MovingPlatform
 
 @export var offset: Vector2 = Vector2(0, -250)
 @export var duration: float = 5.0
