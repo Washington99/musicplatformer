@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cj72s0jxrbj6v"]
+[gd_scene load_steps=14 format=4 uid="uid://cj72s0jxrbj6v"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_3u1c2"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_qlsst"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://diusx406ladht" path="res://Assets/music-notes-glyph-style-set.png" id="3_dhgg8"]
 [ext_resource type="Texture2D" uid="uid://uqqj0c6wya6r" path="res://Assets/music note.svg" id="3_ka186"]
 [ext_resource type="Script" path="res://Scripts/instrument_node.gd" id="4_lbjbj"]
-[ext_resource type="Script" path="res://Scripts/music_resolver.gd" id="4_wk4p5"]
 [ext_resource type="Script" path="res://Scripts/sample_interactable.gd" id="5_dq177"]
 [ext_resource type="PackedScene" uid="uid://c44tohe5obyy" path="res://Scenes/gate.tscn" id="8_ptjbk"]
 [ext_resource type="PackedScene" uid="uid://bw1n4k65t1ui5" path="res://Scenes/moving_platform.tscn" id="8_rshn3"]
@@ -41,9 +40,8 @@ texture = ExtResource("3_dhgg8")
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_2lcuh")
 
-[node name="MusicResolver" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-script = ExtResource("4_wk4p5")
 
 [node name="Player" parent="." instance=ExtResource("1_3u1c2")]
 position = Vector2(286, 40)
@@ -183,11 +181,9 @@ position = Vector2(-89, -204)
 [node name="switch" parent="Puzzle3/moving_platform2" instance=ExtResource("9_4ifvk")]
 position = Vector2(4, -16)
 
-[connection signal="note_played" from="Player/MusicNode" to="MusicResolver" method="_on_music_node_note_played"]
 [connection signal="area_entered" from="Player/MusicNode/Area2D" to="SampleInteractable" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Player/MusicNode/Area2D" to="SampleInteractable" method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Player/MusicNode/Timer" to="Player/MusicNode" method="_on_timer_timeout"]
-[connection signal="instrument_switched" from="Player/InstrumentNode" to="MusicResolver" method="_on_instrument_node_instrument_switched"]
 [connection signal="pressed" from="Player/InstrumentNode/Control/Guitar" to="SampleInteractable" method="_on_guitar_pressed"]
 [connection signal="pressed" from="Player/InstrumentNode/Control/Guitar" to="Player/InstrumentNode" method="_on_guitar_pressed"]
 [connection signal="pressed" from="Player/InstrumentNode/Control/Piano" to="SampleInteractable" method="_on_piano_pressed"]
