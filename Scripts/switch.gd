@@ -27,7 +27,6 @@ func switch_reset() -> void:
 	$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,9))
 	$CollisionShape2D.set_deferred("disabled", false)
 
-
 func _on_music_node_note_played(note_name: String) -> void:
 	if note_name == trigger_key or trigger_key == "0":
 		triggered = true

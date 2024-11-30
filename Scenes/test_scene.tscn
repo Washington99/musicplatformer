@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cj72s0jxrbj6v"]
+[gd_scene load_steps=18 format=4 uid="uid://cj72s0jxrbj6v"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_3u1c2"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_qlsst"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="9_4ifvk"]
 [ext_resource type="Script" path="res://Scripts/puzzle_1.gd" id="9_86bug"]
 [ext_resource type="Script" path="res://Scripts/puzzle_3.gd" id="14_uam7v"]
+[ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="15_heh3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcuh"]
 size = Vector2(70, 50)
@@ -48,7 +49,7 @@ unique_name_in_owner = true
 script = ExtResource("4_wk4p5")
 
 [node name="Player" parent="." instance=ExtResource("1_3u1c2")]
-position = Vector2(50, 100)
+position = Vector2(884, 555)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -199,6 +200,10 @@ position = Vector2(-89, -204)
 
 [node name="switch" parent="Puzzle3/moving_platform2" instance=ExtResource("9_4ifvk")]
 position = Vector2(4, -16)
+
+[node name="Lifeform" parent="." instance=ExtResource("15_heh3t")]
+position = Vector2(780, 557)
+song_list = Array[String](["piano_1", "piano_3", "violin_5"])
 
 [connection signal="note_played" from="Player/MusicNode" to="MusicResolver" method="_on_music_node_note_played"]
 [connection signal="note_played" from="Player/MusicNode" to="Puzzle1/switch" method="_on_music_node_note_played"]
