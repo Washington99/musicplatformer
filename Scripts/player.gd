@@ -4,7 +4,7 @@ class_name Player
 
 # Should be exported
 const SPEED = 200.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -400.0
 
 const animation_time: float = 0.80
 
