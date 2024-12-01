@@ -106,7 +106,6 @@ script = ExtResource("9_86bug")
 [node name="switch" parent="Puzzle1" instance=ExtResource("9_4ifvk")]
 position = Vector2(-215, 114)
 is_one_time = true
-trigger_key = "1"
 
 [node name="moving_platform" parent="Puzzle1" instance=ExtResource("8_rshn3")]
 position = Vector2(-163, 3)
@@ -116,7 +115,6 @@ is_ledge = true
 [node name="switch2" parent="Puzzle1/moving_platform" instance=ExtResource("9_4ifvk")]
 position = Vector2(46, -17)
 is_one_time = true
-trigger_key = "3"
 
 [node name="moving_platform2" parent="Puzzle1" instance=ExtResource("8_rshn3")]
 position = Vector2(-66, 3)
@@ -126,7 +124,6 @@ is_ledge = true
 [node name="switch3" parent="Puzzle1/moving_platform2" instance=ExtResource("9_4ifvk")]
 position = Vector2(52, -16)
 is_one_time = true
-trigger_key = "5"
 
 [node name="moving_platform3" parent="Puzzle1" instance=ExtResource("8_rshn3")]
 position = Vector2(32, 3)
@@ -136,7 +133,6 @@ is_ledge = true
 [node name="switch4" parent="Puzzle1/moving_platform3" instance=ExtResource("9_4ifvk")]
 position = Vector2(38, -18)
 is_one_time = true
-trigger_key = "1"
 
 [node name="moving_platform4" parent="Puzzle1" instance=ExtResource("8_rshn3")]
 position = Vector2(129, 3)
@@ -155,31 +151,26 @@ position = Vector2(457, 81)
 position = Vector2(27, 96)
 is_one_time = true
 switch_name = "1"
-trigger_key = "1"
 
 [node name="switch2" parent="Puzzle2" instance=ExtResource("9_4ifvk")]
 position = Vector2(170, 97)
 is_one_time = true
 switch_name = "2"
-trigger_key = "1"
 
 [node name="switch3" parent="Puzzle2" instance=ExtResource("9_4ifvk")]
 position = Vector2(330, 97)
 is_one_time = true
 switch_name = "3"
-trigger_key = "3"
 
 [node name="switch4" parent="Puzzle2" instance=ExtResource("9_4ifvk")]
 position = Vector2(241, 48)
 is_one_time = true
 switch_name = "4"
-trigger_key = "3"
 
 [node name="switch5" parent="Puzzle2" instance=ExtResource("9_4ifvk")]
 position = Vector2(97, 48)
 is_one_time = true
 switch_name = "5"
-trigger_key = "5"
 
 [node name="Puzzle3" type="Node2D" parent="."]
 position = Vector2(986, 531)
