@@ -2,7 +2,7 @@ extends AudioStreamPlayer2D
 
 class_name MusicResolver
 
-var note_played: String = ""
+var note_played: int = 0 # A note that is never defined
 var instrument_played: String = "piano"
 
 func _draw() -> void:
@@ -14,14 +14,10 @@ func play_music() -> void:
 	resolve_instrument()
 	resolve_music_key()
 	
-	if instrument_played != "" and note_played != "":
+	if !$".".playing and instrument_played != "" and note_played != 0:
 		
-		var music_player = "res://Assets/Audio/" + instrument_played + "_" + note_played + ".wav"
-		## Prevents switching bug that happens when an instrument is switched
-		## In the middle of play_music() causing the instrument played to switch
-		## To the new one instead of finishing first
-		note_played = "" 
-		
+		var music_player = "res://Assets/Audio/" + instrument_played + "_" + str(note_played) + ".wav"
+			
 		$Area2D/CollisionShape2D.disabled = false
 		queue_redraw()
 		
@@ -41,14 +37,19 @@ func resolve_instrument() -> void:
 		
 	if Input.is_key_pressed(KEY_2):
 		instrument_played = "violin"
+	
+	## Prevents switching bug that happens when an instrument is switched
+	## In the middle of play_music() causing the instrument played to switch
+	## To the new one instead of finishing first
+	note_played = 0
 		
 
 func resolve_music_key () -> void:
 	if Input.is_key_pressed(KEY_U):
-		note_played = "1"
+		note_played = 1
 		
 	elif Input.is_key_pressed(KEY_I):
-		note_played = "3"
+		note_played = 3
 		
 	elif Input.is_key_pressed(KEY_O):
-		note_played = "5"
+		note_played = 5

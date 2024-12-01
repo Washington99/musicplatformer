@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://bjl3682kcg67m"]
+[gd_scene load_steps=5 format=4 uid="uid://bjl3682kcg67m"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_61y0p"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="2_5u7cw"]
+[ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="3_toew8"]
+[ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="4_rqb20"]
 
 [node name="test_scene2" type="Node2D"]
 
@@ -11,6 +13,23 @@ tile_map_data = PackedByteArray("AAAmAAQAAAABAAEAAAAnAAQAAAACAAEAAAAoAAQAAAADAAE
 tile_set = ExtResource("1_61y0p")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_5u7cw")]
+position = Vector2(-9, 113)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
+
+[node name="mover" parent="." node_paths=PackedStringArray("note_hint", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("3_toew8")]
+position = Vector2(195, 156)
+note_hint = NodePath("../Lifeform")
+dest_for_decreasing = NodePath("../Node2D")
+dest_for_increasing = NodePath("../Node2D2")
+
+[node name="Lifeform" parent="." instance=ExtResource("4_rqb20")]
+position = Vector2(121, 174)
+song_list = Array[String](["piano_1", "piano_3", "piano_5", "violin_1"])
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(426, 206)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(625, 39)
