@@ -1,11 +1,13 @@
 extends Node2D
 
+class_name MusicNode
 ###################################################
 ## should make this a State?
 ###################################################
 
 var animation_playing: bool = false
 signal note_played(note_name: String)
+
 
 func _draw() -> void:
 	if animation_playing:

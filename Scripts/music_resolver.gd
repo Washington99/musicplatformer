@@ -1,33 +1,54 @@
 extends AudioStreamPlayer2D
 
+class_name MusicResolver
+
 var note_played: String = ""
 var instrument_played: String = "piano"
 
+func _draw() -> void:
+	if !$Area2D/CollisionShape2D.disabled:
+		draw_circle(Vector2(0,0), 50, $Area2D/CollisionShape2D.debug_color)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func play_music() -> void:
+	resolve_instrument()
+	resolve_music_key()
 	
 	if instrument_played != "" and note_played != "":
 		
 		var music_player = "res://Assets/Audio/" + instrument_played + "_" + note_played + ".wav"
-		#var music_player = preload("res://Assets/Audio/piano_1.wav")
-		#if !$".".is_playing():
-			#$".".stream = music_player
-			#$".".play()
-			#
-		#if finished:
-			#note_played = ""
-		print(music_player)
-		if !$".".is_playing():
-			$".".stream = ResourceLoader.load(music_player)
-			$".".play()
+		## Prevents switching bug that happens when an instrument is switched
+		## In the middle of play_music() causing the instrument played to switch
+		## To the new one instead of finishing first
+		note_played = "" 
 		
-		if $".".finished:
-			note_played = ""
+		$Area2D/CollisionShape2D.disabled = false
+		queue_redraw()
+		
+		$".".stream = ResourceLoader.load(music_player)
+		$".".play()
+		
+		await $".".finished	
+		
+		$Area2D/CollisionShape2D.disabled = true
+		queue_redraw()
+	
+	
+			
+func resolve_instrument() -> void:
+	if Input.is_key_pressed(KEY_1):
+		instrument_played = "piano"
+		
+	if Input.is_key_pressed(KEY_2):
+		instrument_played = "violin"
+		
 
-
-func _on_music_node_note_played(note_name: String) -> void:
-	note_played = note_name
-
-func _on_instrument_node_instrument_switched(instrument_name: String) -> void:
-	instrument_played = instrument_name
+func resolve_music_key () -> void:
+	if Input.is_key_pressed(KEY_U):
+		note_played = "1"
+		
+	elif Input.is_key_pressed(KEY_I):
+		note_played = "3"
+		
+	elif Input.is_key_pressed(KEY_O):
+		note_played = "5"

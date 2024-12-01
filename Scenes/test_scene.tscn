@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://diusx406ladht" path="res://Assets/music-notes-glyph-style-set.png" id="3_dhgg8"]
 [ext_resource type="Texture2D" uid="uid://uqqj0c6wya6r" path="res://Assets/music note.svg" id="3_ka186"]
 [ext_resource type="Script" path="res://Scripts/instrument_node.gd" id="4_lbjbj"]
-[ext_resource type="Script" path="res://Scripts/music_resolver.gd" id="4_wk4p5"]
 [ext_resource type="Script" path="res://Scripts/sample_interactable.gd" id="5_dq177"]
 [ext_resource type="PackedScene" uid="uid://c44tohe5obyy" path="res://Scenes/gate.tscn" id="8_ptjbk"]
 [ext_resource type="PackedScene" uid="uid://bw1n4k65t1ui5" path="res://Scenes/moving_platform.tscn" id="8_rshn3"]
@@ -15,6 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/puzzle_1.gd" id="9_86bug"]
 [ext_resource type="Script" path="res://Scripts/puzzle_3.gd" id="14_uam7v"]
 [ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="15_heh3t"]
+[ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="16_5tuws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcuh"]
 size = Vector2(70, 50)
@@ -43,10 +43,6 @@ texture = ExtResource("3_dhgg8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SampleInteractable/Area2D"]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_2lcuh")
-
-[node name="MusicResolver" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("4_wk4p5")
 
 [node name="Player" parent="." instance=ExtResource("1_3u1c2")]
 position = Vector2(884, 555)
@@ -205,7 +201,10 @@ position = Vector2(4, -16)
 position = Vector2(780, 557)
 song_list = Array[String](["piano_1", "piano_3", "violin_5"])
 
-[connection signal="note_played" from="Player/MusicNode" to="MusicResolver" method="_on_music_node_note_played"]
+[node name="mover" parent="." node_paths=PackedStringArray("note_hint") instance=ExtResource("16_5tuws")]
+position = Vector2(807, 540)
+note_hint = NodePath("../Lifeform")
+
 [connection signal="note_played" from="Player/MusicNode" to="Puzzle1/switch" method="_on_music_node_note_played"]
 [connection signal="note_played" from="Player/MusicNode" to="Puzzle1/moving_platform/switch2" method="_on_music_node_note_played"]
 [connection signal="note_played" from="Player/MusicNode" to="Puzzle1/moving_platform2/switch3" method="_on_music_node_note_played"]
@@ -220,7 +219,6 @@ song_list = Array[String](["piano_1", "piano_3", "violin_5"])
 [connection signal="area_entered" from="Player/MusicNode/Area2D" to="SampleInteractable" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Player/MusicNode/Area2D" to="SampleInteractable" method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Player/MusicNode/Timer" to="Player/MusicNode" method="_on_timer_timeout"]
-[connection signal="instrument_switched" from="Player/InstrumentNode" to="MusicResolver" method="_on_instrument_node_instrument_switched"]
 [connection signal="instrument_switched" from="Player/InstrumentNode" to="Puzzle1" method="_on_instrument_node_instrument_switched"]
 [connection signal="instrument_switched" from="Player/InstrumentNode" to="Puzzle3" method="_on_instrument_node_instrument_switched"]
 [connection signal="pressed" from="Player/InstrumentNode/Control/Guitar" to="SampleInteractable" method="_on_guitar_pressed"]

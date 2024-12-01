@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 # Should be exported
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
@@ -31,4 +33,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	if Input.is_action_just_pressed("play_note") or Input.is_action_just_pressed("play_instrument"):
+		$MusicResolver.play_music()
+		
 	move_and_slide()
+	
