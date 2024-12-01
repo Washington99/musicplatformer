@@ -2,7 +2,7 @@ extends Area2D
 
 
 
-@export var note_hint: Lifeform
+@export var lifeform: Lifeform
 
 @export var dest_for_decreasing: Node2D
 @export var dest_for_increasing: Node2D
@@ -18,9 +18,9 @@ var temp: Array[int] = [1,3,5]
 var note_sequence: Array[String] = ["piano_5", "piano_1", "piano_3", "piano_5", "piano_1"]
 
 func _on_ready() -> void:
-	var mover_note = note_hint.song_list[0].split("_")
+	var mover_note = lifeform.song_list[0].split("_")
 	var instrument_to_use: String = mover_note[0]
-	var note_to_play: int = int(mover_note[1])
+	# var note_to_play: int = int(mover_note[1])
 	
 	#var i = 0
 	#while i < num_notes_to_play:
@@ -30,7 +30,7 @@ func _on_ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	var music_resolver: MusicResolver = area.get_parent()
 	var music_played: String = music_resolver.instrument_played + "_" + str(music_resolver.note_played)
-	
+	# music_resolver.set_disabled(true)
 	
 	#var num_notes: int = 3
 	#var adjacent_notes: Array[String] = [

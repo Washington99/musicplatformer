@@ -53,3 +53,11 @@ func resolve_music_key () -> void:
 		
 	elif Input.is_key_pressed(KEY_O):
 		note_played = 5
+		
+#func set_disabled (is_disabled: bool) -> void:
+	#$Area2D/CollisionShape2D.disabled = is_disabled
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	$Area2D/CollisionShape2D.disabled = true
+	queue_redraw()
+	note_played = 0

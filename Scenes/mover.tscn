@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0qo"]
 size = Vector2(47, 32)
 
-[node name="mover" type="Area2D"]
+[node name="Mover" type="Area2D"]
 script = ExtResource("1_at3ce")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

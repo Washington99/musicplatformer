@@ -192,9 +192,8 @@ position = Vector2(4, -16)
 position = Vector2(780, 557)
 song_list = Array[String](["piano_1", "piano_3", "violin_5"])
 
-[node name="mover" parent="." node_paths=PackedStringArray("note_hint") instance=ExtResource("16_5tuws")]
+[node name="mover" parent="." instance=ExtResource("16_5tuws")]
 position = Vector2(807, 540)
-note_hint = NodePath("../Lifeform")
 
 [connection signal="note_played" from="Player/MusicNode" to="Puzzle1/switch" method="_on_music_node_note_played"]
 [connection signal="note_played" from="Player/MusicNode" to="Puzzle1/moving_platform/switch2" method="_on_music_node_note_played"]

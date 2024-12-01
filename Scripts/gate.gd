@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var needed_vertices: Array[Switch]
-@export var note_hint: Lifeform
+@export var lifeform: Lifeform
 @export var is_ordered: bool = false
 
 func _process(delta: float) -> void:
@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 		var all_vertices_opened: bool = true
 		
 		## if any vertex wasn't triggered by the correct key then close Gate
-		if not (vertex.switch_name in note_hint.song_list):
+		if not (vertex.switch_name in lifeform.song_list):
 			all_vertices_opened = false
 			close_door()
 			break

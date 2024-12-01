@@ -12,6 +12,7 @@ signal switch_on(name: String)
 func _on_area_entered(area: Area2D) -> void:
 	var music_resolver: MusicResolver = area.get_parent()
 	var music_played: String = music_resolver.instrument_played + "_" + str(music_resolver.note_played)
+	# music_resolver.set_disabled(true)
 
 	if music_played in trigger_keys:
 		# triggered = true
