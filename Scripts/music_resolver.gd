@@ -2,8 +2,13 @@ extends AudioStreamPlayer2D
 
 class_name MusicResolver
 
+var level: int
+
 var note_played: int = 0 # A note that is never defined
 var instrument_played: String = "piano"
+
+func _ready() -> void:
+	level = $"..".level
 
 func _draw() -> void:
 	if !$Area2D/CollisionShape2D.disabled:
@@ -32,10 +37,10 @@ func play_music() -> void:
 	
 			
 func resolve_instrument() -> void:
-	if Input.is_key_pressed(KEY_1):
+	if level > 0 and Input.is_key_pressed(KEY_1):
 		instrument_played = "piano"
 		
-	if Input.is_key_pressed(KEY_2):
+	if level > 2 and Input.is_key_pressed(KEY_2):
 		instrument_played = "violin"
 	
 	## Prevents switching bug that happens when an instrument is switched
@@ -45,14 +50,29 @@ func resolve_instrument() -> void:
 		
 
 func resolve_music_key () -> void:
-	if Input.is_key_pressed(KEY_U):
-		note_played = 1
+	if level > 0:
+		if Input.is_key_pressed(KEY_U):
+			note_played = 1
+			
+		elif Input.is_key_pressed(KEY_I):
+			note_played = 3
+			
+		elif Input.is_key_pressed(KEY_O):
+			note_played = 5
+			
+	if level > 1:
+		if Input.is_key_pressed(KEY_P):
+			note_played = 6
+			
+		elif Input.is_key_pressed(KEY_J):
+			note_played = 8	
+			
+		elif Input.is_key_pressed(KEY_K):
+			note_played = 10
+			
+		elif Input.is_key_pressed(KEY_L):
+			note_played = 12
 		
-	elif Input.is_key_pressed(KEY_I):
-		note_played = 3
-		
-	elif Input.is_key_pressed(KEY_O):
-		note_played = 5
 		
 #func set_disabled (is_disabled: bool) -> void:
 	#$Area2D/CollisionShape2D.disabled = is_disabled

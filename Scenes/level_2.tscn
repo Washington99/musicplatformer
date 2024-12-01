@@ -88,6 +88,7 @@ dest_for_increasing = NodePath("high")
 
 [node name="Lifeform" parent="Mover" instance=ExtResource("3_6qweu")]
 position = Vector2(-48, -267)
+song_list = Array[String](["piano_10"])
 
 [node name="high" type="Node2D" parent="Mover"]
 _import_path = NodePath("")
@@ -151,12 +152,15 @@ scale = Vector2(1, 1)
 skew = 0.0
 script = null
 
-[node name="Mover2" parent="." node_paths=PackedStringArray("lifeform") instance=ExtResource("2_xrnc4")]
+[node name="Mover2" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("2_xrnc4")]
 position = Vector2(283, 433)
 lifeform = NodePath("Lifeform2")
+dest_for_decreasing = NodePath("low")
+dest_for_increasing = NodePath("high")
 
 [node name="Lifeform2" parent="Mover2" instance=ExtResource("3_6qweu")]
 position = Vector2(19, 78)
+song_list = Array[String](["piano_5"])
 
 [node name="high" type="Node2D" parent="Mover2"]
 _import_path = NodePath("")
@@ -228,6 +232,7 @@ dest_for_increasing = NodePath("high")
 
 [node name="Lifeform3" parent="Mover3" instance=ExtResource("3_6qweu")]
 position = Vector2(-195, -62)
+song_list = Array[String](["piano_6"])
 
 [node name="high" type="Node2D" parent="Mover3"]
 _import_path = NodePath("")
@@ -293,9 +298,12 @@ script = null
 
 [node name="MusicComet" parent="." instance=ExtResource("4_iueeh")]
 position = Vector2(561, 223)
+notes_list = Array[String](["piano_6", "piano_8", "piano_10", "piano_12", "piano_3", "piano_5"])
+next_scene_path = "res://Scenes/test_scene_3.tscn"
 
 [node name="player" parent="." instance=ExtResource("5_ewanq")]
 position = Vector2(374.932, 310.004)
+level = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(3, 3)

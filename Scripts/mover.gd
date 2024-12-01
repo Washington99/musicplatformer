@@ -14,7 +14,7 @@ var current_state: String = states[0]
 #var current_note: int = 0
 #var current_instrument: String = ""
 #var seq_direction: int = 0
-var temp: Array[int] = [1,3,5]
+var temp: Array[int] = [1,3,5,6,8,10,12]
 var note_sequence: Array[String] = ["piano_5", "piano_1", "piano_3", "piano_5", "piano_1"]
 
 func _on_ready() -> void:
@@ -63,11 +63,11 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	elif current_state == states[2] and music_played == note_sequence[0]:
 		var player: Player = area.get_parent().get_parent()
-		player.transform = dest_for_decreasing.transform
+		player.position = dest_for_decreasing.global_position
 		current_state = states[0]
 	elif current_state == states[3] and music_played == note_sequence[4]:
 		var player: Player = area.get_parent().get_parent()
-		player.transform = dest_for_increasing.transform
+		player.position = dest_for_increasing.global_position
 		current_state = states[0]
 		
 	else:

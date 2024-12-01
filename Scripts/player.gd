@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+@export var level: int
+
 # Should be exported
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
@@ -35,6 +37,6 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("play_note") or Input.is_action_just_pressed("play_instrument"):
 		$MusicResolver.play_music()
-		
+	
 	move_and_slide()
 	
