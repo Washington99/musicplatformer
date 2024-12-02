@@ -15,7 +15,7 @@ var current_state: String = states[0]
 #var current_instrument: String = ""
 #var seq_direction: int = 0
 var temp: Array[int] = [1,3,5,6,8,10,12]
-var note_sequence: Array[String] = ["piano_5", "piano_1", "piano_3", "piano_5", "piano_1"]
+@export var note_sequence: Array[String]
 
 func _on_ready() -> void:
 	var mover_note = lifeform.song_list[0].split("_")

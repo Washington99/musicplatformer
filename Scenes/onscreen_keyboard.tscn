@@ -4,8 +4,6 @@
 
 [node name="OnscreenKeyboard" type="Camera2D"]
 zoom = Vector2(3, 3)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 script = ExtResource("1_w61f7")
 
 [node name="Control" type="Control" parent="."]

@@ -86,6 +86,7 @@ position = Vector2(864, 495)
 lifeform = NodePath("Lifeform")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
+note_sequence = Array[String](["piano_1", "piano_3", "piano_5", "piano_1", "piano_3"])
 
 [node name="Lifeform" parent="Mover" instance=ExtResource("3_6qweu")]
 position = Vector2(-48, -267)
@@ -158,6 +159,7 @@ position = Vector2(283, 433)
 lifeform = NodePath("Lifeform2")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
+note_sequence = Array[String](["piano_1", "piano_3", "piano_5", "piano_1", "piano_3"])
 
 [node name="Lifeform2" parent="Mover2" instance=ExtResource("3_6qweu")]
 position = Vector2(19, 78)
@@ -230,6 +232,7 @@ position = Vector2(544, 286)
 lifeform = NodePath("Lifeform3")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
+note_sequence = Array[String](["piano_1", "piano_3", "piano_5", "piano_1", "piano_3"])
 
 [node name="Lifeform3" parent="Mover3" instance=ExtResource("3_6qweu")]
 position = Vector2(-195, -62)
@@ -300,7 +303,7 @@ script = null
 [node name="MusicComet" parent="." instance=ExtResource("4_iueeh")]
 position = Vector2(561, 223)
 notes_list = Array[String](["piano_6", "piano_8", "piano_10", "piano_12", "piano_3", "piano_5"])
-next_scene_path = "res://Scenes/test_scene_3.tscn"
+next_scene_path = "res://Scenes/level_3.tscn"
 
 [node name="player" parent="." instance=ExtResource("5_ewanq")]
 position = Vector2(374.932, 310.004)
