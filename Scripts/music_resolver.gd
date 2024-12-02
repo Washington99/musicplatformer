@@ -37,10 +37,10 @@ func play_music() -> void:
 	
 			
 func resolve_instrument() -> void:
-	if level > 0 and Input.is_key_pressed(KEY_1):
+	if level > 0 and Input.is_action_just_pressed("piano"):
 		instrument_played = "piano"
 		
-	if level > 2 and Input.is_key_pressed(KEY_2):
+	if level > 2 and Input.is_action_just_pressed("violin"):
 		instrument_played = "violin"
 	
 	## Prevents switching bug that happens when an instrument is switched
@@ -51,26 +51,26 @@ func resolve_instrument() -> void:
 
 func resolve_music_key () -> void:
 	if level > 0:
-		if Input.is_key_pressed(KEY_U):
+		if Input.is_action_just_pressed("note_1"):
 			note_played = 1
 			
-		elif Input.is_key_pressed(KEY_I):
+		elif Input.is_action_just_pressed("note_3"):
 			note_played = 3
 			
-		elif Input.is_key_pressed(KEY_O):
+		elif Input.is_action_just_pressed("note_5"):
 			note_played = 5
 			
 	if level > 1:
-		if Input.is_key_pressed(KEY_P):
+		if Input.is_action_just_pressed("note_6"):
 			note_played = 6
 			
-		elif Input.is_key_pressed(KEY_J):
+		elif Input.is_action_just_pressed("note_8"):
 			note_played = 8	
 			
-		elif Input.is_key_pressed(KEY_K):
+		elif Input.is_action_just_pressed("note_10"):
 			note_played = 10
 			
-		elif Input.is_key_pressed(KEY_L):
+		elif Input.is_action_just_pressed("note_12"):
 			note_played = 12
 		
 		

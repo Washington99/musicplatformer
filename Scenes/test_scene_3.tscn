@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=4 uid="uid://cxnx247p8hssn"]
+[gd_scene load_steps=4 format=4 uid="uid://cxnx247p8hssn"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_k6t8u"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="2_pgw28"]
+[ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="3_m5uhv"]
 
-[node name="test_scene2" type="Node2D"]
+[node name="test_scene_3" type="Node2D"]
 _import_path = NodePath("")
 unique_name_in_owner = false
 process_mode = 0
@@ -43,5 +44,5 @@ tile_set = ExtResource("1_k6t8u")
 position = Vector2(-9, 113)
 level = 3
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(3, 3)
+[node name="Control" parent="CharacterBody2D" instance=ExtResource("3_m5uhv")]
+level = 3
