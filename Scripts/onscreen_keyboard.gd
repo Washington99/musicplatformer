@@ -3,8 +3,11 @@ extends Camera2D
 @export var level: int = 0
 
 func _ready() -> void:
-	if level < 2:
+	if level < 3:
 		$Control/Instruments.set_item_disabled(1, true)
+	if level == 3:
+		$Control/Instruments.selected = 1 # select violin
+		$Control/Instruments.set_item_disabled(0, true)
 
 func _on_c_button_down() -> void:
 	Input.action_press("play_note")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://bvhwbyt4k0yc8"]
+[gd_scene load_steps=7 format=4 uid="uid://bvhwbyt4k0yc8"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_y523b"]
 [ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="2_xrnc4"]
 [ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="3_6qweu"]
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="4_iueeh"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="5_ewanq"]
+[ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="6_r5rps"]
 
 [node name="Level_2" type="Node2D"]
 _import_path = NodePath("")
@@ -305,5 +306,5 @@ next_scene_path = "res://Scenes/test_scene_3.tscn"
 position = Vector2(374.932, 310.004)
 level = 2
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(3, 3)
+[node name="OnscreenKeyboard" parent="player" instance=ExtResource("6_r5rps")]
+level = 2

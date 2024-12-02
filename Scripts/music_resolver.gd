@@ -9,6 +9,9 @@ var instrument_played: String = "piano"
 
 func _ready() -> void:
 	level = $"..".level
+	
+	if level == 3:
+		instrument_played = "violin"
 
 func _draw() -> void:
 	if !$Area2D/CollisionShape2D.disabled:
@@ -37,7 +40,7 @@ func play_music() -> void:
 	
 			
 func resolve_instrument() -> void:
-	if level > 0 and Input.is_action_just_pressed("piano"):
+	if level > 0 and level != 3 and Input.is_action_just_pressed("piano"):
 		instrument_played = "piano"
 		
 	if level > 2 and Input.is_action_just_pressed("violin"):
