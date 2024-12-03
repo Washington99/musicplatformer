@@ -37,7 +37,8 @@ func play_music() -> void:
 		$Area2D/CollisionShape2D.disabled = true
 		queue_redraw()
 	
-	
+func is_playing_sound() -> bool:
+	return playing
 			
 func resolve_instrument() -> void:
 	if level > 0 and level != 3 and Input.is_action_just_pressed("piano"):

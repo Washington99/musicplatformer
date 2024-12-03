@@ -1,12 +1,10 @@
-[gd_scene load_steps=64 format=3 uid="uid://cjyf3dk4bye4q"]
+[gd_scene load_steps=62 format=3 uid="uid://cjyf3dk4bye4q"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pgw2l"]
 [ext_resource type="Texture2D" uid="uid://byos13spnrm3t" path="res://Assets/CharSprite/Astronaut-Idle.png" id="2_k3aes"]
 [ext_resource type="Texture2D" uid="uid://bwfquj8vs0o76" path="res://Assets/CharSprite/Astronaut-Fall.png" id="3_lmaw8"]
 [ext_resource type="Texture2D" uid="uid://ki536kqdh0e2" path="res://Assets/CharSprite/Astronaut-Walk.png" id="4_bflto"]
 [ext_resource type="Texture2D" uid="uid://cf7dj4yojw4mk" path="res://Assets/CharSprite/Astronaut-Sing.png" id="5_lypyx"]
-[ext_resource type="AudioStream" uid="uid://bymqttsg27v7t" path="res://Assets/Audio/Player SFX/zapsplat_foley_footstep_single_flip_flop_grass_010_44582.mp3" id="7_v6l20"]
-[ext_resource type="AudioStream" uid="uid://i2odf7gv4ga0" path="res://Assets/Audio/Player SFX/Jump.wav" id="7_yfqml"]
 [ext_resource type="Script" path="res://Scripts/music_resolver.gd" id="19_iln4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cbf7k"]
@@ -410,7 +408,7 @@ position = Vector2(-0.344139, 0.0501022)
 scale = Vector2(0.44, 0.44)
 sprite_frames = SubResource("SpriteFrames_krifi")
 animation = &"Run"
-frame_progress = 0.0799989
+frame_progress = 0.0682325
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -426,14 +424,4 @@ visible = false
 shape = SubResource("CircleShape2D_6x1ko")
 disabled = true
 
-[node name="Walk" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_v6l20")
-volume_db = -24.0
-
-[node name="Jump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_yfqml")
-volume_db = -6.934
-pitch_scale = 2.37
-
-[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="MusicResolver/Area2D" to="MusicResolver" method="_on_area_2d_area_entered"]
