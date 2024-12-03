@@ -81,6 +81,6 @@ func resolve_music_key () -> void:
 	#$Area2D/CollisionShape2D.disabled = is_disabled
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	$Area2D/CollisionShape2D.disabled = true
+	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	queue_redraw()
 	note_played = 0
