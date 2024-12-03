@@ -19,91 +19,91 @@ offset_bottom = 107.0
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.315927
-anchor_top = 0.841121
-anchor_right = 0.315927
-anchor_bottom = 0.841121
+anchor_left = 0.180157
+anchor_top = 0.808411
+anchor_right = 0.208877
+anchor_bottom = 0.808411
 offset_right = 19.0
 offset_bottom = 31.0
-text = "C"
+text = "Do"
 metadata/_edit_use_anchors_ = true
 
 [node name="D" type="Button" parent="Control"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.373368
-anchor_top = 0.841121
-anchor_right = 0.373368
-anchor_bottom = 0.841121
+anchor_left = 0.279373
+anchor_top = 0.808411
+anchor_right = 0.300261
+anchor_bottom = 0.808411
 offset_right = 20.0
 offset_bottom = 31.0
-text = "D"
+text = "Re"
 metadata/_edit_use_anchors_ = true
 
 [node name="E" type="Button" parent="Control"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.43342
-anchor_top = 0.841121
-anchor_right = 0.43342
-anchor_bottom = 0.841121
+anchor_left = 0.373368
+anchor_top = 0.808411
+anchor_right = 0.402089
+anchor_bottom = 0.808411
 offset_right = 17.0
 offset_bottom = 31.0
-text = "E"
+text = "Mi"
 metadata/_edit_use_anchors_ = true
 
 [node name="F" type="Button" parent="Control"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.48564
-anchor_top = 0.841121
-anchor_right = 0.48564
-anchor_bottom = 0.841121
+anchor_left = 0.467363
+anchor_top = 0.808411
+anchor_right = 0.490862
+anchor_bottom = 0.808411
 offset_right = 17.0
 offset_bottom = 31.0
-text = "F"
+text = "Fa"
 metadata/_edit_use_anchors_ = true
 
 [node name="G" type="Button" parent="Control"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.535248
-anchor_top = 0.841121
-anchor_right = 0.535248
-anchor_bottom = 0.841121
+anchor_left = 0.558747
+anchor_top = 0.808411
+anchor_right = 0.577024
+anchor_bottom = 0.808411
 offset_right = 20.0
 offset_bottom = 31.0
-text = "G"
+text = "So"
 metadata/_edit_use_anchors_ = true
 
 [node name="A" type="Button" parent="Control"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5953
-anchor_top = 0.841121
-anchor_right = 0.5953
-anchor_bottom = 0.841121
+anchor_left = 0.650131
+anchor_top = 0.808411
+anchor_right = 0.668407
+anchor_bottom = 0.808411
 offset_right = 19.0
 offset_bottom = 31.0
-text = "A"
+text = "La"
 metadata/_edit_use_anchors_ = true
 
 [node name="B" type="Button" parent="Control"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.655352
-anchor_top = 0.841121
-anchor_right = 0.655352
-anchor_bottom = 0.841121
+anchor_left = 0.741514
+anchor_top = 0.808411
+anchor_right = 0.749347
+anchor_bottom = 0.808411
 offset_right = 19.0
 offset_bottom = 31.0
-text = "B"
+text = "Ti"
 metadata/_edit_use_anchors_ = true
 
 [node name="Instruments" type="OptionButton" parent="Control"]
