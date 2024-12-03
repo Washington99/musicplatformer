@@ -53,23 +53,71 @@ func _on_area_entered(area: Area2D) -> void:
 		#print(seq_direction)
 		
 	if current_state == states[0] and music_played == note_sequence[2]:
-		print(fposmod(-1, 3))
 		current_state = states[1]
+		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(10,15))
+		$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(12,15))
 		
 	elif current_state == states[1] and music_played == note_sequence[1]:
 		current_state = states[2]
+		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(7,15))
+		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(9,15))
+		
 	elif current_state == states[1] and music_played == note_sequence[3]:
 		current_state = states[3]
+		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(7,15))
+		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(9,15))
 		
 	elif current_state == states[2] and music_played == note_sequence[0]:
 		var player: Player = area.get_parent().get_parent()
 		player.position = dest_for_decreasing.global_position
 		current_state = states[0]
+		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(11,15))
+		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
+		
 	elif current_state == states[3] and music_played == note_sequence[4]:
 		var player: Player = area.get_parent().get_parent()
 		player.position = dest_for_increasing.global_position
 		current_state = states[0]
+		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(11,15))
+		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
 		
 	else:
 		current_state = states[0]
+		## Top right and Top left tiles
+		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,15))
+		$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(10,15))
+		
+		## Bottom right and Bottom left tiles
+		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(9,15))
+		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(7,15))
+		
+		## Top mid and Bottom mid tiles
+		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(8,15))
+		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(11,15))
+		
 	
+func _change_design () -> void:
+	if current_state == states[0]:
+		## Top right and Top left tiles
+		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,15))
+		$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(10,15))
+		
+		## Bottom right and Bottom left tiles
+		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(9,15))
+		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(7,15))
+		
+		## Top mid and Bottom mid tiles
+		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(8,15))
+		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(11,15))
+		
+	if current_state == states[1]:
+		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(10,15))
+		$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(12,15))
+		
+	if current_state == states[1]:
+		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(7,15))
+		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(9,15))
+		
+	if current_state == states[1]:
+		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(11,15))
+		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
