@@ -8,16 +8,19 @@ extends Area2D
 var successfully_played: int = 0
 
 func _on_body_entered(body: Node2D) -> void:
-	var i: int = 0
-	for audio in notes_list:
-		if i < num_notes_to_play:
-			var music_player = "res://Assets/Audio/" + audio + ".wav"
+	if body is Player:
+		var i: int = 0
+		for audio in notes_list:
+			if i < num_notes_to_play:
+				var music_player = "res://Assets/Audio/" + audio + ".wav"
+				
+				$AudioStreamPlayer2D.stream = ResourceLoader.load(music_player)
+				$AudioStreamPlayer2D.play()
+				await $AudioStreamPlayer2D.finished
 			
-			$AudioStreamPlayer2D.stream = ResourceLoader.load(music_player)
-			$AudioStreamPlayer2D.play()
-			await $AudioStreamPlayer2D.finished
-		
-		i += 1
+			i += 1
+	else:
+		print("from music_comet ", body)
 
 func _on_area_entered(area: Area2D) -> void:
 	var music_resolver: MusicResolver = area.get_parent()

@@ -9,6 +9,17 @@ class_name Switch
 var triggered: bool = false
 signal switch_on(name: String)
 
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		for audio in trigger_keys:
+			var music_player = "res://Assets/Audio/" + audio + ".wav"
+				
+			$AudioStreamPlayer2D.stream = ResourceLoader.load(music_player)
+			$AudioStreamPlayer2D.play()
+			await $AudioStreamPlayer2D.finished
+	else:
+		print("from vertices ", body)
+
 func _on_area_entered(area: Area2D) -> void:
 	var music_resolver: MusicResolver = area.get_parent()
 	var music_played: String = music_resolver.instrument_played + "_" + str(music_resolver.note_played)
