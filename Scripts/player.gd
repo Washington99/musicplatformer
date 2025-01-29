@@ -14,6 +14,7 @@ var footstep_frames : Array = [4,9]
 
 @onready var music_resolver = get_node("MusicResolver")
 @onready var animated_sprite_2d = get_node("AnimatedSprite2D")
+@onready var animated_notes = get_node("AnimatedNote")
 @onready var jump = $Jump
 @onready var walk = $Walk
 
@@ -42,6 +43,11 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("Jump")
 		velocity.x = direction * SPEED
 		
+		if direction > 0:
+			animated_notes.position = Vector2(13, -10)
+		elif direction < 0:
+			animated_notes.position = Vector2(-15,-10)
+		
 	# Idle State
 	else:
 		if abs(velocity.y) > 0.25:
@@ -50,7 +56,25 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("Sing")
 		else:
 			$AnimatedSprite2D.play("Idle")
+			$AnimatedNote.play("blank")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if music_resolver.is_playing_sound():
+		print(music_resolver.get_playing_note())
+		if music_resolver.get_playing_note() == 1:
+			$AnimatedNote.play("green")
+		elif music_resolver.get_playing_note() == 3:
+			$AnimatedNote.play("blue")
+		elif music_resolver.get_playing_note() == 5:
+			$AnimatedNote.play("cyan")
+		elif music_resolver.get_playing_note() == 6:
+			$AnimatedNote.play("red")
+		elif music_resolver.get_playing_note() == 8:
+			$AnimatedNote.play("orange")
+		elif music_resolver.get_playing_note() == 10:
+			$AnimatedNote.play("purple")
+		elif music_resolver.get_playing_note() == 12:
+			$AnimatedNote.play("yellow")
 
 	if Input.is_action_just_pressed("play_note") or Input.is_action_just_pressed("play_instrument"):
 		$MusicResolver.play_music()
