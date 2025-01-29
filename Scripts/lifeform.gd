@@ -3,6 +3,7 @@ extends Area2D
 class_name Lifeform
 
 @export var song_list: Array[String]
+@onready var animated_sprite = $AnimatedSprite2D
 
 @export var instruments_selection: Array[String] = ["piano"]
 @export var notes_selection: Array[int] = [1,3,5]
@@ -44,3 +45,8 @@ func randomize_song_list () -> void:
 			song_list.append(
 				temp
 			)
+
+
+func _ready():
+	animated_sprite.play("default")
+
