@@ -30,7 +30,6 @@ position = Vector2(291, 495)
 lifeform = NodePath("Lifeform5")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
-note_sequence = Array[String](["violin_1", "violin_3", "violin_5", "violin_6", "violin_8"])
 
 [node name="Lifeform5" parent="TileMap/Mover" instance=ExtResource("4_um06f")]
 position = Vector2(-68, 16)
@@ -47,7 +46,6 @@ position = Vector2(818, 496)
 lifeform = NodePath("Lifeform6")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
-note_sequence = Array[String](["violin_5", "violin_6", "violin_8", "violin_10", "violin_12"])
 
 [node name="Lifeform6" parent="TileMap/Mover2" instance=ExtResource("4_um06f")]
 position = Vector2(94, 14)

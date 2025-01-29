@@ -28,11 +28,11 @@ position = Vector2(864, 495)
 lifeform = NodePath("Lifeform")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
-note_sequence = Array[String](["piano_1", "piano_3", "piano_5", "piano_1", "piano_3"])
 
 [node name="Lifeform" parent="Mover" instance=ExtResource("3_6qweu")]
 position = Vector2(-48, -267)
 song_list = Array[String](["piano_10"])
+notes_selection = Array[int]([3, 5, 6, 8, 10])
 
 [node name="high" type="Node2D" parent="Mover"]
 position = Vector2(-620.247, -286.744)
@@ -45,11 +45,11 @@ position = Vector2(283, 433)
 lifeform = NodePath("Lifeform2")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
-note_sequence = Array[String](["piano_1", "piano_3", "piano_5", "piano_1", "piano_3"])
 
 [node name="Lifeform2" parent="Mover2" instance=ExtResource("3_6qweu")]
 position = Vector2(19, 78)
 song_list = Array[String](["piano_5"])
+notes_selection = Array[int]([3, 5, 6, 8, 10])
 
 [node name="high" type="Node2D" parent="Mover2"]
 position = Vector2(468, -219)
@@ -62,11 +62,11 @@ position = Vector2(544, 286)
 lifeform = NodePath("Lifeform3")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
-note_sequence = Array[String](["piano_1", "piano_3", "piano_5", "piano_1", "piano_3"])
 
 [node name="Lifeform3" parent="Mover3" instance=ExtResource("3_6qweu")]
 position = Vector2(-195, -62)
 song_list = Array[String](["piano_6"])
+notes_selection = Array[int]([3, 5, 6, 8, 10])
 
 [node name="high" type="Node2D" parent="Mover3"]
 position = Vector2(105, -73)

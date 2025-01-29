@@ -39,13 +39,3 @@ func randomize_song_list () -> void:
 			song_list.append(
 				temp
 			)
-		
-
-
-#func _on_area_entered(area: Area2D) -> void:
-	#for audio in song_list:
-		#var music_player = "res://Assets/Audio/" + audio + ".wav"
-			#
-		#$AudioStreamPlayer2D.stream = ResourceLoader.load(music_player)
-		#$AudioStreamPlayer2D.play()
-		#await $AudioStreamPlayer2D.finished

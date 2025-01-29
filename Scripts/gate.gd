@@ -32,9 +32,6 @@ func _process(delta: float) -> void:
 			
 		if all_vertices_opened:
 			open_door()
-		
-		
-		
 
 func open_door() -> void:
 	$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,10))
