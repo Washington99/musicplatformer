@@ -1,14 +1,108 @@
-[gd_scene load_steps=10 format=4 uid="uid://b5diebk2idubi"]
+[gd_scene load_steps=25 format=4 uid="uid://b5diebk2idubi"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_seosm"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_wiw7r"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_lkglu"]
 [ext_resource type="PackedScene" uid="uid://c44tohe5obyy" path="res://Scenes/gate.tscn" id="2_ycc87"]
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="3_0pi2j"]
+[ext_resource type="Script" path="res://Scenes/background.gd" id="3_52g8s"]
 [ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="3_oleg4"]
+[ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="4_50sh0"]
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="4_xyqpw"]
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="6_au214"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="6_gha18"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffix1"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqv43"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jv6i"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rppms"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8h0v"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt2k1"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(11520, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5tgb"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(13440, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3i6o"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(15360, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuft4"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(17280, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai3tx"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(19200, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmosu"]
+atlas = ExtResource("4_50sh0")
+region = Rect2(21120, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8nek2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gem6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffix1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqv43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jv6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rppms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8h0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt2k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5tgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3i6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuft4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai3tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmosu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Level_1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [201.0]
@@ -42,11 +136,19 @@ texture = ExtResource("2_lkglu")
 [node name="Background 1" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.5)
 motion_mirroring = Vector2(921.6, 0)
+script = ExtResource("3_52g8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="TileMap/ParallaxBackground/Background 1"]
+visible = false
 position = Vector2(280, 140)
 scale = Vector2(0.48, 0.48)
 texture = ExtResource("3_0pi2j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/ParallaxBackground/Background 1"]
+position = Vector2(280, 120)
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_8nek2")
+frame_progress = 0.79224
 
 [node name="MusicComet" parent="TileMap" instance=ExtResource("6_au214")]
 position = Vector2(910, 511)
