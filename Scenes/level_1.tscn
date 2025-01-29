@@ -56,29 +56,29 @@ song_list = Array[String](["piano_1"])
 [node name="Lifeform2" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(699, 446)
 song_list = Array[String](["piano_1", "piano_3"])
+num_songs = 2
 
 [node name="Lifeform3" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(837, 447)
 song_list = Array[String](["piano_1", "piano_3", "piano_5"])
+num_songs = 3
 
 [node name="Lifeform4" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(337, 510)
 song_list = Array[String](["piano_3", "piano_5"])
+num_songs = 2
 
 [node name="Vertices" type="Node2D" parent="."]
 position = Vector2(221, 432)
 
 [node name="switch" parent="Vertices" instance=ExtResource("4_xyqpw")]
 position = Vector2(179, 15)
-trigger_keys = Array[String](["piano_1", "piano_3"])
 
 [node name="switch2" parent="Vertices" instance=ExtResource("4_xyqpw")]
 position = Vector2(99, 15)
-trigger_keys = Array[String](["piano_5"])
 
 [node name="switch3" parent="Vertices" instance=ExtResource("4_xyqpw")]
 position = Vector2(3, 80)
-trigger_keys = Array[String](["piano_3"])
 
 [node name="player" parent="." instance=ExtResource("1_seosm")]
 position = Vector2(281, 443)

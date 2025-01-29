@@ -9,6 +9,9 @@ class_name Switch
 var triggered: bool = false
 signal switch_on(name: String)
 
+func _on_ready() -> void:
+	print (trigger_keys)
+
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		for audio in trigger_keys:
@@ -31,6 +34,8 @@ func _on_area_entered(area: Area2D) -> void:
 		# $CollisionShape2D.set_deferred("disabled", true)
 		switch_name = music_played
 		# switch_on.emit(switch_name)
+		
+		$Label.text = music_played
 		
 		if !is_one_time:
 			$Timer.start()
