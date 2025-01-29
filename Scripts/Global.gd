@@ -1,6 +1,8 @@
 extends Node
 
 var current_scene = null
+var player_accuracy: float = 100
+var player_level: int = 0
 
 func _ready():
 	var root = get_tree().root

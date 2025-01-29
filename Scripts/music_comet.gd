@@ -42,6 +42,9 @@ func _on_area_entered(area: Area2D) -> void:
 		if successfully_played == num_notes_to_play:
 			successfully_played = 0
 			await $"../player/MusicResolver".finished
+			
+			var player: Player = music_resolver.get_parent()
+			Global.player_accuracy = player.player_accuracy
 			Global.goto_scene(next_scene_path)
 			# get_tree().change_scene_to_file(next_scene_path)
 		

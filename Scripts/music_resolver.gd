@@ -12,6 +12,8 @@ func _ready() -> void:
 	
 	if level == 3:
 		instrument_played = "violin"
+		
+	print($"..".player_accuracy)
 
 func _draw() -> void:
 	if !$Area2D/CollisionShape2D.disabled:

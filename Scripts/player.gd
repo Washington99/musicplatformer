@@ -9,7 +9,7 @@ class_name Player
 
 var num_notes_played: int = 0
 var num_error_played: int = 0
-var player_accuracy: float = 100
+var player_accuracy: float = Global.player_accuracy
 
 # Should probably move the movement itself to another function
 # So add-ons to the player is functional
@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		if num_notes_played > 0:
 			player_accuracy = (1 - (float(num_error_played) / num_notes_played)) * 100
 		
-		print(player_accuracy)
+		# print(player_accuracy)
 	
 	move_and_slide()
 	
