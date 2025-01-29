@@ -38,7 +38,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 	if music_played in trigger_keys:
 		# triggered = true
-		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(13,9))
+		$TileMapLayer.set_cell(Vector2i(0,0), 5, Vector2i(2,4))
 		# $CollisionShape2D.set_deferred("disabled", true)
 		switch_name = music_played
 		# switch_on.emit(switch_name)
@@ -53,6 +53,6 @@ func _on_area_entered(area: Area2D) -> void:
 		player.num_error_played += 1
 
 func _on_timer_timeout() -> void:
-	$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,9))
+	$TileMapLayer.set_cell(Vector2i(0,0), 5, Vector2i(1,4))
 	$CollisionShape2D.set_deferred("disabled", false)
 	triggered = false
