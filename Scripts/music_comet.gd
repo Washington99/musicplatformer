@@ -36,12 +36,15 @@ func _on_area_entered(area: Area2D) -> void:
 			await $"../player/MusicResolver".finished
 			get_tree().change_scene_to_file(next_scene_path)
 		
-	else: # Reset
+	else: # Reset upon MISTAKE
 		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(11,12))
 		successfully_played = 0
+		
 		if is_randomized:
 			randomized_notes_list()
-		# Call lifeform randomizer
+		
+		var player: Player = music_resolver.get_parent()
+		player.num_error_played += 1
 		
 func randomized_notes_list () -> void:
 	randomize()

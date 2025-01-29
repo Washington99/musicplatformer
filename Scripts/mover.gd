@@ -26,7 +26,7 @@ func _on_ready() -> void:
 		instrument_to_use + "_" + str(notes[note_index + 1])
 	])
 	
-	print(note_sequence)
+	# print(note_sequence)
 	
 func _on_area_entered(area: Area2D) -> void:
 	var music_resolver: MusicResolver = area.get_parent()
@@ -86,6 +86,9 @@ func _on_area_entered(area: Area2D) -> void:
 		## Top mid and Bottom mid tiles
 		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(8,15))
 		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(11,15))
+		
+		var player: Player = music_resolver.get_parent()
+		player.num_error_played += 1
 		
 	
 func _change_design () -> void:

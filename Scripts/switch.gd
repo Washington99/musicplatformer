@@ -10,7 +10,8 @@ var player_near: bool = false
 var triggered: bool = false
 
 func _on_ready() -> void:
-	print (trigger_keys)
+	# print (trigger_keys)
+	pass
 
 func _physics_process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("interact"):
@@ -46,6 +47,10 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		if !is_one_time:
 			$Timer.start()
+			
+	else:
+		var player: Player = music_resolver.get_parent()
+		player.num_error_played += 1
 
 func _on_timer_timeout() -> void:
 	$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,9))

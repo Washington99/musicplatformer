@@ -3,12 +3,13 @@ extends CharacterBody2D
 class_name Player
 
 @export var level: int
+@export var SPEED = 200.0
+@export var JUMP_VELOCITY = -400.0
+@export var animation_time: float = 0.80
 
-# Should be exported
-const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
-
-const animation_time: float = 0.80
+var num_notes_played: int = 0
+var num_error_played: int = 0
+var player_accuracy: float = 100
 
 # Should probably move the movement itself to another function
 # So add-ons to the player is functional
@@ -37,6 +38,11 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("play_note") or Input.is_action_just_pressed("play_instrument"):
 		$MusicResolver.play_music()
+		
+		if num_notes_played > 0:
+			player_accuracy = (1 - (float(num_error_played) / num_notes_played)) * 100
+		
+		print(player_accuracy)
 	
 	move_and_slide()
 	

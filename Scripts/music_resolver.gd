@@ -17,7 +17,7 @@ func _draw() -> void:
 	if !$Area2D/CollisionShape2D.disabled:
 		draw_circle(Vector2(0,0), 50, $Area2D/CollisionShape2D.debug_color)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func play_music() -> void:
 	resolve_instrument()
 	resolve_music_key()
@@ -75,10 +75,9 @@ func resolve_music_key () -> void:
 		elif Input.is_action_just_pressed("note_12"):
 			note_played = 12
 		
-		
-	
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	queue_redraw()
 	note_played = 0
+	$"..".num_notes_played += 1

@@ -5,7 +5,7 @@ extends Node2D
 @export var is_ordered: bool = false
 
 func _on_ready() -> void:
-	assert(len(lifeform.song_list) == len(needed_vertices))
+	# assert(len(lifeform.song_list) == len(needed_vertices))
 	var i: int = 0
 	
 	#for vertex in needed_vertices:
