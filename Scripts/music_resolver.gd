@@ -13,9 +13,9 @@ func _ready() -> void:
 	if level == 3:
 		instrument_played = "violin"
 
-func _draw() -> void:
-	if !$Area2D/CollisionShape2D.disabled:
-		draw_circle(Vector2(0,0), 50, $Area2D/CollisionShape2D.debug_color)
+#func _draw() -> void:
+	#if !$Area2D/CollisionShape2D.disabled:
+		#draw_circle(Vector2(0,0), 50, $Area2D/CollisionShape2D.debug_color)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func play_music() -> void:

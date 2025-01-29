@@ -858,7 +858,7 @@ position = Vector2(-0.344139, 0.0501022)
 scale = Vector2(0.44, 0.44)
 sprite_frames = SubResource("SpriteFrames_krifi")
 animation = &"Sing"
-frame_progress = 0.636281
+frame_progress = 0.741386
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -870,7 +870,6 @@ script = ExtResource("19_iln4j")
 [node name="Area2D" type="Area2D" parent="MusicResolver"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MusicResolver/Area2D"]
-visible = false
 shape = SubResource("CircleShape2D_6x1ko")
 disabled = true
 

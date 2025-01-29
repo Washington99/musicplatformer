@@ -48,6 +48,12 @@ position = Vector2(280, 140)
 scale = Vector2(0.48, 0.48)
 texture = ExtResource("3_0pi2j")
 
+[node name="MusicComet" parent="TileMap" instance=ExtResource("6_au214")]
+position = Vector2(910, 511)
+notes_list = Array[String](["piano_1", "piano_3", "piano_5"])
+next_scene_path = "res://Scenes/test_scene_2.tscn"
+is_randomized = true
+
 [node name="Gates" type="Node2D" parent="."]
 position = Vector2(518.071, 493.564)
 
@@ -110,9 +116,3 @@ level = 1
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("6_gha18")]
 level = 1
-
-[node name="MusicComet" parent="." instance=ExtResource("6_au214")]
-position = Vector2(910, 511)
-notes_list = Array[String](["piano_1", "piano_3", "piano_5"])
-next_scene_path = "res://Scenes/test_scene_2.tscn"
-is_randomized = true

@@ -60,7 +60,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if music_resolver.is_playing_sound():
-		print(music_resolver.get_playing_note())
 		if music_resolver.get_playing_note() == 1:
 			$AnimatedNote.play("green")
 		elif music_resolver.get_playing_note() == 3:
