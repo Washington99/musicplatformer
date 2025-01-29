@@ -37,8 +37,7 @@ func play_music() -> void:
 		$Area2D/CollisionShape2D.disabled = true
 		queue_redraw()
 	
-	
-			
+		
 func resolve_instrument() -> void:
 	if level > 0 and level != 3 and Input.is_action_just_pressed("piano"):
 		instrument_played = "piano"
@@ -77,8 +76,7 @@ func resolve_music_key () -> void:
 			note_played = 12
 		
 		
-#func set_disabled (is_disabled: bool) -> void:
-	#$Area2D/CollisionShape2D.disabled = is_disabled
+	
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)

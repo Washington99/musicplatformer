@@ -125,3 +125,4 @@ position = Vector2(886, 207)
 notes_list = Array[String](["violin_1", "violin_3", "violin_5", "violin_10", "violin_12"])
 num_notes_to_play = 5
 next_scene_path = "res://Scenes/level_1.tscn"
+is_randomized = true

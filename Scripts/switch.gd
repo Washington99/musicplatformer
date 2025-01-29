@@ -6,24 +6,31 @@ class_name Switch
 @export var switch_name: String = ""
 @export var trigger_keys: Array[String] = []
 
+var player_near: bool = false
 var triggered: bool = false
-signal switch_on(name: String)
 
 func _on_ready() -> void:
 	print (trigger_keys)
 
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
+func _physics_process(_delta: float) -> void:
+	if player_near and Input.is_action_just_pressed("interact"):
 		for audio in trigger_keys:
 			var music_player = "res://Assets/Audio/" + audio + ".wav"
 				
 			$AudioStreamPlayer2D.stream = ResourceLoader.load(music_player)
 			$AudioStreamPlayer2D.play()
 			await $AudioStreamPlayer2D.finished
-	else:
-		print("from vertices ", body)
 
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		player_near = true
+		
+func _on_body_exited(body: Node2D) -> void:
+	if body is Player:
+		player_near = false
+	
 func _on_area_entered(area: Area2D) -> void:
+	
 	var music_resolver: MusicResolver = area.get_parent()
 	var music_played: String = music_resolver.instrument_played + "_" + str(music_resolver.note_played)
 	# music_resolver.set_disabled(true)
