@@ -153,7 +153,7 @@ frame_progress = 0.79224
 [node name="MusicComet" parent="TileMap" instance=ExtResource("6_au214")]
 position = Vector2(910, 511)
 notes_list = Array[String](["piano_1", "piano_3", "piano_5"])
-next_scene_path = "res://Scenes/test_scene_2.tscn"
+next_scene_path = "res://Scenes/level_2.tscn"
 is_randomized = true
 
 [node name="Gates" type="Node2D" parent="."]

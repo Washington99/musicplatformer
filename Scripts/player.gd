@@ -8,7 +8,11 @@ class_name Player
 
 
 const animation_time: float = 0.80
-var isSinging = false
+
+var num_notes_played: int = 0
+var num_error_played: int = 0
+var player_accuracy: float = 100
+
 var footstep_frames : Array = [4,9]
 
 @onready var music_resolver = get_node("MusicResolver")
