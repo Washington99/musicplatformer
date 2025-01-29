@@ -6,9 +6,10 @@ extends Area2D
 @export var is_randomized: bool = false
 
 var successfully_played: int = 0
+var player_near: bool = false
 
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
+func _physics_process(_delta: float) -> void:
+	if player_near and Input.is_action_just_pressed("interact"):
 		var i: int = 0
 		for audio in notes_list:
 			if i < num_notes_to_play:
@@ -19,8 +20,15 @@ func _on_body_entered(body: Node2D) -> void:
 				await $AudioStreamPlayer2D.finished
 			
 			i += 1
-	else:
-		print("from music_comet ", body)
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		player_near = true
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is Player:
+		player_near = false	
+
 
 func _on_area_entered(area: Area2D) -> void:
 	var music_resolver: MusicResolver = area.get_parent()
@@ -34,7 +42,8 @@ func _on_area_entered(area: Area2D) -> void:
 		if successfully_played == num_notes_to_play:
 			successfully_played = 0
 			await $"../player/MusicResolver".finished
-			get_tree().change_scene_to_file(next_scene_path)
+			Global.goto_scene(next_scene_path)
+			# get_tree().change_scene_to_file(next_scene_path)
 		
 	else: # Reset upon MISTAKE
 		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(11,12))
