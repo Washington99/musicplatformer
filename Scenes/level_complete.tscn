@@ -56,7 +56,7 @@ theme_override_fonts/font = ExtResource("1_g75xn")
 theme_override_font_sizes/font_size = 48
 text = "LEVEL COMPLETE"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="star1" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 255.0
 offset_top = 177.0
@@ -64,7 +64,7 @@ offset_right = 427.0
 offset_bottom = 328.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="star2" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 452.0
 offset_top = 174.0
@@ -72,7 +72,7 @@ offset_right = 624.0
 offset_bottom = 325.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="star3" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 637.0
 offset_top = 177.0
