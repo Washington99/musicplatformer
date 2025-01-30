@@ -47,6 +47,7 @@ func _on_area_entered(area: Area2D) -> void:
 			Global.player_accuracy = player.player_accuracy
 			Global.next_level = next_scene_path
 			Global.previous_level = get_tree().current_scene.scene_file_path
+			Global.unlocked_levels += 1
 			
 			Global.goto_scene("res://Scenes/level_complete.tscn")
 			# get_tree().change_scene_to_file(next_scene_path)

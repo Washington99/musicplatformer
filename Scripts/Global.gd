@@ -6,6 +6,9 @@ var player_level: int = 0
 var next_level: String 
 var previous_level: String
 
+var levels = []
+var unlocked_levels = 1
+
 func _ready():
 	var root = get_tree().root
 	

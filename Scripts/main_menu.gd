@@ -16,7 +16,7 @@ func _on_start_pressed() -> void:
 
 
 func _on_continue_pressed() -> void:
-	pass # Replace with function body.
+	Global.goto_scene("res://Scenes/level_select.tscn")
 
 
 func _on_tutorial_pressed() -> void:
