@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bryytyegqjeke"]
+[gd_scene load_steps=36 format=3 uid="uid://bryytyegqjeke"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Scenes/background.gd" id="4_2xafq"]
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="5_yjpwm"]
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
+[ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
+[ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Scenes/quit-button.tres" id="8_tcgbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
 atlas = ExtResource("6_2gj12")
@@ -194,6 +196,9 @@ expand_margin_bottom = 5.0
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1gjw"]
+texture = ExtResource("7_ddq4v")
+
 [node name="Main Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -293,6 +298,17 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_q75a2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "CREDITS"
 
+[node name="quit-button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1074.0
+offset_top = 573.0
+offset_right = 1144.0
+offset_bottom = 640.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_e1gjw")
+theme_override_styles/hover = ExtResource("8_tcgbi")
+theme_override_styles/pressed = ExtResource("8_tcgbi")
+theme_override_styles/normal = ExtResource("8_tcgbi")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -311,3 +327,4 @@ text = "IN ORBEAT"
 [connection signal="pressed" from="buttons-container/continue-button" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="buttons-container/tutorial-button" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="buttons-container/credits-button" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="quit-button" to="." method="_on_quit_pressed"]
