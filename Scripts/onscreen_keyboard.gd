@@ -5,11 +5,22 @@ extends Camera2D
 var active_instrument: String = "piano"
 
 func _ready() -> void:
-	if level < 3:
-		$Control/Instruments.set_item_disabled(1, true)
-	if level == 3:
-		$Control/Instruments.selected = 1 # select violin
-		$Control/Instruments.set_item_disabled(0, true)
+	if level == 1:
+		$Control/Violin.disabled = true
+		$Control/Woodwind.disabled = true
+		$Control/F.disabled = true
+		$Control/G.disabled = true
+		$Control/A.disabled = true
+		$Control/B.disabled = true
+	elif level == 2:
+		$Control/Violin.disabled = true
+		$Control/Woodwind.disabled = true
+		$Control/C.disabled = true
+		$Control/D.disabled = true
+		$Control/E.disabled = true
+	elif level == 3:
+		$Control/Piano.disabled = true
+		$Control/Woodwind.disabled = true
 		active_instrument = "violin"
 
 func _on_c_button_down() -> void:
