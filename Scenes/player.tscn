@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://cjyf3dk4bye4q"]
+[gd_scene load_steps=129 format=3 uid="uid://cjyf3dk4bye4q"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pgw2l"]
 [ext_resource type="Texture2D" uid="uid://byos13spnrm3t" path="res://Assets/CharSprite/Astronaut-Idle.png" id="2_k3aes"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bymqttsg27v7t" path="res://Assets/Audio/Player SFX/zapsplat_foley_footstep_single_flip_flop_grass_010_44582.mp3" id="7_v6l20"]
 [ext_resource type="AudioStream" uid="uid://i2odf7gv4ga0" path="res://Assets/Audio/Player SFX/Jump.wav" id="7_yfqml"]
 [ext_resource type="Texture2D" uid="uid://dnmaecpngoxip" path="res://Assets/Notes/yellow note.png" id="8_pm8q2"]
+[ext_resource type="AudioStream" uid="uid://dap40ryrneua6" path="res://Assets/Audio/Player SFX/Fall.mp3" id="16_8v8dc"]
 [ext_resource type="Script" path="res://Scripts/music_resolver.gd" id="19_iln4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yuro"]
@@ -800,7 +801,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -857,8 +858,7 @@ texture_filter = 1
 position = Vector2(-0.344139, 0.0501022)
 scale = Vector2(0.44, 0.44)
 sprite_frames = SubResource("SpriteFrames_krifi")
-animation = &"Sing"
-frame_progress = 0.741386
+animation = &"Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2ktv1")
@@ -880,6 +880,10 @@ volume_db = -24.0
 stream = ExtResource("7_yfqml")
 volume_db = -6.934
 pitch_scale = 2.37
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_8v8dc")
+volume_db = -18.0
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="MusicResolver/Area2D" to="MusicResolver" method="_on_area_2d_area_entered"]

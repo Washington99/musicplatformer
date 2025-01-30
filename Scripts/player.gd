@@ -6,6 +6,8 @@ class_name Player
 @export var SPEED = 200.0
 @export var JUMP_VELOCITY = -400.0
 @export var animation_time: float = 0.80
+@export var jump_buffer_time = 0.10
+@export var coyote_time = 0.15
 
 var num_notes_played: int = 0
 var num_error_played: int = 0
@@ -19,6 +21,9 @@ var footstep_frames : Array = [4,9]
 @onready var animated_notes = get_node("AnimatedNote")
 @onready var jump = $Jump
 @onready var walk = $Walk
+@onready var fall = $Fall
+@onready var jump_buffer_timer = 0
+@onready var coyote_timer = 0
 
 # Should probably move the movement itself to another function
 # So add-ons to the player is functional
@@ -26,12 +31,30 @@ func _physics_process(delta: float) -> void:
 	
 	# Gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if velocity.y < 0:
+			velocity += get_gravity() * delta
+		else:
+			velocity += get_gravity() * delta / 4.8
+		coyote_timer -= delta
+	else:
+		coyote_timer = coyote_time
 
 	# Jump State
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		jump.play()
+	if Input.is_action_just_pressed("Jump"):
+		fall.pitch_scale = randf_range(0.8, 1.2)
+		if is_on_floor() or coyote_timer > 0:
+			velocity.y = JUMP_VELOCITY
+			jump.play()
+			fall.play()
+			jump_buffer_timer = jump_buffer_time
+			coyote_timer = 0
+		else:
+			await get_tree().create_timer(jump_buffer_timer).timeout
+			if is_on_floor():
+				velocity.y = JUMP_VELOCITY
+				jump.play()
+				fall.play()
+	
 		
 	if Input.is_action_just_pressed("scene_reset"):
 		get_tree().reload_current_scene()
