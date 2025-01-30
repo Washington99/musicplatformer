@@ -46,7 +46,5 @@ func randomize_song_list () -> void:
 				temp
 			)
 
-
 func _ready():
 	animated_sprite.play("default")
-

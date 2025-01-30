@@ -5,9 +5,12 @@ class_name Player
 @export var level: int
 @export var SPEED = 200.0
 @export var JUMP_VELOCITY = -400.0
+@export var animation_time: float = 0.80
 
+var num_notes_played: int = 0
+var num_error_played: int = 0
+var player_accuracy: float = Global.player_accuracy
 
-const animation_time: float = 0.80
 var isSinging = false
 var footstep_frames : Array = [4,9]
 
@@ -29,6 +32,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jump.play()
+		
+	if Input.is_action_just_pressed("scene_reset"):
+		get_tree().reload_current_scene()
 
 	# Running State
 	var direction := Input.get_axis("Left", "Right")
@@ -59,6 +65,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if music_resolver.is_playing_sound():
+		# print(music_resolver.get_playing_note())
 		if music_resolver.get_playing_note() == 1:
 			$AnimatedNote.play("green")
 		elif music_resolver.get_playing_note() == 3:
@@ -79,8 +86,6 @@ func _physics_process(delta: float) -> void:
 		
 		if num_notes_played > 0:
 			player_accuracy = (1 - (float(num_error_played) / num_notes_played)) * 100
-		
-		# print(player_accuracy)
 	
 	move_and_slide()
 	

@@ -63,7 +63,6 @@ func resolve_music_key () -> void:
 		if Input.is_action_just_pressed("note_1"):
 			note_played = 1
 			
-			
 		elif Input.is_action_just_pressed("note_3"):
 			note_played = 3
 			
@@ -87,5 +86,4 @@ func resolve_music_key () -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	queue_redraw()
-	note_played = 0
 	$"..".num_notes_played += 1
