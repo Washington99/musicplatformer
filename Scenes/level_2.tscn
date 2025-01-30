@@ -100,7 +100,7 @@ position = Vector2(-166, 23)
 [node name="MusicComet" parent="." instance=ExtResource("4_iueeh")]
 position = Vector2(561, 223)
 notes_list = Array[String](["piano_6", "piano_8", "piano_10", "piano_12", "piano_3", "piano_5"])
-next_scene_path = "res://Scenes/level_complete.tscn"
+next_scene_path = "res://Scenes/level_3.tscn"
 is_randomized = true
 
 [node name="player" parent="." instance=ExtResource("5_ewanq")]

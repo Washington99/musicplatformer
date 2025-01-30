@@ -42,6 +42,7 @@ grow_vertical = 2
 script = ExtResource("1_cx5no")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 87.0
 offset_right = 877.0
@@ -56,6 +57,22 @@ layout_mode = 0
 offset_left = 255.0
 offset_top = 177.0
 offset_right = 427.0
+offset_bottom = 328.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 174.0
+offset_right = 624.0
+offset_bottom = 325.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 177.0
+offset_right = 809.0
 offset_bottom = 328.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
 

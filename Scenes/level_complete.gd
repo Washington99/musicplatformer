@@ -1,5 +1,6 @@
 extends Control
 
+var next_level = Global.next_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,4 +16,4 @@ func _process(delta: float) -> void:
 
 func _on_next_pressed() -> void:
 	Global.player_accuracy = 100
-	Global.goto_scene("res://Scenes/level_3.tscn")
+	Global.goto_scene(next_level)
