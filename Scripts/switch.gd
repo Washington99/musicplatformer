@@ -6,6 +6,8 @@ class_name Switch
 @export var switch_name: String = ""
 @export var trigger_keys: Array[String] = []
 
+@onready var animated_notes = get_node("AnimatedNote")
+
 var player_near: bool = false
 var triggered: bool = false
 
@@ -42,7 +44,22 @@ func _on_area_entered(area: Area2D) -> void:
 		switch_name = music_played
 		# switch_on.emit(switch_name)
 		
-		$Label.text = music_played
+		#$Label.text = music_played
+		
+		if "1" in music_played:
+			$AnimatedNote.play("green")
+		elif "3" in music_played:
+			$AnimatedNote.play("blue")
+		elif "5" in music_played:
+			$AnimatedNote.play("cyan")
+		elif "6" in music_played:
+			$AnimatedNote.play("red")
+		elif "8" in music_played:
+			$AnimatedNote.play("orange")
+		elif "10" in music_played:
+			$AnimatedNote.play("purple")
+		elif "12" in music_played:
+			$AnimatedNote.play("yellow")
 		
 		if !is_one_time:
 			$Timer.start()

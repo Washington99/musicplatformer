@@ -801,7 +801,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 20.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -856,7 +856,7 @@ animation = &"blank"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-0.344139, 0.0501022)
-scale = Vector2(0.44, 0.44)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_krifi")
 animation = &"Run"
 
