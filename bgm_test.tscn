@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckoscicyfqg43"]
-
-[ext_resource type="AudioStream" uid="uid://ck0lfyp7rpyqx" path="res://Assets/Audio/Player SFX/BGM.mp3" id="1_nckbk"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_nckbk")
-volume_db = -28.108
-autoplay = true
