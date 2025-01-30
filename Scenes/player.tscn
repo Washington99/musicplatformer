@@ -861,7 +861,6 @@ animation = &"Sing"
 frame_progress = 0.741386
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_2ktv1")
 
 [node name="MusicResolver" type="AudioStreamPlayer2D" parent="."]

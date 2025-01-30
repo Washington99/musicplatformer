@@ -10,7 +10,6 @@ var player_near: bool = false
 var triggered: bool = false
 
 func _on_ready() -> void:
-	# print (trigger_keys)
 	pass
 
 func _physics_process(_delta: float) -> void:
