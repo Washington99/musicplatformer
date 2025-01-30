@@ -1,7 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds8qwxivln25n"]
+[gd_scene load_steps=21 format=3 uid="uid://ds8qwxivln25n"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
+[ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="3_b3apx"]
+[ext_resource type="Script" path="res://Scenes/background.gd" id="4_2xafq"]
+[ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="5_yjpwm"]
+[ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffix1"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqv43"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jv6i"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rppms"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8h0v"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt2k1"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(11520, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5tgb"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(13440, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3i6o"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(15360, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuft4"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(17280, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai3tx"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(19200, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmosu"]
+atlas = ExtResource("6_2gj12")
+region = Rect2(21120, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6rf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gem6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffix1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqv43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jv6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rppms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8h0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt2k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5tgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3i6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuft4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai3tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmosu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc8rf"]
 bg_color = Color(1, 1, 1, 1)
@@ -23,13 +119,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_umgk5")
 
+[node name="TileMap" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="TileMap"]
+
+[node name="Background 2" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.2, 0.1)
+motion_mirroring = Vector2(1152.58, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap/ParallaxBackground/Background 2"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_b3apx")
+
+[node name="Background 1" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.5)
+motion_mirroring = Vector2(921.6, 0)
+script = ExtResource("4_2xafq")
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap/ParallaxBackground/Background 1"]
+visible = false
+position = Vector2(280, 140)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("5_yjpwm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/ParallaxBackground/Background 1"]
+position = Vector2(280, 120)
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_y6rf5")
+
 [node name="buttons-container" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.729167
+anchor_top = 0.770833
 anchor_right = 0.5
-anchor_bottom = 0.729167
+anchor_bottom = 0.770833
 offset_left = -154.0
 offset_top = -92.5
 offset_right = 154.0
