@@ -14,11 +14,6 @@ func _ready() -> void:
 	$Label2.text = "ACCURACY:" + str(accuracy_output) + "%"
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_next_pressed() -> void:
 	Global.player_accuracy = 100
 	Global.level_completed = false

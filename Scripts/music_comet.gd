@@ -48,7 +48,7 @@ func _on_area_entered(area: Area2D) -> void:
 			Global.next_level = next_scene_path
 			Global.previous_level = get_tree().current_scene.scene_file_path
 			
-			if not Global.level_completed:  
+			if player.level == Global.unlocked_levels:  
 				Global.unlocked_levels += 1
 				Global.level_completed = true 
 			
