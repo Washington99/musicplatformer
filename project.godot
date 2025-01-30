@@ -25,6 +25,7 @@ Bgm="*res://Scenes/bgm.tscn"
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://Assets/Arrow2.png"
 
 [input]
 
