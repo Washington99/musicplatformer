@@ -2,12 +2,15 @@ extends Camera2D
 
 @export var level: int = 0
 
+var active_instrument: String = "piano"
+
 func _ready() -> void:
 	if level < 3:
 		$Control/Instruments.set_item_disabled(1, true)
 	if level == 3:
 		$Control/Instruments.selected = 1 # select violin
 		$Control/Instruments.set_item_disabled(0, true)
+		active_instrument = "violin"
 
 func _on_c_button_down() -> void:
 	Input.action_press("play_note")
@@ -56,7 +59,21 @@ func _on_b_button_down() -> void:
 	Input.action_release("play_note")
 	Input.action_press("note_12")
 	Input.action_release("note_12")
+	
+func _on_piano_button_down() -> void:
+	Input.action_press("piano")
+	Input.action_release("piano")
+	active_instrument = "piano"
+	
+func _on_violin_button_down() -> void:
+	Input.action_press("violin")
+	Input.action_release("violin")
+	active_instrument = "violin"
 
+func _on_woodwind_button_down() -> void:
+	#Input.action_press("woodwind")
+	#Input.action_release("woodwind")
+	active_instrument = "woodwind"
 
 func _on_option_button_item_selected(index: int) -> void:
 	Input.action_press("play_instrument")
@@ -69,3 +86,11 @@ func _on_option_button_item_selected(index: int) -> void:
 	if index == 1:
 		Input.action_press("violin")
 		Input.action_release("violin")
+		
+func _process(delta: float) -> void:
+	if active_instrument == "piano":
+		$Control/Radar/AnimatedSprite2D.play("piano")
+	elif active_instrument == "violin":
+		$Control/Radar/AnimatedSprite2D.play("violin")
+	elif active_instrument == "woodwind":
+		$Control/Radar/AnimatedSprite2D.play("woodwind")

@@ -15,7 +15,6 @@ var player_near: bool = false
 func _on_ready() -> void:
 	song_list.clear()
 	randomize_song_list()
-	# print(song_list)
 
 func _physics_process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("interact"):

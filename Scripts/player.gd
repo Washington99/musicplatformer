@@ -65,8 +65,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.scale.x = abs($AnimatedSprite2D.scale.x)*direction
 		if abs(velocity.y) < 0.25:
 			$AnimatedSprite2D.play("Run")
-			if !walk.is_playing:
-				print("Walking")
 		else:
 			$AnimatedSprite2D.play("Jump")
 		velocity.x = direction * SPEED
@@ -88,7 +86,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if music_resolver.is_playing_sound():
-		# print(music_resolver.get_playing_note())
 		if music_resolver.get_playing_note() == 1:
 			$AnimatedNote.play("green")
 		elif music_resolver.get_playing_note() == 3:
