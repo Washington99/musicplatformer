@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bryytyegqjeke"]
+[gd_scene load_steps=36 format=3 uid="uid://5gk7oslgl8ts"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="5_yjpwm"]
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
 [ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
-[ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Scenes/quit-button.tres" id="8_tcgbi"]
+[ext_resource type="StyleBox" path="res://Scenes/quit-button.tres" id="8_tcgbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
 atlas = ExtResource("6_2gj12")

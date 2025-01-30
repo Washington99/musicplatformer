@@ -83,7 +83,7 @@ func resolve_music_key () -> void:
 			note_played = 12
 		
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	queue_redraw()
 	$"..".num_notes_played += 1

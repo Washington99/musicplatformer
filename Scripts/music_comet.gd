@@ -50,7 +50,10 @@ func _on_area_entered(area: Area2D) -> void:
 			
 			if not Global.level_completed:  
 				Global.unlocked_levels += 1
-				Global.level_completed = true  
+				Global.level_completed = true 
+			
+			# Game automatically saves everytime the level finishes
+			Global.save_game()
 			
 			Global.goto_scene("res://Scenes/level_complete.tscn")
 			# get_tree().change_scene_to_file(next_scene_path)

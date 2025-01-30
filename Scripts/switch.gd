@@ -10,7 +10,7 @@ var player_near: bool = false
 var triggered: bool = false
 
 func _on_ready() -> void:
-	pass
+	print(trigger_keys)
 
 func _physics_process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("interact"):
