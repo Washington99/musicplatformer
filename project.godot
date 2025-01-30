@@ -20,10 +20,6 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/Global.gd"
 Bgm="*res://bgm.tscn"
 
-[display]
-
-window/size/borderless=true
-
 [input]
 
 ui_accept={

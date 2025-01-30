@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if music_resolver.is_playing_sound():
-		print(music_resolver.get_playing_note())
+		# print(music_resolver.get_playing_note())
 		if music_resolver.get_playing_note() == 1:
 			$AnimatedNote.play("green")
 		elif music_resolver.get_playing_note() == 3:
@@ -83,8 +83,6 @@ func _physics_process(delta: float) -> void:
 		
 		if num_notes_played > 0:
 			player_accuracy = (1 - (float(num_error_played) / num_notes_played)) * 100
-		
-		# print(player_accuracy)
 	
 	move_and_slide()
 	

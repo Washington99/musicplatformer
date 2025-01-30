@@ -63,7 +63,6 @@ func resolve_music_key () -> void:
 		if Input.is_action_just_pressed("note_1"):
 			note_played = 1
 			
-			
 		elif Input.is_action_just_pressed("note_3"):
 			note_played = 3
 			
