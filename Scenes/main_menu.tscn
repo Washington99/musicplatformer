@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds8qwxivln25n"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
+[ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc8rf"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_umgk5")
+
+[node name="buttons-container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.729167
+anchor_right = 0.5
+anchor_bottom = 0.729167
+offset_left = -154.0
+offset_top = -92.5
+offset_right = 154.0
+offset_bottom = 92.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+metadata/_edit_use_anchors_ = true
+
+[node name="new-game-button" type="Button" parent="buttons-container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jv270")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+text = "NEW GAME"
+
+[node name="continue-button" type="Button" parent="buttons-container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jv270")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+text = "CONTINUE"
+
+[node name="tutorial-button" type="Button" parent="buttons-container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jv270")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+text = "TUTORIAL"
+
+[node name="credits-button" type="Button" parent="buttons-container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jv270")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+text = "CREDITS"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -346.5
+offset_top = 137.0
+offset_right = 346.5
+offset_bottom = 241.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_jv270")
+theme_override_font_sizes/font_size = 96
+text = "IN ORBEAT"
+
+[connection signal="pressed" from="buttons-container/new-game-button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="buttons-container/continue-button" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="buttons-container/tutorial-button" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="buttons-container/credits-button" to="." method="_on_credits_pressed"]
