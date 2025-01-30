@@ -8,6 +8,7 @@ var previous_level: String
 
 var levels = []
 var unlocked_levels = 1
+var level_completed: bool = false
 
 func _ready():
 	var root = get_tree().root

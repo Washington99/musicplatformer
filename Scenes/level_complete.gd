@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 
 func _on_next_pressed() -> void:
 	Global.player_accuracy = 100
+	Global.level_completed = false
 	Global.goto_scene(next_level)
 
 func _on_home_pressed() -> void:
@@ -28,5 +29,6 @@ func _on_home_pressed() -> void:
 
 func _on_replay_pressed() -> void:
 	Global.player_accuracy = 100
+	Global.level_completed = false
 	if Global.previous_level:
 		Global.goto_scene(Global.previous_level)
