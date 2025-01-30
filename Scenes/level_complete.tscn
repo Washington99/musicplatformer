@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6hi0odlcitjs"]
+[gd_scene load_steps=7 format=3 uid="uid://66jurfrilgfn"]
 
 [ext_resource type="Script" path="res://Scenes/level_complete.gd" id="1_cx5no"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="1_g75xn"]

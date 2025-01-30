@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://b5diebk2idubi"]
+[gd_scene load_steps=26 format=4 uid="uid://b5diebk2idubi"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_seosm"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_wiw7r"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="4_xyqpw"]
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="6_au214"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="6_gha18"]
-[ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="12_amjkd"]
+[ext_resource type="Script" path="res://Scripts/vertices_randomizer.gd" id="9_b0m5t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
 atlas = ExtResource("4_50sh0")
@@ -105,13 +105,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j00me"]
-shader = ExtResource("12_amjkd")
-
-[sub_resource type="QuadMesh" id="QuadMesh_t7juq"]
-size = Vector2(1152, 648)
-center_offset = Vector3(576, 324, 0)
-
 [node name="Level_1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [201.0]
 
@@ -170,7 +163,7 @@ position = Vector2(518.071, 493.564)
 [node name="Gate" parent="Gates" node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("2_ycc87")]
 position = Vector2(33.929, 1.43601)
 needed_vertices = [NodePath("../../Vertices/switch")]
-lifeform = NodePath("../../Lifeforms/Lifeform")
+lifeform = NodePath("../../Lifeforms/Lifeform1")
 
 [node name="Gate2" parent="Gates" node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("2_ycc87")]
 position = Vector2(178.929, 1.43601)
@@ -189,7 +182,7 @@ lifeform = NodePath("../../Lifeforms/Lifeform4")
 
 [node name="Lifeforms" type="Node2D" parent="."]
 
-[node name="Lifeform" parent="Lifeforms" instance=ExtResource("3_oleg4")]
+[node name="Lifeform1" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(554, 447)
 song_list = Array[String](["piano_1"])
 notes_selection = Array[int]([1])
@@ -211,8 +204,12 @@ song_list = Array[String](["piano_3", "piano_5"])
 notes_selection = Array[int]([3, 5])
 num_songs = 2
 
-[node name="Vertices" type="Node2D" parent="."]
+[node name="Vertices" type="Node2D" parent="." node_paths=PackedStringArray("bucket")]
 position = Vector2(221, 432)
+script = ExtResource("9_b0m5t")
+num_buckets = 5
+bucket = [NodePath("../Lifeforms/Lifeform1"), NodePath("../Lifeforms/Lifeform2"), NodePath("../Lifeforms/Lifeform3"), NodePath("../Lifeforms/Lifeform4")]
+selection_rules = Array[Array]([[1, 2], [3, 4], [2, 4], [3], [3]])
 
 [node name="switch" parent="Vertices" instance=ExtResource("4_xyqpw")]
 position = Vector2(179, 15)
@@ -229,9 +226,3 @@ level = 1
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("6_gha18")]
 level = 1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="player/OnscreenKeyboard"]
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="player/OnscreenKeyboard/CanvasLayer"]
-material = SubResource("ShaderMaterial_j00me")
-mesh = SubResource("QuadMesh_t7juq")
