@@ -17,10 +17,6 @@ func _ready() -> void:
 			level.disabled = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func goto_level(level_number):
 	Global.goto_scene("res://Scenes/level_" + str(level_number) + ".tscn")
 
