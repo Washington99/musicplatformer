@@ -32,6 +32,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jump.play()
+		
+	if Input.is_action_just_pressed("scene_reset"):
+		get_tree().reload_current_scene()
 
 	# Running State
 	var direction := Input.get_axis("Left", "Right")
