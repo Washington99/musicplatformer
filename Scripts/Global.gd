@@ -4,6 +4,7 @@ var current_scene = null
 var player_accuracy: float = 100
 var player_level: int = 0
 var next_level: String 
+var previous_level: String
 
 func _ready():
 	var root = get_tree().root

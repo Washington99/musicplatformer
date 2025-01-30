@@ -33,20 +33,24 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 47.0
-offset_top = 33.0
-offset_right = 47.0
-offset_bottom = 33.0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cx5no")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 223.0
-offset_top = 87.0
-offset_right = 877.0
-offset_bottom = 193.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -327.0
+offset_top = 88.0
+offset_right = 327.0
+offset_bottom = 194.0
+grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_g75xn")
 theme_override_font_sizes/font_size = 48
@@ -78,15 +82,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
 
 [node name="next-button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.57
-anchor_top = 0.781
-anchor_right = 0.57
-anchor_bottom = 0.781
-offset_left = -63.6401
-offset_top = -16.088
-offset_right = 64.3599
-offset_bottom = 15.912
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = 164.5
+offset_right = 139.0
+offset_bottom = 235.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -96,11 +100,69 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xs6uy")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3nlb1")
 text = "NEXT"
 
+[node name="replay-button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.57
+anchor_top = 0.781
+anchor_right = 0.57
+anchor_bottom = 0.781
+offset_left = 111.36
+offset_top = -8.08801
+offset_right = 326.36
+offset_bottom = 35.912
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_g75xn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_xs6uy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3nlb1")
+text = "REPLAY"
+
+[node name="home-button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.251
+anchor_top = 0.79
+anchor_right = 0.251
+anchor_bottom = 0.79
+offset_left = -123.152
+offset_top = -13.92
+offset_right = 91.848
+offset_bottom = 30.08
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_g75xn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_xs6uy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3nlb1")
+text = "HOME"
+
 [node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_right = 172.0
-offset_bottom = 41.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = 71.0
+offset_right = 157.5
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_g75xn")
 theme_override_font_sizes/font_size = 36
 text = "0"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="next-button" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="replay-button" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="home-button" to="." method="_on_home_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bryytyegqjeke"]
+[gd_scene load_steps=33 format=3 uid="uid://bryytyegqjeke"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
@@ -99,6 +99,8 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axqlm"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ghd7"]
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -130,6 +132,18 @@ expand_margin_bottom = 5.0
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhmg5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6ah1"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7hfb"]
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -140,6 +154,16 @@ expand_margin_bottom = 5.0
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpejq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r5f4"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v61nr"]
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -147,6 +171,16 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 8.0
 expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpuqk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rudo8"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
 
@@ -220,6 +254,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_axqlm")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5ghd7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m736g")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
@@ -230,6 +265,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xhmg5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_p6ah1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k7hfb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "CONTINUE"
@@ -239,6 +276,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mpejq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5r5f4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v61nr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "TUTORIAL"
@@ -248,6 +287,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hpuqk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rudo8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q75a2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "CREDITS"
