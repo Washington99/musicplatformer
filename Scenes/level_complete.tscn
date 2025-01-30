@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6hi0odlcitjs"]
+
+[ext_resource type="Script" path="res://Scenes/level_complete.gd" id="1_cx5no"]
+[ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="1_g75xn"]
+[ext_resource type="Texture2D" uid="uid://drig8jiy2qvln" path="res://Assets/star.png" id="2_4qphw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0thcv"]
+texture = ExtResource("2_4qphw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xs6uy"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nlb1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = 33.0
+offset_right = 47.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cx5no")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 223.0
+offset_top = 87.0
+offset_right = 877.0
+offset_bottom = 193.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_g75xn")
+theme_override_font_sizes/font_size = 48
+text = "LEVEL COMPLETE"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 177.0
+offset_right = 427.0
+offset_bottom = 328.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
+
+[node name="next-button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.57
+anchor_top = 0.781
+anchor_right = 0.57
+anchor_bottom = 0.781
+offset_left = -63.6401
+offset_top = -16.088
+offset_right = 64.3599
+offset_bottom = 15.912
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_g75xn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_xs6uy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3nlb1")
+text = "NEXT"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 36
+text = "0"
+
+[connection signal="pressed" from="next-button" to="." method="_on_next_pressed"]

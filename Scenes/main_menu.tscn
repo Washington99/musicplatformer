@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ds8qwxivln25n"]
+[gd_scene load_steps=26 format=3 uid="uid://ds8qwxivln25n"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
@@ -99,13 +99,63 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ghd7"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m736g"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc8rf"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-expand_margin_top = 5.0
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7hfb"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v61nr"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q75a2"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
 expand_margin_bottom = 5.0
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
@@ -170,6 +220,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5ghd7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m736g")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "NEW GAME"
 
@@ -178,6 +230,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_k7hfb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "CONTINUE"
 
@@ -186,6 +239,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_v61nr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "TUTORIAL"
 
@@ -194,6 +248,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_q75a2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "CREDITS"
 
