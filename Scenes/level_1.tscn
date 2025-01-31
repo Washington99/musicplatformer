@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b5diebk2idubi"]
+[gd_scene load_steps=35 format=4 uid="uid://b5diebk2idubi"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_seosm"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_wiw7r"]
@@ -11,19 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="4_xyqpw"]
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="6_au214"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="6_gha18"]
+[ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="12_tde7q"]
 
 [sub_resource type="Gradient" id="Gradient_1quux"]
 offsets = PackedFloat32Array(0.465116, 1)
 colors = PackedColorArray(0, 0, 0, 0.360784, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ypkdi"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8xr2c"]
 gradient = SubResource("Gradient_1quux")
 
 [sub_resource type="Gradient" id="Gradient_0s4ha"]
 offsets = PackedFloat32Array(0, 0.189369, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0.827451, 1, 1, 1, 1, 1, 0.45098)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_rnmqp"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s52nf"]
 gradient = SubResource("Gradient_0s4ha")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nprfp"]
@@ -35,15 +36,15 @@ gravity = Vector3(100, 20, 0)
 damping_max = 84.0
 scale_min = 1.5
 scale_max = 1.8
-color_ramp = SubResource("GradientTexture1D_rnmqp")
-color_initial_ramp = SubResource("GradientTexture1D_ypkdi")
+color_ramp = SubResource("GradientTexture1D_s52nf")
+color_initial_ramp = SubResource("GradientTexture1D_8xr2c")
 
-[sub_resource type="Gradient" id="Gradient_8eg1i"]
+[sub_resource type="Gradient" id="Gradient_was04"]
 offsets = PackedFloat32Array(0, 0.129129, 1)
 colors = PackedColorArray(0.51523, 0.492773, 0.432407, 0.172549, 0.603243, 0.774735, 0.540396, 1, 1, 1, 1, 0.223529)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ppcrg"]
-gradient = SubResource("Gradient_8eg1i")
+gradient = SubResource("Gradient_was04")
 width = 1
 height = 32
 fill_to = Vector2(0, 1)
@@ -139,6 +140,13 @@ animations = [{
 "name": &"default",
 "speed": 8.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcrke"]
+shader = ExtResource("12_tde7q")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8hlln"]
+size = Vector2(1152, 648)
+center_offset = Vector3(576, 324, 0)
 
 [node name="Level_1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [201.0]
@@ -272,3 +280,9 @@ level = 1
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("6_gha18")]
 level = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player/OnscreenKeyboard"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="player/OnscreenKeyboard/CanvasLayer"]
+material = SubResource("ShaderMaterial_wcrke")
+mesh = SubResource("QuadMesh_8hlln")

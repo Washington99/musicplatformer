@@ -2,6 +2,8 @@ extends Camera2D
 
 @export var level: int = 0
 
+@onready var music_resolver: MusicResolver = get_node("../MusicResolver")
+
 var active_instrument: String = "piano"
 
 func _ready() -> void:
@@ -19,7 +21,7 @@ func _ready() -> void:
 		$Control/D.disabled = true
 		$Control/E.disabled = true
 	elif level == 3:
-		$Control/Piano.disabled = true
+		#$Control/Piano.disabled = true
 		$Control/Woodwind.disabled = true
 		active_instrument = "violin"
 
@@ -75,11 +77,13 @@ func _on_piano_button_down() -> void:
 	Input.action_press("piano")
 	Input.action_release("piano")
 	active_instrument = "piano"
+	music_resolver.resolve_instrument("piano")
 	
 func _on_violin_button_down() -> void:
 	Input.action_press("violin")
 	Input.action_release("violin")
 	active_instrument = "violin"
+	music_resolver.resolve_instrument("violin")
 
 func _on_woodwind_button_down() -> void:
 	#Input.action_press("woodwind")
