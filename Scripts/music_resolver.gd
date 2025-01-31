@@ -21,7 +21,6 @@ func _ready() -> void:
 
 
 func play_music() -> void:
-	resolve_instrument()
 	resolve_music_key()
 	
 	if !$".".playing and instrument_played != "" and note_played != 0:
@@ -45,12 +44,9 @@ func is_playing_sound() -> bool:
 func get_playing_note() -> int:
 	return note_played
 			
-func resolve_instrument() -> void:
-	if level > 0 and level != 3 and Input.is_action_just_pressed("piano"):
-		instrument_played = "piano"
-		
-	if level > 2 and Input.is_action_just_pressed("violin"):
-		instrument_played = "violin"
+func resolve_instrument(instrument) -> void:
+	instrument_played = instrument
+
 	
 	## Prevents switching bug that happens when an instrument is switched
 	## In the middle of play_music() causing the instrument played to switch
