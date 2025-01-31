@@ -35,6 +35,8 @@ dest_for_increasing = NodePath("high")
 [node name="Lifeform5" parent="TileMap/Mover" instance=ExtResource("4_um06f")]
 position = Vector2(-68, 16)
 song_list = Array[String](["violin_5"])
+instruments_selection = Array[String](["violin"])
+notes_selection = Array[String](["3", "5", "6", "8", "10"])
 
 [node name="high" type="Node2D" parent="TileMap/Mover"]
 position = Vector2(172.342, -320.957)
@@ -51,6 +53,8 @@ dest_for_increasing = NodePath("high")
 [node name="Lifeform6" parent="TileMap/Mover2" instance=ExtResource("4_um06f")]
 position = Vector2(94, 14)
 song_list = Array[String](["violin_8"])
+instruments_selection = Array[String](["violin"])
+notes_selection = Array[String](["3", "5", "6", "8", "10"])
 
 [node name="high" type="Node2D" parent="TileMap/Mover2"]
 position = Vector2(-129, -315)
@@ -89,6 +93,9 @@ lifeform = NodePath("Lifeform")
 [node name="Lifeform" parent="Gates/Gate" instance=ExtResource("4_um06f")]
 position = Vector2(-62, 14)
 song_list = Array[String](["violin_3", "violin_6", "violin_8", "violin_10"])
+instruments_selection = Array[String](["violin"])
+notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
+is_lifeform_for_vertice = true
 
 [node name="Gate2" parent="Gates" node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("5_t7apr")]
 position = Vector2(337, 192)
@@ -98,6 +105,7 @@ lifeform = NodePath("Lifeform2")
 [node name="Lifeform2" parent="Gates/Gate2" instance=ExtResource("4_um06f")]
 position = Vector2(62, 16)
 song_list = Array[String](["violin_1", "violin_6", "violin_8"])
+is_lifeform_for_vertice = true
 
 [node name="Gate3" parent="Gates" node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("5_t7apr")]
 position = Vector2(800, 319)
@@ -107,6 +115,9 @@ lifeform = NodePath("Lifeform3")
 [node name="Lifeform3" parent="Gates/Gate3" instance=ExtResource("4_um06f")]
 position = Vector2(-64, 17)
 song_list = Array[String](["violin_1"])
+instruments_selection = Array[String](["violin"])
+notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
+is_lifeform_for_vertice = true
 
 [node name="Gate4" parent="Gates" node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("5_t7apr")]
 position = Vector2(335, 320)
@@ -116,24 +127,31 @@ lifeform = NodePath("Lifeform4")
 [node name="Lifeform4" parent="Gates/Gate4" instance=ExtResource("4_um06f")]
 position = Vector2(63, 15)
 song_list = Array[String](["violin_3"])
+instruments_selection = Array[String](["violin"])
+notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
+is_lifeform_for_vertice = true
 
 [node name="Switches" type="Node2D" parent="."]
 
 [node name="switch" parent="Switches" instance=ExtResource("6_ashhn")]
 position = Vector2(224, 336)
 trigger_keys = Array[String](["violin_8"])
+notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch2" parent="Switches" instance=ExtResource("6_ashhn")]
 position = Vector2(913, 337)
 trigger_keys = Array[String](["violin_6"])
+notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch3" parent="Switches" instance=ExtResource("6_ashhn")]
 position = Vector2(568, 512)
 trigger_keys = Array[String](["violin_1", "violin_3"])
+notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch4" parent="Switches" instance=ExtResource("6_ashhn")]
 position = Vector2(225, 208)
 trigger_keys = Array[String](["violin_10"])
+notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="player" parent="." instance=ExtResource("7_bx4r6")]
 position = Vector2(572, 467)

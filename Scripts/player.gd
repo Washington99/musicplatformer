@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	
 		
 	if Input.is_action_just_pressed("scene_reset"):
-		var _reload = get_tree().reload_current_scene()
+		Global.reset_scene()
 
 	# Running State
 	var direction := Input.get_axis("Left", "Right")
