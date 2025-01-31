@@ -15,10 +15,11 @@ func _on_ready() -> void:
 		if lifeform.song_list[i] not in needed_vertices[i].trigger_keys:
 			needed_vertices[i].trigger_keys.append(lifeform.song_list[i])
 		i += 1
-		
+	
+	# print(lifeform.song_list)
 		
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for vertex in needed_vertices:
 		
 		## Assume needed_vertices are all triggered

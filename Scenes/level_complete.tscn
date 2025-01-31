@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://66jurfrilgfn"]
+[gd_scene load_steps=9 format=3 uid="uid://66jurfrilgfn"]
 
 [ext_resource type="Script" path="res://Scenes/level_complete.gd" id="1_cx5no"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="1_g75xn"]
 [ext_resource type="Texture2D" uid="uid://drig8jiy2qvln" path="res://Assets/star.png" id="2_4qphw"]
+[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Scenes/default-button-pressed.tres" id="4_daeuj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0thcv"]
 texture = ExtResource("2_4qphw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pa41m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xs6uy"]
 corner_radius_top_left = 16
@@ -96,7 +99,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_g75xn")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pa41m")
+theme_override_styles/hover_pressed = ExtResource("4_daeuj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs6uy")
+theme_override_styles/pressed = ExtResource("4_daeuj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3nlb1")
 text = "NEXT"
 
@@ -116,7 +122,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_g75xn")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pa41m")
+theme_override_styles/hover_pressed = ExtResource("4_daeuj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs6uy")
+theme_override_styles/pressed = ExtResource("4_daeuj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3nlb1")
 text = "REPLAY"
 
@@ -136,7 +145,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_g75xn")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pa41m")
+theme_override_styles/hover_pressed = ExtResource("4_daeuj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs6uy")
+theme_override_styles/pressed = ExtResource("4_daeuj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3nlb1")
 text = "HOME"
 

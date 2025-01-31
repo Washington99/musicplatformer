@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bryytyegqjeke"]
+[gd_scene load_steps=36 format=3 uid="uid://5gk7oslgl8ts"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/background.gd" id="4_2xafq"]
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="5_yjpwm"]
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
+[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Scenes/default-button-pressed.tres" id="7_bbl2a"]
 [ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
 [ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Scenes/quit-button.tres" id="8_tcgbi"]
 
@@ -102,16 +103,6 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axqlm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ghd7"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_top = 8.0
-expand_margin_bottom = 5.0
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m736g"]
 corner_radius_top_left = 16
@@ -260,7 +251,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_axqlm")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5ghd7")
+theme_override_styles/hover_pressed = ExtResource("7_bbl2a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m736g")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
 text = "NEW GAME"
