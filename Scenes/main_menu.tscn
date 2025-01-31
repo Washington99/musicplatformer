@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
 [ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Scenes/default-button-pressed.tres" id="7_bbl2a"]
 [ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
+[ext_resource type="StyleBox" uid="uid://lmrw2o82o1um" path="res://Scenes/default-button-normal.tres" id="8_iqflb"]
 [ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Scenes/quit-button.tres" id="8_tcgbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
@@ -105,17 +106,6 @@ animations = [{
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axqlm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m736g"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_top = 8.0
-expand_margin_bottom = 5.0
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc8rf"]
-bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -253,7 +243,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_axqlm")
 theme_override_styles/hover_pressed = ExtResource("7_bbl2a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m736g")
-theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+theme_override_styles/normal = ExtResource("8_iqflb")
 text = "NEW GAME"
 
 [node name="continue-button" type="Button" parent="buttons-container"]
@@ -264,7 +254,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xhmg5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_p6ah1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k7hfb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+theme_override_styles/normal = ExtResource("8_iqflb")
 text = "CONTINUE"
 
 [node name="tutorial-button" type="Button" parent="buttons-container"]
@@ -275,7 +265,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mpejq")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5r5f4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v61nr")
-theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+theme_override_styles/normal = ExtResource("8_iqflb")
 text = "TUTORIAL"
 
 [node name="credits-button" type="Button" parent="buttons-container"]
@@ -286,7 +276,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hpuqk")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rudo8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q75a2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_tc8rf")
+theme_override_styles/normal = ExtResource("8_iqflb")
 text = "CREDITS"
 
 [node name="quit-button" type="Button" parent="."]
