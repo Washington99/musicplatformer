@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dxaogve6n5tm2"]
+[gd_scene load_steps=12 format=4 uid="uid://dxaogve6n5tm2"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_846rn"]
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="2_eywsk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="6_ashhn"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="7_bx4r6"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="8_2wwve"]
+[ext_resource type="PackedScene" uid="uid://l0ua0nfivdla" path="res://Scenes/pause-menu.tscn" id="11_rhgbs"]
 
 [node name="Level_3" type="Node2D"]
 
@@ -148,3 +149,10 @@ notes_list = Array[String](["violin_1", "violin_3", "violin_5", "violin_10", "vi
 num_notes_to_play = 1
 next_scene_path = "res://Scenes/level_1.tscn"
 is_randomized = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("11_rhgbs")]
+offset_left = -1.0
+offset_right = -1.0
+metadata/_edit_use_anchors_ = true

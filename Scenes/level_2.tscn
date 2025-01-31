@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bvhwbyt4k0yc8"]
+[gd_scene load_steps=10 format=4 uid="uid://bvhwbyt4k0yc8"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_y523b"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_w2qpk"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="4_iueeh"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="5_ewanq"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="6_r5rps"]
+[ext_resource type="PackedScene" uid="uid://l0ua0nfivdla" path="res://Scenes/pause-menu.tscn" id="9_vntw4"]
 
 [node name="Level_2" type="Node2D"]
 
@@ -109,3 +110,10 @@ level = 2
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("6_r5rps")]
 level = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("9_vntw4")]
+offset_left = -1.0
+offset_right = -1.0
+metadata/_edit_use_anchors_ = true
