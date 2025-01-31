@@ -283,3 +283,8 @@ level = 1
 [node name="MeshInstance2D" type="MeshInstance2D" parent="player/OnscreenKeyboard/CanvasLayer"]
 material = SubResource("ShaderMaterial_wcrke")
 mesh = SubResource("QuadMesh_8hlln")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("12_4ow04")]
+offset_left = -1.0
+offset_right = -1.0

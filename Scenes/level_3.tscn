@@ -309,3 +309,10 @@ notes_list = Array[String](["violin_1", "violin_3", "violin_5", "violin_10", "vi
 num_notes_to_play = 1
 next_scene_path = "res://Scenes/level_1.tscn"
 is_randomized = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("11_rhgbs")]
+offset_left = -1.0
+offset_right = -1.0
+metadata/_edit_use_anchors_ = true
