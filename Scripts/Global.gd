@@ -93,4 +93,14 @@ func load_game () -> void:
 	unlocked_levels = save_data.unlocked_levels
 	level_completed = save_data.level_completed	
 		
-	
+func delete_save () -> void:
+	if FileAccess.file_exists("res://savefile.json"):
+		DirAccess.remove_absolute("res://savefile.json")
+		
+		player_accuracy = 100
+		player_level = 0
+		next_level = ""
+		previous_level = ""
+		levels = []
+		unlocked_levels = 1
+		level_completed = false

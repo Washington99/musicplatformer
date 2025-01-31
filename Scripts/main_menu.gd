@@ -6,6 +6,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_start_pressed() -> void:
+	Global.delete_save()
 	Global.goto_scene("res://Scenes/level_1.tscn")
 
 

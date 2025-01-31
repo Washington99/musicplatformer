@@ -144,6 +144,7 @@ theme_override_styles/pressed = ExtResource("3_7qjbb")
 theme_override_styles/normal = ExtResource("3_7qjbb")
 
 [node name="back-button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 24.0
 offset_right = 129.0
