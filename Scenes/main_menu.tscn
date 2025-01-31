@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
 [ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Scenes/default-button-pressed.tres" id="7_bbl2a"]
 [ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
-[ext_resource type="StyleBox" uid="uid://lmrw2o82o1um" path="res://Scenes/default-button-normal.tres" id="8_iqflb"]
+[ext_resource type="StyleBox" uid="uid://bogffe2fb6adf" path="res://Scenes/default-button-normal.tres" id="8_iqflb"]
 [ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Scenes/quit-button.tres" id="8_tcgbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]

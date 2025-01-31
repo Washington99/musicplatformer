@@ -54,6 +54,7 @@ func _deferred_goto_scene(path: String) -> void:
 
 func reset_scene () -> void:
 	switch_seed = randi() % 12
+	print(current_scene)
 	var _reload = get_tree().reload_current_scene()
 
 func save_game () -> void:

@@ -1,13 +1,16 @@
 extends Control
 
 func _ready():
+	$"..".layer = -1
 	$AnimationPlayer.play("RESET")
 
 func resume():
+	$"..".layer = -1
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
 	
 func pause():
+	$"..".layer = 1
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
 	
@@ -24,7 +27,7 @@ func _on_resume_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	resume()
-	get_tree().reload_current_scene()
+	Global.reset_scene()
 
 
 func _on_quit_pressed() -> void:
