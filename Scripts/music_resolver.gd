@@ -21,7 +21,6 @@ func _ready() -> void:
 
 
 func play_music() -> void:
-	resolve_instrument()
 	resolve_music_key()
 	
 	if !$".".playing and instrument_played != "" and note_played != 0:
@@ -45,12 +44,9 @@ func is_playing_sound() -> bool:
 func get_playing_note() -> int:
 	return note_played
 			
-func resolve_instrument() -> void:
-	if level > 0 and level != 3 and Input.is_action_just_pressed("piano"):
-		instrument_played = "piano"
-		
-	if level > 2 and Input.is_action_just_pressed("violin"):
-		instrument_played = "violin"
+func resolve_instrument(instrument) -> void:
+	instrument_played = instrument
+
 	
 	## Prevents switching bug that happens when an instrument is switched
 	## In the middle of play_music() causing the instrument played to switch
@@ -62,7 +58,6 @@ func resolve_music_key () -> void:
 	if level > 0:
 		if Input.is_action_just_pressed("note_1"):
 			note_played = 1
-			
 			
 		elif Input.is_action_just_pressed("note_3"):
 			note_played = 3
@@ -84,8 +79,7 @@ func resolve_music_key () -> void:
 			note_played = 12
 		
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	queue_redraw()
-	note_played = 0
 	$"..".num_notes_played += 1

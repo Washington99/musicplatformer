@@ -46,7 +46,17 @@ func _on_area_entered(area: Area2D) -> void:
 			
 			var player: Player = music_resolver.get_parent()
 			Global.player_accuracy = player.player_accuracy
-			Global.goto_scene(next_scene_path)
+			Global.next_level = next_scene_path
+			Global.previous_level = get_tree().current_scene.scene_file_path
+			
+			if player.level == Global.unlocked_levels:  
+				Global.unlocked_levels += 1
+				Global.level_completed = true 
+			
+			# Game automatically saves everytime the level finishes
+			Global.save_game()
+			
+			Global.goto_scene("res://Scenes/level_complete.tscn")
 			# get_tree().change_scene_to_file(next_scene_path)
 		
 	else: # Reset upon MISTAKE
