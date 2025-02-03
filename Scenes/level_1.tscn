@@ -241,21 +241,25 @@ lifeform = NodePath("../../Lifeforms/Lifeform4")
 [node name="Lifeform" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(554, 447)
 song_list = Array[String](["piano_1"])
+is_lifeform_for_vertice = true
 
 [node name="Lifeform2" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(699, 446)
 song_list = Array[String](["piano_1", "piano_3"])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="Lifeform3" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(837, 447)
 song_list = Array[String](["piano_1", "piano_3", "piano_5"])
 num_songs = 3
+is_lifeform_for_vertice = true
 
 [node name="Lifeform4" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(337, 510)
 song_list = Array[String](["piano_3", "piano_5"])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="Vertices" type="Node2D" parent="."]
 position = Vector2(221, 432)

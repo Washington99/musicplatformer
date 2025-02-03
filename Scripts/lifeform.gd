@@ -17,28 +17,28 @@ func _ready():
 	animated_sprite.play("default")
 	
 func _on_ready() -> void:
-	# song_list.clear()
 	randomize_song_list()
-	pass
+	print(song_list)
 
 func _physics_process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("interact"):
 		for audio in song_list:
 			var music_player = "res://Assets/Audio/" + audio + ".wav"
 			
-			if "1" in audio:
+			# Logical Error here "1" is also in "10"
+			if "1" == audio:
 				$AnimatedNote.play("green")
-			elif "3" in audio:
+			elif "3" == audio:
 				$AnimatedNote.play("blue")
-			elif "5" in audio:
+			elif "5" == audio:
 				$AnimatedNote.play("cyan")
-			elif "6" in audio:
+			elif "6" == audio:
 				$AnimatedNote.play("red")
-			elif "8" in audio:
+			elif "8" == audio:
 				$AnimatedNote.play("orange")
-			elif "10" in audio:
+			elif "10" == audio:
 				$AnimatedNote.play("purple")
-			elif "12" in audio:
+			elif "12" == audio:
 				$AnimatedNote.play("yellow")
 				
 			$AudioStreamPlayer2D.stream = ResourceLoader.load(music_player)
@@ -67,7 +67,6 @@ func _on_body_exited(body: Node2D) -> void:
 			#)
 
 func randomize_song_list () -> void:
-	
 	if is_lifeform_for_vertice:
 		var new_song_list: Array[String] = []
 		
