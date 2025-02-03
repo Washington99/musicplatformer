@@ -26,19 +26,19 @@ func _physics_process(_delta: float) -> void:
 			var music_player = "res://Assets/Audio/" + audio + ".wav"
 			
 			# Logical Error here "1" is also in "10"
-			if "1" == audio:
+			if 1 == int(audio):
 				$AnimatedNote.play("green")
-			elif "3" == audio:
+			elif 3 == int(audio):
 				$AnimatedNote.play("blue")
-			elif "5" == audio:
+			elif 5 == int(audio):
 				$AnimatedNote.play("cyan")
-			elif "6" == audio:
+			elif 6 == int(audio):
 				$AnimatedNote.play("red")
-			elif "8" == audio:
+			elif 8 == int(audio):
 				$AnimatedNote.play("orange")
-			elif "10" == audio:
+			elif 10 == int(audio):
 				$AnimatedNote.play("purple")
-			elif "12" == audio:
+			elif 12 == int(audio):
 				$AnimatedNote.play("yellow")
 				
 			$AudioStreamPlayer2D.stream = ResourceLoader.load(music_player)
