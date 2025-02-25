@@ -261,6 +261,8 @@ is_randomized = true
 
 [node name="player" parent="." instance=ExtResource("5_ewanq")]
 position = Vector2(353.656, 317.043)
+allowed_instruments = Array[String](["piano"])
+allowed_notes = Array[String](["6", "8", "10", "12"])
 level = 2
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("6_r5rps")]

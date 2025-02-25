@@ -2,18 +2,17 @@ extends AudioStreamPlayer2D
 
 class_name MusicResolver
 
-var level: int
+var allowed_songs: Array[String]
 
 var note_played: int = 0 # A note that is never defined
 var instrument_played: String = "piano"
 
 func _ready() -> void:
-	level = $"..".level
-	
-	if level == 3:
-		instrument_played = "violin"
-		
-	print($"..".player_accuracy)
+	for instrument: String in $"..".allowed_instruments:
+		for note: String in $"..".allowed_notes:
+			allowed_songs.append(instrument + "_" + note)
+			
+	print("note_1" in allowed_songs)
 
 #func _draw() -> void:
 	#if !$Area2D/CollisionShape2D.disabled:
@@ -55,28 +54,26 @@ func resolve_instrument(instrument) -> void:
 		
 
 func resolve_music_key () -> void:
-	if level > 0:
-		if Input.is_action_just_pressed("note_1"):
-			note_played = 1
+	if Input.is_action_just_pressed("note_1") and "1" in $"..".allowed_notes:
+		note_played = 1
 			
-		elif Input.is_action_just_pressed("note_3"):
-			note_played = 3
+	elif Input.is_action_just_pressed("note_3") and "3" in $"..".allowed_notes:
+		note_played = 3
 			
-		elif Input.is_action_just_pressed("note_5"):
-			note_played = 5
+	elif Input.is_action_just_pressed("note_5") and "5" in $"..".allowed_notes:
+		note_played = 5
+
+	if Input.is_action_just_pressed("note_6") and "6" in $"..".allowed_notes:
+		note_played = 6
 			
-	if level > 1:
-		if Input.is_action_just_pressed("note_6"):
-			note_played = 6
+	elif Input.is_action_just_pressed("note_8") and "8" in $"..".allowed_notes:
+		note_played = 8	
 			
-		elif Input.is_action_just_pressed("note_8"):
-			note_played = 8	
+	elif Input.is_action_just_pressed("note_10") and "10" in $"..".allowed_notes:
+		note_played = 10
 			
-		elif Input.is_action_just_pressed("note_10"):
-			note_played = 10
-			
-		elif Input.is_action_just_pressed("note_12"):
-			note_played = 12
+	elif Input.is_action_just_pressed("note_12") and "12" in $"..".allowed_notes:
+		note_played = 12
 		
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:

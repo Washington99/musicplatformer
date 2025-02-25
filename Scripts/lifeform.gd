@@ -18,7 +18,7 @@ func _ready():
 	
 func _on_ready() -> void:
 	randomize_song_list()
-	print(song_list)
+	# print(song_list)
 
 func _physics_process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("interact"):

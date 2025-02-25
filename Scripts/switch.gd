@@ -50,17 +50,17 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		if "1" in music_played:
 			$AnimatedNote.play("green")
-		elif "3" in music_played:
+		if "3" in music_played:
 			$AnimatedNote.play("blue")
-		elif "5" in music_played:
+		if "5" in music_played:
 			$AnimatedNote.play("cyan")
-		elif "6" in music_played:
+		if "6" in music_played:
 			$AnimatedNote.play("red")
-		elif "8" in music_played:
+		if "8" in music_played:
 			$AnimatedNote.play("orange")
-		elif "10" in music_played:
+		if "10" in music_played:
 			$AnimatedNote.play("purple")
-		elif "12" in music_played:
+		if "12" in music_played:
 			$AnimatedNote.play("yellow")
 		
 		if !is_one_time:

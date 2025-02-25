@@ -7,23 +7,54 @@ extends Camera2D
 var active_instrument: String = "piano"
 
 func _ready() -> void:
-	if level == 1:
-		$Control/Violin.disabled = true
-		$Control/Woodwind.disabled = true
-		$Control/F.disabled = true
-		$Control/G.disabled = true
-		$Control/A.disabled = true
-		$Control/B.disabled = true
-	elif level == 2:
-		$Control/Violin.disabled = true
-		$Control/Woodwind.disabled = true
-		$Control/C.disabled = true
-		$Control/D.disabled = true
-		$Control/E.disabled = true
-	elif level == 3:
-		#$Control/Piano.disabled = true
-		$Control/Woodwind.disabled = true
-		active_instrument = "violin"
+	var player: Player = get_parent()
+	if "piano" in player.allowed_instruments:
+		$Control/Piano.disabled = false
+		
+	if "violin" in player.allowed_instruments:
+		$Control/Violin.disabled = false
+		
+	if "woodwind" in player.allowed_instruments:
+		$Control/Woodwind.disabled = false
+		
+	if "1" in player.allowed_notes:
+		$Control/C.disabled = false
+		
+	if "3" in player.allowed_notes:
+		$Control/D.disabled = false
+		
+	if "5" in player.allowed_notes:
+		$Control/E.disabled = false
+		
+	if "6" in player.allowed_notes:
+		$Control/F.disabled = false
+		
+	if "8" in player.allowed_notes:
+		$Control/G.disabled = false
+		
+	if "10" in player.allowed_notes:
+		$Control/A.disabled = false
+		
+	if "12" in player.allowed_notes:
+		$Control/B.disabled = false
+	
+	#if level == 1:
+		#$Control/Violin.disabled = true
+		#$Control/Woodwind.disabled = true
+		#$Control/F.disabled = true
+		#$Control/G.disabled = true
+		#$Control/A.disabled = true
+		#$Control/B.disabled = true
+	#elif level == 2:
+		#$Control/Violin.disabled = true
+		#$Control/Woodwind.disabled = true
+		#$Control/C.disabled = true
+		#$Control/D.disabled = true
+		#$Control/E.disabled = true
+	#elif level == 3:
+		##$Control/Piano.disabled = true
+		#$Control/Woodwind.disabled = true
+		#active_instrument = "violin"
 
 func _on_c_button_down() -> void:
 	Input.action_press("play_note")
