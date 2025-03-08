@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_lkglu"]
 [ext_resource type="PackedScene" uid="uid://bpnfpft461iwv" path="res://Scenes/gate.tscn" id="2_ycc87"]
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="3_0pi2j"]
-[ext_resource type="Script" path="res://Scenes/background.gd" id="3_52g8s"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="3_52g8s"]
 [ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="3_oleg4"]
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="4_50sh0"]
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="4_xyqpw"]

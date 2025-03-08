@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/onscreen_keyboard.gd" id="1_w61f7"]
 [ext_resource type="Texture2D" uid="uid://cqvep8rsosvyi" path="res://Assets/Buttons/do.png" id="2_lig4x"]
-[ext_resource type="Script" path="res://Scenes/note button.gd" id="2_sbwo3"]
+[ext_resource type="Script" path="res://Scripts/note button.gd" id="2_sbwo3"]
 [ext_resource type="Texture2D" uid="uid://yf3xr6qxv1gn" path="res://Assets/Buttons/re.png" id="4_thbc7"]
 [ext_resource type="Texture2D" uid="uid://dlqogdfcq7ou3" path="res://Assets/Buttons/mi.png" id="5_iu8r6"]
 [ext_resource type="Texture2D" uid="uid://6jgpuhe4nkus" path="res://Assets/Buttons/fa.png" id="6_2yqqs"]
