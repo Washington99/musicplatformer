@@ -17,14 +17,14 @@
 offsets = PackedFloat32Array(0.465116, 1)
 colors = PackedColorArray(0, 0, 0, 0.360784, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_cokji"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jlqjk"]
 gradient = SubResource("Gradient_fs08g")
 
 [sub_resource type="Gradient" id="Gradient_6nul4"]
 offsets = PackedFloat32Array(0, 0.189369, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0.827451, 1, 1, 1, 1, 1, 0.45098)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_f12vd"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pydeu"]
 gradient = SubResource("Gradient_6nul4")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m4os6"]
@@ -36,15 +36,15 @@ gravity = Vector3(100, 20, 0)
 damping_max = 84.0
 scale_min = 1.5
 scale_max = 1.8
-color_ramp = SubResource("GradientTexture1D_f12vd")
-color_initial_ramp = SubResource("GradientTexture1D_cokji")
+color_ramp = SubResource("GradientTexture1D_pydeu")
+color_initial_ramp = SubResource("GradientTexture1D_jlqjk")
 
-[sub_resource type="Gradient" id="Gradient_4ibdv"]
+[sub_resource type="Gradient" id="Gradient_byk67"]
 offsets = PackedFloat32Array(0, 0.129129, 1)
 colors = PackedColorArray(0.51523, 0.492773, 0.432407, 0.172549, 0.603243, 0.774735, 0.540396, 1, 1, 1, 1, 0.223529)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7c31f"]
-gradient = SubResource("Gradient_4ibdv")
+gradient = SubResource("Gradient_byk67")
 width = 1
 height = 32
 fill_to = Vector2(0, 1)
@@ -205,10 +205,11 @@ lifeform = NodePath("Lifeform")
 position = Vector2(-8.50336, 60.4995)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
-song_list = Array[String](["1", "5"])
+song_list = Array[String](["violin_1", "violin_5"])
 instruments_selection = Array[String](["violin"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate" instance=ExtResource("8_3fc3o")]
 position = Vector2(-7.4986, -25.0004)
@@ -235,10 +236,11 @@ lifeform = NodePath("Lifeform")
 position = Vector2(-8.5, 63.5)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
-song_list = Array[String](["1", "6"])
+song_list = Array[String](["violin_1", "violin_6"])
 instruments_selection = Array[String](["violin"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate2" instance=ExtResource("8_3fc3o")]
 position = Vector2(-7.99805, -25.0004)
@@ -265,10 +267,11 @@ lifeform = NodePath("Lifeform")
 position = Vector2(-30, -51.5)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
-song_list = Array[String](["3", "6"])
+song_list = Array[String](["violin_3", "violin_6"])
 instruments_selection = Array[String](["violin"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate3" instance=ExtResource("8_3fc3o")]
 position = Vector2(-13.5, 59)
@@ -295,10 +298,11 @@ lifeform = NodePath("Lifeform")
 position = Vector2(-9, -69)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
-song_list = Array[String](["3", "6"])
+song_list = Array[String](["violin_3", "violin_6"])
 instruments_selection = Array[String](["violin"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate4" instance=ExtResource("8_3fc3o")]
 position = Vector2(-7.99997, 52.5)
