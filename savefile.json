@@ -1,1 +1,1 @@
-{"level_completed":false,"levels":[],"next_level":"res://Scenes/test_scene_3.tscn","player_accuracy":55.5555555555556,"player_level":0,"previous_level":"res://Scenes/test_scene_2.tscn","unlocked_levels":1}
+{"level_completed":true,"levels":[],"next_level":"res://Scenes/level_2.tscn","player_accuracy":85.7142857142857,"player_level":0,"previous_level":"res://Scenes/level_1.tscn","unlocked_levels":2}

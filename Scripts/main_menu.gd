@@ -15,7 +15,7 @@ func _on_continue_pressed() -> void:
 
 
 func _on_tutorial_pressed() -> void:
-	Global.goto_scene("res://Scenes/tutorial.tscn")
+	Global.goto_scene("res://Scenes/level_tutorial.tscn")
 
 
 func _on_credits_pressed() -> void:

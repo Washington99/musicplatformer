@@ -343,5 +343,5 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(719, 640)
 notes_list = Array[String](["violin_6", "violin_3", "violin_5", "violin_1"])
 num_notes_to_play = 4
-next_scene_path = "res://Scenes/test_scene.tscn"
+next_scene_path = "res://Scenes/level_5.tscn"
 is_randomized = true

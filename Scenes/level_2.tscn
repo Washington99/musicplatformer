@@ -273,6 +273,7 @@ level = 2
 [node name="MeshInstance2D" type="MeshInstance2D" parent="player/OnscreenKeyboard/CanvasLayer"]
 material = SubResource("ShaderMaterial_xcnd1")
 mesh = SubResource("QuadMesh_mt8c4")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("9_vntw4")]
