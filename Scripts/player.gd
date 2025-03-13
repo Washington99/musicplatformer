@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+@export var allowed_instruments: Array[String]
+@export var allowed_notes: Array[String]
 @export var level: int
 @export var SPEED = 200.0
 @export var JUMP_VELOCITY = -400.0
@@ -115,8 +117,6 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-
-
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if animated_sprite_2d.animation == "Idle": return
 	if animated_sprite_2d.animation == "Jump": return

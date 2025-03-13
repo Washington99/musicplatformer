@@ -6,6 +6,7 @@ extends Area2D
 @export var is_randomized: bool = false
 
 var successfully_played: int = 0
+var errors_played = 0
 var player_near: bool = false
 
 func _physics_process(_delta: float) -> void:
@@ -62,9 +63,11 @@ func _on_area_entered(area: Area2D) -> void:
 	else: # Reset upon MISTAKE
 		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(11,12))
 		successfully_played = 0
+		errors_played += 1
 		
-		if is_randomized:
+		if errors_played > 3:
 			randomized_notes_list()
+			errors_played = 0
 		
 		var player: Player = music_resolver.get_parent()
 		player.num_error_played += 1

@@ -1,6 +1,6 @@
 extends Node
 
-var current_scene = null
+var current_scene: Node = null
 var switch_seed: int = 0
 var notes: Array[String] = ["1","3","5","6","8","10","12"]
 
@@ -38,9 +38,9 @@ func goto_scene(path: String) -> void:
 func _deferred_goto_scene(path: String) -> void:
 	# It is now safe to remove the current scene.
 	current_scene.free()
-
+		
 	# Load the new scene.
-	var scene = ResourceLoader.load(path)
+	var scene: Resource = ResourceLoader.load(path)
 
 	# Instance the new scene.
 	current_scene = scene.instantiate()
@@ -51,11 +51,12 @@ func _deferred_goto_scene(path: String) -> void:
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = current_scene
 
-
+# I DON'T LIKE THIS FIX :>
 func reset_scene () -> void:
 	switch_seed = randi() % 12
-	print(current_scene)
-	var _reload = get_tree().reload_current_scene()
+	
+	var path: String = "res://Scenes/" + current_scene.name + ".tscn"
+	goto_scene(path)
 
 func save_game () -> void:
 	

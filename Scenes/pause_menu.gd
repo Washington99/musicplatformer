@@ -34,5 +34,5 @@ func _on_quit_pressed() -> void:
 	resume()
 	Global.goto_scene("res://Scenes/main_menu.tscn")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	testEsc()
