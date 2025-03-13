@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://1kgqapwtyom3"]
 
-[ext_resource type="Script" path="res://Scenes/level_select.gd" id="1_i0ux5"]
+[ext_resource type="Script" path="res://Scripts/level_select.gd" id="1_i0ux5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_ner2a"]
-[ext_resource type="StyleBox" uid="uid://chjmh3sbk4oe4" path="res://Scenes/square-button-disabled.tres" id="3_3oviw"]
-[ext_resource type="StyleBox" uid="uid://b3mrw0853qbmu" path="res://Scenes/square-button.tres" id="3_7qjbb"]
-[ext_resource type="StyleBox" uid="uid://bsuwj2aky06jb" path="res://Scenes/back-button.tres" id="3_73dcp"]
-[ext_resource type="StyleBox" uid="uid://bqwvomvu1p6k2" path="res://Scenes/square-button-hover.tres" id="5_6sfan"]
+[ext_resource type="StyleBox" uid="uid://chjmh3sbk4oe4" path="res://Assets/square-button-disabled.tres" id="3_3oviw"]
+[ext_resource type="StyleBox" uid="uid://b3mrw0853qbmu" path="res://Assets/square-button.tres" id="3_7qjbb"]
+[ext_resource type="StyleBox" uid="uid://bsuwj2aky06jb" path="res://Assets/back-button.tres" id="3_73dcp"]
+[ext_resource type="StyleBox" uid="uid://bqwvomvu1p6k2" path="res://Assets/square-button-hover.tres" id="5_6sfan"]
 
 [sub_resource type="GDScript" id="GDScript_kx24o"]
 script/source = "extends GridContainer

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_lkglu"]
 [ext_resource type="PackedScene" uid="uid://bpnfpft461iwv" path="res://Scenes/gate.tscn" id="2_ycc87"]
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="3_0pi2j"]
-[ext_resource type="Script" path="res://Scenes/background.gd" id="3_52g8s"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="3_52g8s"]
 [ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="3_oleg4"]
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="4_50sh0"]
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="4_xyqpw"]
@@ -18,14 +18,14 @@
 offsets = PackedFloat32Array(0.465116, 1)
 colors = PackedColorArray(0, 0, 0, 0.360784, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_8xr2c"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_84hit"]
 gradient = SubResource("Gradient_1quux")
 
 [sub_resource type="Gradient" id="Gradient_0s4ha"]
 offsets = PackedFloat32Array(0, 0.189369, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0.827451, 1, 1, 1, 1, 1, 0.45098)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_s52nf"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t3jij"]
 gradient = SubResource("Gradient_0s4ha")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nprfp"]
@@ -37,15 +37,15 @@ gravity = Vector3(100, 20, 0)
 damping_max = 84.0
 scale_min = 1.5
 scale_max = 1.8
-color_ramp = SubResource("GradientTexture1D_s52nf")
-color_initial_ramp = SubResource("GradientTexture1D_8xr2c")
+color_ramp = SubResource("GradientTexture1D_t3jij")
+color_initial_ramp = SubResource("GradientTexture1D_84hit")
 
-[sub_resource type="Gradient" id="Gradient_was04"]
+[sub_resource type="Gradient" id="Gradient_dj6tf"]
 offsets = PackedFloat32Array(0, 0.129129, 1)
 colors = PackedColorArray(0.51523, 0.492773, 0.432407, 0.172549, 0.603243, 0.774735, 0.540396, 1, 1, 1, 1, 0.223529)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ppcrg"]
-gradient = SubResource("Gradient_was04")
+gradient = SubResource("Gradient_dj6tf")
 width = 1
 height = 32
 fill_to = Vector2(0, 1)

@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://djobe1efx3yo4"]
 
-[ext_resource type="StyleBox" uid="uid://bsuwj2aky06jb" path="res://Scenes/back-button.tres" id="1_ljiqq"]
+[ext_resource type="StyleBox" uid="uid://bsuwj2aky06jb" path="res://Assets/back-button.tres" id="1_ljiqq"]
 
 [node name="Control2" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

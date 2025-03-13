@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cwsju60qeuywn"]
 
-[ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_i0kik"]
-[ext_resource type="Shader" path="res://Scenes/pause-menu.gdshader" id="1_qj281"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i0kik"]
+[ext_resource type="Shader" path="res://Assets/pause-menu.gdshader" id="1_qj281"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_borrs"]
-[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Scenes/default-button-pressed.tres" id="3_a0xqc"]
-[ext_resource type="StyleBox" uid="uid://bogffe2fb6adf" path="res://Scenes/default-button-normal.tres" id="4_h0te3"]
+[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Assets/default-button-pressed.tres" id="3_a0xqc"]
+[ext_resource type="StyleBox" uid="uid://bogffe2fb6adf" path="res://Assets/default-button-normal.tres" id="4_h0te3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mspl7"]
 shader = ExtResource("1_qj281")

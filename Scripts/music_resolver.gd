@@ -43,9 +43,12 @@ func is_playing_sound() -> bool:
 func get_playing_note() -> int:
 	return note_played
 			
-func resolve_instrument(instrument) -> void:
-	instrument_played = instrument
-
+func resolve_instrument() -> void:
+	if Input.is_action_just_pressed("piano") and "piano" in $"..".allowed_instruments:
+		instrument_played = "piano"
+	
+	if Input.is_action_just_pressed("violin") and "violin" in $"..".allowed_instruments:
+		instrument_played = "violin"
 	
 	## Prevents switching bug that happens when an instrument is switched
 	## In the middle of play_music() causing the instrument played to switch

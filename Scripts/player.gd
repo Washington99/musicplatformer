@@ -109,7 +109,9 @@ func _physics_process(delta: float) -> void:
 		elif music_resolver.get_playing_note() == 12:
 			$AnimatedNote.play("yellow")
 
-	if Input.is_action_just_pressed("play_note") or Input.is_action_just_pressed("play_instrument"):
+	if Input.is_action_just_pressed("play_instrument"):
+		$MusicResolver.resolve_instrument()
+	if Input.is_action_just_pressed("play_note"):
 		$MusicResolver.play_music()
 		
 		if num_notes_played > 0:
