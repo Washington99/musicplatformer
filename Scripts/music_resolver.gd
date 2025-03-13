@@ -32,6 +32,8 @@ func play_music() -> void:
 		$".".stream = ResourceLoader.load(music_player)
 		$".".play()
 		
+		display_note_hints(note_played)
+		
 		await $".".finished	
 		
 		$Area2D/CollisionShape2D.disabled = true
@@ -78,6 +80,22 @@ func resolve_music_key () -> void:
 	elif Input.is_action_just_pressed("note_12") and "12" in $"..".allowed_notes:
 		note_played = 12
 		
+
+func display_note_hints (note_played: int) -> void:
+	if note_played == 1:
+		$".."/AnimatedNote.play("green")
+	elif note_played == 3:
+		$".."/AnimatedNote.play("blue")
+	elif note_played == 5:
+		$".."/AnimatedNote.play("cyan")
+	elif note_played == 6:
+		$".."/AnimatedNote.play("red")
+	elif note_played == 8:
+		$".."/AnimatedNote.play("orange")
+	elif note_played == 10:
+		$".."/AnimatedNote.play("purple")
+	elif note_played == 12:
+		$".."/AnimatedNote.play("yellow")
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)

@@ -1,13 +1,11 @@
 extends Area2D
 
-
-
 @export var lifeform: Lifeform
 
 @export var dest_for_decreasing: Node2D
 @export var dest_for_increasing: Node2D
 
-var states: Array[String] = ["zero", "first", "second_dec", "second_inc",]
+var states: Array[String] = ["zero", "first_inc", "first_dec", "second_inc", "second_dec"]
 var current_state: String = states[0]
 
 var notes: Array[int] = [1,3,5,6,8,10,12]
@@ -46,12 +44,16 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	# Note played is Middle of Sequence	
 	elif (current_state == states[1] or current_state == states[2]) and music_played == note_sequence[1]:
-		# current_state = states[3]
+		if current_state == states[1]: # Middle of INCREASING sequence
+			current_state = states[3]
+		if current_state == states[2]: # Middle of DECREASING sequence
+			current_state = states[4]
+		
 		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(7,15))
 		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(9,15))
 	
 	# Playing Third note in Increasing Sequence
-	elif current_state == states[1] and music_played == note_sequence[2]:
+	elif current_state == states[3] and music_played == note_sequence[2]:
 		var player: Player = area.get_parent().get_parent()
 		
 		# Teleport
@@ -62,7 +64,7 @@ func _on_area_entered(area: Area2D) -> void:
 		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
 	
 	# Playing Third note in Decreasing Sequence
-	elif current_state == states[2] and music_played == note_sequence[0]:
+	elif current_state == states[4] and music_played == note_sequence[0]:
 		var player: Player = area.get_parent().get_parent()
 		
 		# Teleport

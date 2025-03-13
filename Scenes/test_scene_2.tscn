@@ -31,7 +31,8 @@ dest_for_increasing = NodePath("Node2D2")
 
 [node name="Lifeform" parent="mover" instance=ExtResource("4_rqb20")]
 position = Vector2(-160, 50)
-song_list = Array[String](["piano_1", "violin_3", "violin_1"])
+song_list = Array[String](["violin_3"])
+notes_selection = Array[String](["3"])
 
 [node name="Node2D" type="Node2D" parent="mover"]
 position = Vector2(430, -117)

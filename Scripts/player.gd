@@ -15,12 +15,6 @@ var num_notes_played: int = 0
 var num_error_played: int = 0
 var player_accuracy: float = Global.player_accuracy
 
-const animation_time: float = 0.80
-
-var num_notes_played: int = 0
-var num_error_played: int = 0
-var player_accuracy: float = 100
-
 var isSinging = false
 var footstep_frames : Array = [4,9]
 
@@ -92,22 +86,6 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("Idle")
 			$AnimatedNote.play("blank")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	if music_resolver.is_playing_sound():
-		if music_resolver.get_playing_note() == 1:
-			$AnimatedNote.play("green")
-		elif music_resolver.get_playing_note() == 3:
-			$AnimatedNote.play("blue")
-		elif music_resolver.get_playing_note() == 5:
-			$AnimatedNote.play("cyan")
-		elif music_resolver.get_playing_note() == 6:
-			$AnimatedNote.play("red")
-		elif music_resolver.get_playing_note() == 8:
-			$AnimatedNote.play("orange")
-		elif music_resolver.get_playing_note() == 10:
-			$AnimatedNote.play("purple")
-		elif music_resolver.get_playing_note() == 12:
-			$AnimatedNote.play("yellow")
 
 	if Input.is_action_just_pressed("play_instrument"):
 		$MusicResolver.resolve_instrument()
