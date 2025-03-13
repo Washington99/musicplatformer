@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://66jurfrilgfn"]
 
-[ext_resource type="Script" path="res://Scenes/level_complete.gd" id="1_cx5no"]
+[ext_resource type="Script" path="res://Scripts/level_complete.gd" id="1_cx5no"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="1_g75xn"]
 [ext_resource type="Texture2D" uid="uid://drig8jiy2qvln" path="res://Assets/star.png" id="2_4qphw"]
-[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Scenes/default-button-pressed.tres" id="4_daeuj"]
+[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Assets/default-button-pressed.tres" id="4_daeuj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0thcv"]
 texture = ExtResource("2_4qphw")

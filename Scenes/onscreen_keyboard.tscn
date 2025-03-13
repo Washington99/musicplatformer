@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/onscreen_keyboard.gd" id="1_w61f7"]
 [ext_resource type="Texture2D" uid="uid://cqvep8rsosvyi" path="res://Assets/Buttons/do.png" id="2_lig4x"]
-[ext_resource type="Script" path="res://Scenes/note button.gd" id="2_sbwo3"]
+[ext_resource type="Script" path="res://Scripts/note button.gd" id="2_sbwo3"]
 [ext_resource type="Texture2D" uid="uid://yf3xr6qxv1gn" path="res://Assets/Buttons/re.png" id="4_thbc7"]
 [ext_resource type="Texture2D" uid="uid://dlqogdfcq7ou3" path="res://Assets/Buttons/mi.png" id="5_iu8r6"]
 [ext_resource type="Texture2D" uid="uid://6jgpuhe4nkus" path="res://Assets/Buttons/fa.png" id="6_2yqqs"]
@@ -481,9 +481,9 @@ offset_top = 4.57764e-05
 offset_right = 21.0001
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_stla7")
+disabled = true
 text = "Do"
 script = ExtResource("2_sbwo3")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/C"]
 position = Vector2(15.4999, 15.4999)
@@ -502,9 +502,9 @@ anchor_bottom = 0.808411
 offset_right = 20.0
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_eshsx")
+disabled = true
 text = "Re"
 script = ExtResource("2_sbwo3")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/D"]
 position = Vector2(15.4999, 15.4999)
@@ -523,9 +523,9 @@ anchor_bottom = 0.808411
 offset_right = 17.0
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_08ird")
+disabled = true
 text = "Mi"
 script = ExtResource("2_sbwo3")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/E"]
 position = Vector2(15.4999, 15.4999)
@@ -544,9 +544,9 @@ anchor_bottom = 0.808411
 offset_right = 17.0
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0t3ju")
+disabled = true
 text = "Fa"
 script = ExtResource("2_sbwo3")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/F"]
 position = Vector2(15.4999, 15.4999)
@@ -567,9 +567,9 @@ offset_top = 4.57764e-05
 offset_right = 20.9999
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m13br")
+disabled = true
 text = "So"
 script = ExtResource("2_sbwo3")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/G"]
 position = Vector2(15.4999, 15.4999)
@@ -590,9 +590,9 @@ offset_top = 4.57764e-05
 offset_right = 21.0001
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ayvo")
+disabled = true
 text = "La"
 script = ExtResource("2_sbwo3")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/A"]
 position = Vector2(15.4999, 15.4999)
@@ -613,6 +613,7 @@ offset_top = 4.57764e-05
 offset_right = 22.0001
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jq35y")
+disabled = true
 text = "Ti"
 script = ExtResource("2_sbwo3")
 
@@ -667,6 +668,7 @@ offset_top = 66.0
 offset_right = 29.0
 offset_bottom = 82.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8cyma")
+disabled = true
 script = ExtResource("2_sbwo3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Piano"]
@@ -681,6 +683,7 @@ offset_top = 66.0
 offset_right = 49.5
 offset_bottom = 82.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8cyma")
+disabled = true
 script = ExtResource("2_sbwo3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Violin"]
@@ -695,6 +698,7 @@ offset_top = 66.0
 offset_right = 70.0
 offset_bottom = 82.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8cyma")
+disabled = true
 script = ExtResource("2_sbwo3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Woodwind"]

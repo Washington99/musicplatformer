@@ -1,30 +1,31 @@
-[gd_scene load_steps=35 format=4 uid="uid://b5diebk2idubi"]
+[gd_scene load_steps=36 format=4 uid="uid://b5diebk2idubi"]
 
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="1_seosm"]
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_wiw7r"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_lkglu"]
-[ext_resource type="PackedScene" uid="uid://c44tohe5obyy" path="res://Scenes/gate.tscn" id="2_ycc87"]
+[ext_resource type="PackedScene" uid="uid://bpnfpft461iwv" path="res://Scenes/gate.tscn" id="2_ycc87"]
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="3_0pi2j"]
-[ext_resource type="Script" path="res://Scenes/background.gd" id="3_52g8s"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="3_52g8s"]
 [ext_resource type="PackedScene" uid="uid://c54iwrw1m1gi" path="res://Scenes/lifeform.tscn" id="3_oleg4"]
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="4_50sh0"]
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="4_xyqpw"]
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="6_au214"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="6_gha18"]
+[ext_resource type="PackedScene" uid="uid://cwsju60qeuywn" path="res://Scenes/pause-menu.tscn" id="12_4ow04"]
 [ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="12_tde7q"]
 
 [sub_resource type="Gradient" id="Gradient_1quux"]
 offsets = PackedFloat32Array(0.465116, 1)
 colors = PackedColorArray(0, 0, 0, 0.360784, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_8xr2c"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_84hit"]
 gradient = SubResource("Gradient_1quux")
 
 [sub_resource type="Gradient" id="Gradient_0s4ha"]
 offsets = PackedFloat32Array(0, 0.189369, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0.827451, 1, 1, 1, 1, 1, 0.45098)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_s52nf"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t3jij"]
 gradient = SubResource("Gradient_0s4ha")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nprfp"]
@@ -36,15 +37,15 @@ gravity = Vector3(100, 20, 0)
 damping_max = 84.0
 scale_min = 1.5
 scale_max = 1.8
-color_ramp = SubResource("GradientTexture1D_s52nf")
-color_initial_ramp = SubResource("GradientTexture1D_8xr2c")
+color_ramp = SubResource("GradientTexture1D_t3jij")
+color_initial_ramp = SubResource("GradientTexture1D_84hit")
 
-[sub_resource type="Gradient" id="Gradient_was04"]
+[sub_resource type="Gradient" id="Gradient_dj6tf"]
 offsets = PackedFloat32Array(0, 0.129129, 1)
 colors = PackedColorArray(0.51523, 0.492773, 0.432407, 0.172549, 0.603243, 0.774735, 0.540396, 1, 1, 1, 1, 0.223529)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ppcrg"]
-gradient = SubResource("Gradient_was04")
+gradient = SubResource("Gradient_dj6tf")
 width = 1
 height = 32
 fill_to = Vector2(0, 1)
@@ -240,39 +241,55 @@ lifeform = NodePath("../../Lifeforms/Lifeform4")
 [node name="Lifeform" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(554, 447)
 song_list = Array[String](["piano_1"])
-notes_selection = Array[int]([1])
+is_lifeform_for_vertice = true
 
 [node name="Lifeform2" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(699, 446)
 song_list = Array[String](["piano_1", "piano_3"])
-notes_selection = Array[int]([1, 3])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="Lifeform3" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(837, 447)
 song_list = Array[String](["piano_1", "piano_3", "piano_5"])
 num_songs = 3
+is_lifeform_for_vertice = true
 
 [node name="Lifeform4" parent="Lifeforms" instance=ExtResource("3_oleg4")]
 position = Vector2(337, 510)
 song_list = Array[String](["piano_3", "piano_5"])
-notes_selection = Array[int]([3, 5])
 num_songs = 2
+is_lifeform_for_vertice = true
 
 [node name="Vertices" type="Node2D" parent="."]
 position = Vector2(221, 432)
 
 [node name="switch" parent="Vertices" instance=ExtResource("4_xyqpw")]
 position = Vector2(179, 15)
+trigger_keys = Array[String](["piano_1", "piano_3"])
+notes_selection = Array[String](["1", "3", "5"])
 
 [node name="switch2" parent="Vertices" instance=ExtResource("4_xyqpw")]
 position = Vector2(99, 15)
+trigger_keys = Array[String](["piano_3", "piano_5"])
+notes_selection = Array[String](["1", "3", "5"])
 
 [node name="switch3" parent="Vertices" instance=ExtResource("4_xyqpw")]
 position = Vector2(3, 80)
+trigger_keys = Array[String](["piano_3"])
+notes_selection = Array[String](["1", "3", "5"])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("12_4ow04")]
+offset_left = -1.0
+offset_right = -1.0
 
 [node name="player" parent="." instance=ExtResource("1_seosm")]
 position = Vector2(281, 443)
+allowed_instruments = Array[String](["piano"])
+allowed_notes = Array[String](["1", "3", "5"])
 level = 1
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("6_gha18")]

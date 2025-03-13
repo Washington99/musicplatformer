@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+@export var allowed_instruments: Array[String]
+@export var allowed_notes: Array[String]
 @export var level: int
 @export var SPEED = 200.0
 @export var JUMP_VELOCITY = -400.0
@@ -57,7 +59,7 @@ func _physics_process(delta: float) -> void:
 	
 		
 	if Input.is_action_just_pressed("scene_reset"):
-		var _reload = get_tree().reload_current_scene()
+		Global.reset_scene()
 
 	# Running State
 	var direction := Input.get_axis("Left", "Right")
@@ -84,24 +86,10 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("Idle")
 			$AnimatedNote.play("blank")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	if music_resolver.is_playing_sound():
-		if music_resolver.get_playing_note() == 1:
-			$AnimatedNote.play("green")
-		elif music_resolver.get_playing_note() == 3:
-			$AnimatedNote.play("blue")
-		elif music_resolver.get_playing_note() == 5:
-			$AnimatedNote.play("cyan")
-		elif music_resolver.get_playing_note() == 6:
-			$AnimatedNote.play("red")
-		elif music_resolver.get_playing_note() == 8:
-			$AnimatedNote.play("orange")
-		elif music_resolver.get_playing_note() == 10:
-			$AnimatedNote.play("purple")
-		elif music_resolver.get_playing_note() == 12:
-			$AnimatedNote.play("yellow")
 
-	if Input.is_action_just_pressed("play_note") or Input.is_action_just_pressed("play_instrument"):
+	if Input.is_action_just_pressed("play_instrument"):
+		$MusicResolver.resolve_instrument()
+	if Input.is_action_just_pressed("play_note"):
 		$MusicResolver.play_music()
 		
 		if num_notes_played > 0:
@@ -109,8 +97,6 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-
-
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if animated_sprite_2d.animation == "Idle": return
 	if animated_sprite_2d.animation == "Jump": return

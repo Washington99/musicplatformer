@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="3_b3apx"]
-[ext_resource type="Script" path="res://Scenes/background.gd" id="4_2xafq"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="4_2xafq"]
 [ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="5_yjpwm"]
 [ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
-[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Scenes/default-button-pressed.tres" id="7_bbl2a"]
+[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Assets/default-button-pressed.tres" id="7_bbl2a"]
 [ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
-[ext_resource type="StyleBox" uid="uid://lmrw2o82o1um" path="res://Scenes/default-button-normal.tres" id="8_iqflb"]
-[ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Scenes/quit-button.tres" id="8_tcgbi"]
+[ext_resource type="StyleBox" uid="uid://bogffe2fb6adf" path="res://Assets/default-button-normal.tres" id="8_iqflb"]
+[ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Assets/quit-button.tres" id="8_tcgbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
 atlas = ExtResource("6_2gj12")

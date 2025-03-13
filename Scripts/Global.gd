@@ -1,6 +1,8 @@
 extends Node
 
-var current_scene = null
+var current_scene: Node = null
+var switch_seed: int = 0
+var notes: Array[String] = ["1","3","5","6","8","10","12"]
 
 var player_accuracy: float = 100
 var player_level: int = 0
@@ -13,7 +15,7 @@ var level_completed: bool = false
 
 func _ready():
 	var root = get_tree().root
-	
+
 	# Using a negative index counts from the end, so this gets the last child node of `root`.
 	current_scene = root.get_child(-1)
 	
@@ -36,9 +38,9 @@ func goto_scene(path: String) -> void:
 func _deferred_goto_scene(path: String) -> void:
 	# It is now safe to remove the current scene.
 	current_scene.free()
-
+		
 	# Load the new scene.
-	var scene = ResourceLoader.load(path)
+	var scene: Resource = ResourceLoader.load(path)
 
 	# Instance the new scene.
 	current_scene = scene.instantiate()
@@ -48,6 +50,13 @@ func _deferred_goto_scene(path: String) -> void:
 
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = current_scene
+
+# I DON'T LIKE THIS FIX :>
+func reset_scene () -> void:
+	switch_seed = randi() % 12
+	
+	var path: String = "res://Scenes/" + current_scene.name + ".tscn"
+	goto_scene(path)
 
 func save_game () -> void:
 	
@@ -84,6 +93,7 @@ func load_game () -> void:
 	save_file.close()
 	
 	var save_data: Dictionary = JSON.parse_string(string_data)
+	
 	player_accuracy = save_data.player_accuracy
 	player_level = save_data.player_level
 	next_level = save_data.next_level
