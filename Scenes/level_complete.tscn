@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://66jurfrilgfn"]
+[gd_scene load_steps=19 format=3 uid="uid://66jurfrilgfn"]
 
 [ext_resource type="Script" path="res://Scripts/level_complete.gd" id="1_cx5no"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="1_g75xn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_wog3o"]
 [ext_resource type="Texture2D" uid="uid://daqt08bl87b64" path="res://Assets/title bg.png" id="3_xtmxt"]
 [ext_resource type="Theme" uid="uid://bjluhfhwp4k8j" path="res://Assets/Button Theme.tres" id="6_3qsa3"]
+[ext_resource type="Script" path="res://Scenes/Star.gd" id="6_qy4nh"]
 [ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="7_tmtwv"]
 
 [sub_resource type="Gradient" id="Gradient_p8rq4"]
@@ -132,6 +133,8 @@ offset_bottom = 355.025
 rotation = -0.191986
 scale = Vector2(1.2, 1.2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
+script = ExtResource("6_qy4nh")
+move_distance = 50.0
 
 [node name="star2" type="Panel" parent="."]
 layout_mode = 0
@@ -141,6 +144,9 @@ offset_right = 647.0
 offset_bottom = 319.025
 scale = Vector2(1.2, 1.2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
+script = ExtResource("6_qy4nh")
+move_distance = 50.0
+time_offset = 0.84
 
 [node name="star3" type="Panel" parent="."]
 layout_mode = 0
@@ -151,6 +157,9 @@ offset_bottom = 319.025
 rotation = 0.20944
 scale = Vector2(1.2, 1.2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_0thcv")
+script = ExtResource("6_qy4nh")
+move_distance = 50.0
+time_offset = 1.68
 
 [node name="next-button" type="Button" parent="."]
 layout_mode = 1
