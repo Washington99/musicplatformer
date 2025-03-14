@@ -18,14 +18,14 @@
 offsets = PackedFloat32Array(0.465116, 1)
 colors = PackedColorArray(0, 0, 0, 0.360784, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_84hit"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0jh3k"]
 gradient = SubResource("Gradient_1quux")
 
 [sub_resource type="Gradient" id="Gradient_0s4ha"]
 offsets = PackedFloat32Array(0, 0.189369, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0.827451, 1, 1, 1, 1, 1, 0.45098)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_t3jij"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jrn2i"]
 gradient = SubResource("Gradient_0s4ha")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nprfp"]
@@ -37,15 +37,15 @@ gravity = Vector3(100, 20, 0)
 damping_max = 84.0
 scale_min = 1.5
 scale_max = 1.8
-color_ramp = SubResource("GradientTexture1D_t3jij")
-color_initial_ramp = SubResource("GradientTexture1D_84hit")
+color_ramp = SubResource("GradientTexture1D_jrn2i")
+color_initial_ramp = SubResource("GradientTexture1D_0jh3k")
 
-[sub_resource type="Gradient" id="Gradient_dj6tf"]
+[sub_resource type="Gradient" id="Gradient_lu10h"]
 offsets = PackedFloat32Array(0, 0.129129, 1)
 colors = PackedColorArray(0.51523, 0.492773, 0.432407, 0.172549, 0.603243, 0.774735, 0.540396, 1, 1, 1, 1, 0.223529)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ppcrg"]
-gradient = SubResource("Gradient_dj6tf")
+gradient = SubResource("Gradient_lu10h")
 width = 1
 height = 32
 fill_to = Vector2(0, 1)
