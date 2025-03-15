@@ -108,13 +108,13 @@ func _on_piano_button_down() -> void:
 	Input.action_press("piano")
 	Input.action_release("piano")
 	active_instrument = "piano"
-	music_resolver.resolve_instrument("piano")
+	music_resolver.instrument_played = "piano"
 	
 func _on_violin_button_down() -> void:
 	Input.action_press("violin")
 	Input.action_release("violin")
 	active_instrument = "violin"
-	music_resolver.resolve_instrument("violin")
+	music_resolver.instrument_played = "violin"
 
 func _on_woodwind_button_down() -> void:
 	#Input.action_press("woodwind")
