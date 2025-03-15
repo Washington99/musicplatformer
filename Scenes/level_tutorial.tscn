@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://dy3val2ccl2qf"]
+[gd_scene load_steps=38 format=4 uid="uid://dy3val2ccl2qf"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_37mvc"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_5lbd2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="6_pkbct"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="6_pma55"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="7_gjfwi"]
+[ext_resource type="PackedScene" uid="uid://cb700uvj1tgp6" path="res://message_box.tscn" id="8_ekvtt"]
 [ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="8_ldnas"]
 [ext_resource type="PackedScene" uid="uid://bpnfpft461iwv" path="res://Scenes/gate.tscn" id="10_0yhtl"]
 [ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="10_2u0h3"]
@@ -224,6 +225,8 @@ z_index = -1
 position = Vector2(295, 446)
 allowed_instruments = Array[String](["violin"])
 allowed_notes = Array[String](["1", "3", "5", "6"])
+
+[node name="Message Box" parent="player" instance=ExtResource("8_ekvtt")]
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("7_gjfwi")]
 visible = false

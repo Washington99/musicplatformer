@@ -22,6 +22,7 @@ func _ready() -> void:
 	hide_textbox()
 	queue_text("Hello world! Englishera latina arf arf")
 	queue_text("The quick brown fox jumps over the lazy dog")
+	queue_text("The quick brown Englishera latina jumps over the lazy golden retriever arf arf dog")
 
 func _process(delta: float) -> void:
 	match current_state:
