@@ -431,6 +431,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MusicComet" parent="." instance=ExtResource("13_8b1dv")]
 position = Vector2(1083, 608)
-notes_list = Array[String](["piano_1", "piano_3", "piano_5"])
-next_scene_path = "res://Scenes/level_2.tscn"
-is_randomized = true
+notes_list = Array[String](["piano_1", "violin_5", "piano_3", "violin_8", "violin_12"])
+num_notes_to_play = 5
+next_scene_path = "res://Scenes/main_menu.tscn"
