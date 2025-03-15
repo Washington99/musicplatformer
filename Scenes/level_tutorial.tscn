@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://dy3val2ccl2qf"]
+[gd_scene load_steps=37 format=4 uid="uid://dy3val2ccl2qf"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_37mvc"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_5lbd2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bpnfpft461iwv" path="res://Scenes/gate.tscn" id="10_0yhtl"]
 [ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="10_2u0h3"]
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="12_asqfv"]
+[ext_resource type="PackedScene" uid="uid://cwsju60qeuywn" path="res://Scenes/pause-menu.tscn" id="14_gvyy3"]
 
 [sub_resource type="Gradient" id="Gradient_glnde"]
 offsets = PackedFloat32Array(0.465116, 1)
@@ -277,3 +278,11 @@ position = Vector2(10, -206)
 
 [node name="increasing" type="Node2D" parent="Mover"]
 position = Vector2(-96, 11)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("14_gvyy3")]
+offset_left = -1.0
+offset_right = -1.0
+metadata/_edit_use_anchors_ = true
