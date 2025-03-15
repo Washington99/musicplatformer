@@ -156,7 +156,6 @@ tile_map_data = PackedByteArray("AABDACcABQAAAAAAAABDACgABQAAAAEAAABDACkABQAAAAI
 tile_set = ExtResource("1_8k6xk")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="TileMap"]
-visible = false
 
 [node name="Background 2" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]
 texture_filter = 1
