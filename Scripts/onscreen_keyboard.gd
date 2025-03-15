@@ -8,6 +8,9 @@ var active_instrument: String = "piano"
 
 func _ready() -> void:
 	var player: Player = get_parent()
+	active_instrument = player.allowed_instruments[0]
+	
+	
 	if "piano" in player.allowed_instruments:
 		$Control/Piano.disabled = false
 		
@@ -114,7 +117,7 @@ func _on_violin_button_down() -> void:
 	Input.action_press("violin")
 	Input.action_release("violin")
 	active_instrument = "violin"
-	music_resolver.instrument_played = "piano"
+	music_resolver.instrument_played = "violin"
 
 func _on_woodwind_button_down() -> void:
 	#Input.action_press("woodwind")
