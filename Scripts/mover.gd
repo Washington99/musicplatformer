@@ -46,11 +46,14 @@ func _on_area_entered(area: Area2D) -> void:
 	elif (current_state == states[1] or current_state == states[2]) and music_played == note_sequence[1]:
 		if current_state == states[1]: # Middle of INCREASING sequence
 			current_state = states[3]
+			$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(7,15))
+			$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(9,15))
+			
 		if current_state == states[2]: # Middle of DECREASING sequence
 			current_state = states[4]
+			$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(10,15))
+			$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(12,15))
 		
-		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(7,15))
-		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(9,15))
 	
 	# Playing Third note in Increasing Sequence
 	elif current_state == states[3] and music_played == note_sequence[2]:
