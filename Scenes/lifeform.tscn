@@ -477,6 +477,7 @@ animations = [{
 }]
 
 [node name="Lifeform" type="Area2D"]
+z_index = 1
 script = ExtResource("1_bpuba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

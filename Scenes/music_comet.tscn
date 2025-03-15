@@ -7,6 +7,7 @@
 size = Vector2(16, 17)
 
 [node name="MusicComet" type="Area2D"]
+z_index = 1
 script = ExtResource("1_jmgrn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

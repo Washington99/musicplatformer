@@ -253,6 +253,7 @@ animations = [{
 }]
 
 [node name="switch" type="Area2D"]
+z_index = 1
 script = ExtResource("1_phkb5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

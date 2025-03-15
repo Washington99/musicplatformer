@@ -460,6 +460,7 @@ zoom = Vector2(3, 3)
 script = ExtResource("1_w61f7")
 
 [node name="Control" type="Control" parent="."]
+z_index = 2
 layout_direction = 1
 layout_mode = 3
 anchors_preset = 0
