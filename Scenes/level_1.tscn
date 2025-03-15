@@ -285,6 +285,7 @@ layer = -1
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("12_4ow04")]
 offset_left = -1.0
 offset_right = -1.0
+metadata/_edit_use_anchors_ = true
 
 [node name="player" parent="." instance=ExtResource("1_seosm")]
 position = Vector2(281, 443)

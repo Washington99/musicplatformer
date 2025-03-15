@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ct32gaklquwii"]
+[gd_scene load_steps=35 format=4 uid="uid://dxaogve6n5tm2"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_846rn"]
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="2_eywsk"]
