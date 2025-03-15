@@ -54,6 +54,10 @@ func _on_area_entered(area: Area2D) -> void:
 			$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(10,15))
 			$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(12,15))
 		
+		## Top mid and Bottom mid tiles
+		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(11,15))
+		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
+		
 	
 	# Playing Third note in Increasing Sequence
 	elif current_state == states[3] and music_played == note_sequence[2]:
@@ -63,8 +67,7 @@ func _on_area_entered(area: Area2D) -> void:
 		player.position = dest_for_decreasing.global_position
 		
 		current_state = states[0]
-		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(11,15))
-		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
+		reset()
 	
 	# Playing Third note in Decreasing Sequence
 	elif current_state == states[4] and music_played == note_sequence[0]:
@@ -74,50 +77,26 @@ func _on_area_entered(area: Area2D) -> void:
 		player.position = dest_for_increasing.global_position
 		
 		current_state = states[0]
-		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(11,15))
-		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
+		reset()
 	
 	# Incorrect Sequence Played
 	else:
 		current_state = states[0]
-		## Top right and Top left tiles
-		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,15))
-		$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(10,15))
-		
-		## Bottom right and Bottom left tiles
-		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(9,15))
-		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(7,15))
-		
-		## Top mid and Bottom mid tiles
-		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(8,15))
-		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(11,15))
+		reset()
 		
 		var player: Player = music_resolver.get_parent()
 		player.num_error_played += 1
 		
-	
-func _change_design () -> void:
-	if current_state == states[0]:
-		## Top right and Top left tiles
-		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,15))
-		$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(10,15))
+
+func reset () -> void:
+	## Top right and Top left tiles
+	$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(12,15))
+	$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(10,15))
 		
-		## Bottom right and Bottom left tiles
-		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(9,15))
-		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(7,15))
+	## Bottom right and Bottom left tiles
+	$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(9,15))
+	$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(7,15))
 		
-		## Top mid and Bottom mid tiles
-		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(8,15))
-		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(11,15))
-		
-	if current_state == states[1]:
-		$TileMapLayer.set_cell(Vector2i(0,0), 0, Vector2i(10,15))
-		$TileMapLayer.set_cell(Vector2i(2,0), 0, Vector2i(12,15))
-		
-	if current_state == states[1]:
-		$TileMapLayer.set_cell(Vector2i(0,1), 0, Vector2i(7,15))
-		$TileMapLayer.set_cell(Vector2i(2,1), 0, Vector2i(9,15))
-		
-	if current_state == states[1]:
-		$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(11,15))
-		$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(8,15))
+	## Top mid and Bottom mid tiles
+	$TileMapLayer.set_cell(Vector2i(1,0), 0, Vector2i(8,15))
+	$TileMapLayer.set_cell(Vector2i(1,1), 0, Vector2i(11,15))

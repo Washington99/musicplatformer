@@ -203,6 +203,7 @@ scale = Vector2(0.48, 0.48)
 sprite_frames = SubResource("SpriteFrames_ir7xb")
 
 [node name="Mover" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("2_xrnc4")]
+z_index = 0
 position = Vector2(864, 495)
 lifeform = NodePath("Lifeform")
 dest_for_decreasing = NodePath("low")
@@ -220,6 +221,7 @@ position = Vector2(-620.247, -286.744)
 position = Vector2(-373, -140)
 
 [node name="Mover2" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("2_xrnc4")]
+z_index = 0
 position = Vector2(283, 433)
 lifeform = NodePath("Lifeform2")
 dest_for_decreasing = NodePath("low")
@@ -237,6 +239,7 @@ position = Vector2(468, -219)
 position = Vector2(364, -79)
 
 [node name="Mover3" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("2_xrnc4")]
+z_index = 0
 position = Vector2(544, 286)
 lifeform = NodePath("Lifeform3")
 dest_for_decreasing = NodePath("low")
