@@ -8,6 +8,9 @@ var active_instrument: String = "piano"
 
 func _ready() -> void:
 	var player: Player = get_parent()
+	active_instrument = player.allowed_instruments[0]
+	
+	
 	if "piano" in player.allowed_instruments:
 		$Control/Piano.disabled = false
 		

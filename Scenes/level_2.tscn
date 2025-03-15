@@ -209,7 +209,7 @@ dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
 
 [node name="Lifeform" parent="Mover" instance=ExtResource("3_6qweu")]
-position = Vector2(-48, -267)
+position = Vector2(-48, -271)
 song_list = Array[String](["piano_10"])
 notes_selection = Array[String](["8", "10"])
 

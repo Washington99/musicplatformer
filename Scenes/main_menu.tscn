@@ -1,184 +1,61 @@
-[gd_scene load_steps=36 format=3 uid="uid://5gk7oslgl8ts"]
+[gd_scene load_steps=21 format=3 uid="uid://5gk7oslgl8ts"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="3_b3apx"]
-[ext_resource type="Script" path="res://Scripts/background.gd" id="4_2xafq"]
-[ext_resource type="Texture2D" uid="uid://cu3j8in2e6bqa" path="res://Assets/Background-1.png" id="5_yjpwm"]
-[ext_resource type="Texture2D" uid="uid://cbpnhwg48j6ly" path="res://Assets/Background.png" id="6_2gj12"]
-[ext_resource type="StyleBox" uid="uid://dc4kpm5p2trux" path="res://Assets/default-button-pressed.tres" id="7_bbl2a"]
+[ext_resource type="Texture2D" uid="uid://daqt08bl87b64" path="res://Assets/title bg.png" id="3_uqkbj"]
+[ext_resource type="Theme" uid="uid://do86lmib33bjy" path="res://Assets/Button Theme.tres" id="4_1knc7"]
 [ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
-[ext_resource type="StyleBox" uid="uid://bogffe2fb6adf" path="res://Assets/default-button-normal.tres" id="8_iqflb"]
 [ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Assets/quit-button.tres" id="8_tcgbi"]
+[ext_resource type="Texture2D" uid="uid://caik1se5nk20q" path="res://Assets/title.png" id="9_jupsl"]
+[ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="10_lnj0m"]
+[ext_resource type="Script" path="res://Scenes/Title.gd" id="10_shhoc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gem6p"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(0, 0, 1920, 1080)
+[sub_resource type="Gradient" id="Gradient_1kr4x"]
+offsets = PackedFloat32Array(0.465116, 1)
+colors = PackedColorArray(0, 0, 0, 0.360784, 1, 1, 1, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ffix1"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(1920, 0, 1920, 1080)
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ad8nv"]
+gradient = SubResource("Gradient_1kr4x")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqv43"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(3840, 0, 1920, 1080)
+[sub_resource type="Gradient" id="Gradient_eeei7"]
+offsets = PackedFloat32Array(0, 0.189369, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.827451, 1, 1, 1, 1, 1, 0.45098)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3jv6i"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(5760, 0, 1920, 1080)
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y0vcu"]
+gradient = SubResource("Gradient_eeei7")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rppms"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(7680, 0, 1920, 1080)
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qdgk0"]
+lifetime_randomness = 0.48
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 200, 1)
+gravity = Vector3(100, 20, 0)
+damping_max = 84.0
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_y0vcu")
+color_initial_ramp = SubResource("GradientTexture1D_ad8nv")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8h0v"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(9600, 0, 1920, 1080)
+[sub_resource type="Gradient" id="Gradient_ux1a2"]
+offsets = PackedFloat32Array(0, 0.129129, 1)
+colors = PackedColorArray(0.51523, 0.492773, 0.432407, 0.172549, 0.603243, 0.774735, 0.540396, 1, 1, 1, 1, 0.223529)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xt2k1"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(11520, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w5tgb"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(13440, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3i6o"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(15360, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iuft4"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(17280, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ai3tx"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(19200, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dmosu"]
-atlas = ExtResource("6_2gj12")
-region = Rect2(21120, 0, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y6rf5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gem6p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ffix1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iqv43")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3jv6i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rppms")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v8h0v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xt2k1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w5tgb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v3i6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iuft4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ai3tx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dmosu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axqlm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m736g"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_top = 8.0
-expand_margin_bottom = 5.0
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhmg5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6ah1"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_top = 8.0
-expand_margin_bottom = 5.0
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7hfb"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_top = 8.0
-expand_margin_bottom = 5.0
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpejq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r5f4"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v61nr"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_top = 8.0
-expand_margin_bottom = 5.0
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpuqk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rudo8"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q75a2"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_top = 8.0
-expand_margin_bottom = 5.0
-shadow_size = 5
-shadow_offset = Vector2(0, 5)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vtmae"]
+gradient = SubResource("Gradient_ux1a2")
+width = 1
+height = 32
+fill_to = Vector2(0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1gjw"]
 texture = ExtResource("7_ddq4v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5iw8"]
+shader = ExtResource("10_lnj0m")
+
+[sub_resource type="QuadMesh" id="QuadMesh_da0va"]
+size = Vector2(1152, 648)
+center_offset = Vector3(576, 324, 0)
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -191,92 +68,89 @@ script = ExtResource("1_umgk5")
 
 [node name="TileMap" type="Node2D" parent="."]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="TileMap"]
-
-[node name="Background 2" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]
-texture_filter = 1
-motion_scale = Vector2(0.2, 0.1)
-motion_mirroring = Vector2(1152.58, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="TileMap/ParallaxBackground/Background 2"]
-position = Vector2(576, 324)
-scale = Vector2(0.6, 0.6)
+[node name="TitleBg" type="Sprite2D" parent="TileMap"]
+position = Vector2(584.963, 334.75)
+scale = Vector2(0.611419, 0.613426)
 texture = ExtResource("3_b3apx")
 
-[node name="Background 1" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]
-motion_scale = Vector2(0.4, 0.5)
-motion_mirroring = Vector2(921.6, 0)
-script = ExtResource("4_2xafq")
+[node name="GPUParticles2D" type="GPUParticles2D" parent="TileMap/TitleBg"]
+position = Vector2(-1120.28, -382.687)
+scale = Vector2(1.63554, 1.63019)
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_qdgk0")
+texture = SubResource("GradientTexture2D_vtmae")
+lifetime = 16.0
+preprocess = 48.0
+randomness = 1.0
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.8
 
-[node name="Sprite2D" type="Sprite2D" parent="TileMap/ParallaxBackground/Background 1"]
-visible = false
-position = Vector2(280, 140)
-scale = Vector2(0.48, 0.48)
-texture = ExtResource("5_yjpwm")
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="TileMap/TitleBg"]
+position = Vector2(-1120.28, -102.687)
+scale = Vector2(1.63554, 1.63019)
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_qdgk0")
+texture = SubResource("GradientTexture2D_vtmae")
+lifetime = 16.0
+preprocess = 48.0
+randomness = 1.0
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.8
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/ParallaxBackground/Background 1"]
-position = Vector2(280, 120)
-scale = Vector2(0.48, 0.48)
-sprite_frames = SubResource("SpriteFrames_y6rf5")
+[node name="Sprite2D" type="Sprite2D" parent="TileMap"]
+modulate = Color(1, 1, 1, 0.427451)
+scale = Vector2(0.613889, 0.613889)
+texture = ExtResource("3_uqkbj")
+centered = false
 
 [node name="buttons-container" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.770833
+anchor_top = 0.713735
 anchor_right = 0.5
-anchor_bottom = 0.770833
-offset_left = -154.0
-offset_top = -92.5
-offset_right = 154.0
-offset_bottom = 92.5
+anchor_bottom = 0.714
+offset_left = -180.0
+offset_top = -121.0
+offset_right = 180.0
+offset_bottom = 121.914
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 19
+theme_override_constants/separation = 36
 metadata/_edit_use_anchors_ = true
 
 [node name="new-game-button" type="Button" parent="buttons-container"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("4_1knc7")
+theme_override_colors/font_color = Color(0.874022, 0.883178, 0.980473, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_axqlm")
-theme_override_styles/hover_pressed = ExtResource("7_bbl2a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_m736g")
-theme_override_styles/normal = ExtResource("8_iqflb")
 text = "NEW GAME"
 
 [node name="continue-button" type="Button" parent="buttons-container"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("4_1knc7")
+theme_override_colors/font_color = Color(0.874022, 0.883178, 0.980473, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xhmg5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_p6ah1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_k7hfb")
-theme_override_styles/normal = ExtResource("8_iqflb")
 text = "CONTINUE"
 
 [node name="tutorial-button" type="Button" parent="buttons-container"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("4_1knc7")
+theme_override_colors/font_color = Color(0.874022, 0.883178, 0.980473, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mpejq")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5r5f4")
-theme_override_styles/hover = SubResource("StyleBoxFlat_v61nr")
-theme_override_styles/normal = ExtResource("8_iqflb")
 text = "TUTORIAL"
 
 [node name="credits-button" type="Button" parent="buttons-container"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("4_1knc7")
+theme_override_colors/font_color = Color(0.874022, 0.883178, 0.980473, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hpuqk")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rudo8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_q75a2")
-theme_override_styles/normal = ExtResource("8_iqflb")
 text = "CREDITS"
 
 [node name="quit-button" type="Button" parent="."]
@@ -290,19 +164,17 @@ theme_override_styles/hover = ExtResource("8_tcgbi")
 theme_override_styles/pressed = ExtResource("8_tcgbi")
 theme_override_styles/normal = ExtResource("8_tcgbi")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -346.5
-offset_top = 137.0
-offset_right = 346.5
-offset_bottom = 241.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_jv270")
-theme_override_font_sizes/font_size = 96
-text = "IN ORBEAT"
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(580, 175)
+scale = Vector2(0.571, 0.571)
+texture = ExtResource("9_jupsl")
+script = ExtResource("10_shhoc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_v5iw8")
+mesh = SubResource("QuadMesh_da0va")
 
 [connection signal="pressed" from="buttons-container/new-game-button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="buttons-container/continue-button" to="." method="_on_continue_pressed"]
