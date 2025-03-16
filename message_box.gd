@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 				change_state(State.READY)
 				hide_textbox()
 				
-	print("visible ratio:", message.visible_ratio) #added print statement.
+	#print("visible ratio:", message.visible_ratio) #added print statement.
 
 func queue_text(next_text):
 	text_queue.push_back(next_text)
