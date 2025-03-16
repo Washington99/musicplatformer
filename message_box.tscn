@@ -11,7 +11,7 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.260194, 0.127988, 0.412367, 1)
 
-[node name="Message Box" type="CanvasLayer"]
+[node name="MessageBox" type="CanvasLayer"]
 script = ExtResource("1_1ah4c")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
