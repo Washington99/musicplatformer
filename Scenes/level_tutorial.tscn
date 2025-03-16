@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dy3val2ccl2qf"]
+[gd_scene load_steps=40 format=4 uid="uid://dy3val2ccl2qf"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_37mvc"]
 [ext_resource type="Script" path="res://Scenes/level_tutorial.gd" id="1_a6ka2"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="10_2u0h3"]
 [ext_resource type="PackedScene" uid="uid://qkjd7gmxk5n7" path="res://Scenes/switch.tscn" id="12_asqfv"]
 [ext_resource type="PackedScene" uid="uid://cwsju60qeuywn" path="res://Scenes/pause-menu.tscn" id="14_gvyy3"]
+[ext_resource type="PackedScene" uid="uid://6ndbpkiuhh66" path="res://Scenes/sparkle.tscn" id="16_j77hx"]
 
 [sub_resource type="Gradient" id="Gradient_glnde"]
 offsets = PackedFloat32Array(0.465116, 1)
@@ -208,8 +209,8 @@ next_scene_path = "res://Scenes/level_1.tscn"
 
 [node name="player" parent="." instance=ExtResource("6_pma55")]
 position = Vector2(316, 448)
-allowed_instruments = Array[String](["piano"])
-allowed_notes = Array[String](["1", "3", "5", "6"])
+allowed_instruments = Array[String](["piano", "violin"])
+allowed_notes = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="MessageBox" parent="player" instance=ExtResource("8_ekvtt")]
 visible = false
@@ -271,6 +272,26 @@ position = Vector2(10, -206)
 [node name="increasing" type="Node2D" parent="Mover"]
 position = Vector2(-96, 11)
 
+[node name="Sparkle" parent="." instance=ExtResource("16_j77hx")]
+position = Vector2(321.81, 442.735)
+lines = Array[String](["Welcome to the tutorial! Press [F] to continue dialogue.", "Press [A] or [D] to move left and right.", "Press [W] to jump."])
+
+[node name="Sparkle2" parent="." instance=ExtResource("16_j77hx")]
+position = Vector2(577.55, 377.9)
+lines = Array[String](["On this planet, you will come across these lifeforms.", "They will serve as your guide to solve the puzzles scattered around.", "Interact with them with [SPACE] and they will play certain notes.", "These notes will be your clues in moving forward!"])
+
+[node name="Sparkle3" parent="." instance=ExtResource("16_j77hx")]
+position = Vector2(840, 377.9)
+lines = Array[String](["This device is called a mover.", "Movers will listen to two different sequences of notes.", "An ascending melodic line (moving upwards in pitch)...", "Or a descending melodic line (moving downwards in pitch)...", "Try playing \"Mi-Re-Do\" first, and then try \"Do-Re-Mi\" to see where the mover moves you!"])
+
+[node name="Sparkle4" parent="." instance=ExtResource("16_j77hx")]
+position = Vector2(816.56, 106.395)
+lines = Array[String](["In your journey, you may encounter laser gates blocking your way.", "These gates are linked to a vertex -- the devices shaped like microphones.", "Once you play the correct note on these vertices, the gates will open!", "Interact with the vertex with [SPACE] to see what notes it accepts.", "Interact with nearby lifeforms as well to find out which notes to play!"])
+
+[node name="Sparkle5" parent="." instance=ExtResource("16_j77hx")]
+position = Vector2(388.95, 165.51)
+lines = Array[String](["You found a comet fragment!", "Comet fragments like this are your final challenge every level.", "Interact with the comet with [SPACE] and listen to carefully to what it's playing.", "After listening, play the same notes to move forward...", "But beware, making a mistake will shuffle the notes again!"])
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
@@ -280,6 +301,7 @@ offset_right = -1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="movement_label" type="Label" parent="."]
+visible = false
 offset_left = 260.0
 offset_top = 341.0
 offset_right = 485.0
@@ -293,6 +315,7 @@ You can press the “A” and “D” keys on your keyboard to move from left to
 autowrap_mode = 2
 
 [node name="lifeform_label" type="Label" parent="."]
+visible = false
 offset_left = 544.0
 offset_top = 282.0
 offset_right = 761.0
@@ -302,6 +325,7 @@ text = "In your exploration journey, you will come across these lifeforms. These
 autowrap_mode = 2
 
 [node name="mover_label" type="Label" parent="."]
+visible = false
 offset_left = 772.0
 offset_top = 280.0
 offset_right = 972.0
@@ -311,6 +335,7 @@ text = " Do you remember the note played by the lifeform earlier? That suggests 
 autowrap_mode = 2
 
 [node name="gate_label" type="Label" parent="."]
+visible = false
 offset_left = 780.0
 offset_top = 32.0
 offset_right = 978.0
@@ -321,6 +346,7 @@ text = "Oh no! There’s a bound gate blocking our way. These gates have their c
 autowrap_mode = 2
 
 [node name="comet_label" type="Label" parent="."]
+visible = false
 offset_left = 292.0
 offset_top = 48.0
 offset_right = 443.0

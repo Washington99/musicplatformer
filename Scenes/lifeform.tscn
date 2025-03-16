@@ -476,7 +476,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Lifeform" type="Area2D"]
+[node name="Sparkle" type="Area2D"]
 z_index = 1
 script = ExtResource("1_bpuba")
 

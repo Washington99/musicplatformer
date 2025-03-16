@@ -104,3 +104,4 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 	if animated_sprite_2d.frame in footstep_frames:
 		walk.pitch_scale = randf_range(0.8, 1.2)
 		walk.play()
+		

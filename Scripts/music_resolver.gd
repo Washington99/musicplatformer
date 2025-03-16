@@ -12,7 +12,7 @@ func _ready() -> void:
 		for note: String in $"..".allowed_notes:
 			allowed_songs.append(instrument + "_" + note)
 			
-	instrument_played = $"..".allowed_instruments[0]
+		instrument_played = $"..".allowed_instruments[0]
 
 #func _draw() -> void:
 	#if !$Area2D/CollisionShape2D.disabled:
