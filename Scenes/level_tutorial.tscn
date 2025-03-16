@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="6_pkbct"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="6_pma55"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="7_gjfwi"]
-[ext_resource type="PackedScene" path="res://message_box.tscn" id="8_ekvtt"]
+[ext_resource type="PackedScene" uid="uid://cb700uvj1tgp6" path="res://message_box.tscn" id="8_ekvtt"]
 [ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="8_ldnas"]
 [ext_resource type="PackedScene" uid="uid://bpnfpft461iwv" path="res://Scenes/gate.tscn" id="10_0yhtl"]
 [ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="10_2u0h3"]
@@ -207,7 +207,7 @@ notes_list = Array[String](["piano_1", "piano_3", "piano_1"])
 next_scene_path = "res://Scenes/level_1.tscn"
 
 [node name="player" parent="." instance=ExtResource("6_pma55")]
-position = Vector2(698.824, -84.6429)
+position = Vector2(316, 448)
 allowed_instruments = Array[String](["piano"])
 allowed_notes = Array[String](["1", "3", "5", "6"])
 
