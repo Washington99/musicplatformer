@@ -223,7 +223,6 @@ text = "This is a Lifeform. They give out hints for your journey. Interact with 
 fit_content = true
 
 [node name="player" parent="." instance=ExtResource("6_pma55")]
-z_index = -1
 position = Vector2(295, 446)
 allowed_instruments = Array[String](["piano"])
 allowed_notes = Array[String](["1", "3", "5", "6"])
