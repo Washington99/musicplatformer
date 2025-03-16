@@ -206,22 +206,6 @@ position = Vector2(364, 176)
 notes_list = Array[String](["piano_1", "piano_1", "piano_1"])
 next_scene_path = "res://Scenes/level_1.tscn"
 
-[node name="movement_text" type="RichTextLabel" parent="."]
-offset_left = 212.0
-offset_top = 363.0
-offset_right = 408.0
-offset_bottom = 412.0
-text = "Press the “WAD\" Keys to move around and jump"
-fit_content = true
-
-[node name="lifeform_text" type="RichTextLabel" parent="."]
-offset_left = 508.0
-offset_top = 275.0
-offset_right = 755.0
-offset_bottom = 369.0
-text = "This is a Lifeform. They give out hints for your journey. Interact with them by pressing the \"spacebar\"."
-fit_content = true
-
 [node name="player" parent="." instance=ExtResource("6_pma55")]
 position = Vector2(295, 446)
 allowed_instruments = Array[String](["piano"])
@@ -246,12 +230,14 @@ lifeform = NodePath("Lifeform")
 
 [node name="Lifeform" parent="Gate" instance=ExtResource("6_4ndgs")]
 position = Vector2(36, -50)
+song_list = Array[String](["piano_3"])
 notes_selection = Array[String](["1", "3"])
+is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate" instance=ExtResource("12_asqfv")]
 position = Vector2(1, -49)
 trigger_keys = Array[String](["piano_3"])
-notes_selection = Array[String](["1", "3", "5"])
+notes_selection = Array[String](["1", "3"])
 
 [node name="Gate2" parent="." node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("10_0yhtl")]
 position = Vector2(635, 145)
@@ -260,12 +246,14 @@ lifeform = NodePath("Lifeform2")
 
 [node name="Lifeform2" parent="Gate2" instance=ExtResource("6_4ndgs")]
 position = Vector2(-42, -50)
+song_list = Array[String](["piano_3"])
 notes_selection = Array[String](["1", "3"])
+is_lifeform_for_vertice = true
 
 [node name="switch2" parent="Gate2" instance=ExtResource("12_asqfv")]
 position = Vector2(-1, -50)
 trigger_keys = Array[String](["piano_3"])
-notes_selection = Array[String](["1", "3", "5"])
+notes_selection = Array[String](["1", "3"])
 
 [node name="Mover" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("10_2u0h3")]
 position = Vector2(891, 366)
@@ -291,3 +279,55 @@ layer = -1
 offset_left = -1.0
 offset_right = -1.0
 metadata/_edit_use_anchors_ = true
+
+[node name="movement_label" type="Label" parent="."]
+anchors_preset = -1
+offset_left = 260.0
+offset_top = 341.0
+offset_right = 485.0
+offset_bottom = 428.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 8
+text = "Hey there, explorer! Excited to discover the great unknown and look for comet fragments? Let’s get you equipped with the tools you need in this exploration.
+You can press the “A” and “D” keys on your keyboard to move from left to right and the “W” key to jump. Be careful jumping! Gravity works differently around here."
+autowrap_mode = 2
+
+[node name="lifeform_label" type="Label" parent="."]
+offset_left = 544.0
+offset_top = 282.0
+offset_right = 761.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 8
+text = "In your exploration journey, you will come across these lifeforms. These sentient species serve as a guide as you traverse through the planet. Interact with them by pressing the spacebar and musical notes will play. Take note of these notes as it will help you as you go deeper in this adventure! Try and listen to this lifeform."
+autowrap_mode = 2
+
+[node name="mover_label" type="Label" parent="."]
+offset_left = 772.0
+offset_top = 280.0
+offset_right = 972.0
+offset_bottom = 382.0
+theme_override_font_sizes/font_size = 8
+text = " Do you remember the note played by the lifeform earlier? That suggests the middle note for this mover! A mover listens to a series of musical notes played in an ascending (moving upwards in pitch) or descending (moving downwards in pitch) melodic line. Try playing ‘Mi-Re-Do’ first, then ‘Do-Re-Mi’ and see where it takes you!"
+autowrap_mode = 2
+
+[node name="gate_label" type="Label" parent="."]
+offset_left = 780.0
+offset_top = 32.0
+offset_right = 978.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 8
+text = "Oh no! There’s a bound gate blocking our way. These gates have their corresponding vertex that opens the gate when you play the correct note. Press the spacebar on the microphone-looking vertex to hear which note you need to play!
+"
+autowrap_mode = 2
+
+[node name="comet_label" type="Label" parent="."]
+offset_left = 292.0
+offset_top = 48.0
+offset_right = 443.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 8
+text = " Woah! What’s that? A comet fragment? Nice! We’re almost done. In order to acquire this comet, you should play the notes that it will play. Be careful, making a mistake would shuffle the notes you have to play. Press the spacebar to reveal the notes and try to play the correct sequence!
+"
+autowrap_mode = 2
