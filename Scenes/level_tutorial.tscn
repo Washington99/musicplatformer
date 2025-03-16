@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://74q2uoc27b3" path="res://Scenes/music_comet.tscn" id="6_pkbct"]
 [ext_resource type="PackedScene" uid="uid://cjyf3dk4bye4q" path="res://Scenes/player.tscn" id="6_pma55"]
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="7_gjfwi"]
-[ext_resource type="PackedScene" uid="uid://cb700uvj1tgp6" path="res://message_box.tscn" id="8_ekvtt"]
+[ext_resource type="PackedScene" path="res://message_box.tscn" id="8_ekvtt"]
 [ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="8_ldnas"]
 [ext_resource type="PackedScene" uid="uid://bpnfpft461iwv" path="res://Scenes/gate.tscn" id="10_0yhtl"]
 [ext_resource type="PackedScene" uid="uid://d4ibfvrqimumk" path="res://Scenes/mover.tscn" id="10_2u0h3"]
@@ -203,11 +203,11 @@ sprite_frames = SubResource("SpriteFrames_qej7n")
 
 [node name="MusicComet" parent="TileMap" instance=ExtResource("6_pkbct")]
 position = Vector2(364, 176)
-notes_list = Array[String](["piano_1", "piano_1", "piano_1"])
+notes_list = Array[String](["piano_1", "piano_3", "piano_1"])
 next_scene_path = "res://Scenes/level_1.tscn"
 
 [node name="player" parent="." instance=ExtResource("6_pma55")]
-position = Vector2(295, 446)
+position = Vector2(698.824, -84.6429)
 allowed_instruments = Array[String](["piano"])
 allowed_notes = Array[String](["1", "3", "5", "6"])
 
@@ -231,13 +231,12 @@ lifeform = NodePath("Lifeform")
 [node name="Lifeform" parent="Gate" instance=ExtResource("6_4ndgs")]
 position = Vector2(36, -50)
 song_list = Array[String](["piano_3"])
-notes_selection = Array[String](["1", "3"])
 is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate" instance=ExtResource("12_asqfv")]
 position = Vector2(1, -49)
 trigger_keys = Array[String](["piano_3"])
-notes_selection = Array[String](["1", "3"])
+notes_selection = Array[String](["1", "3", "5"])
 
 [node name="Gate2" parent="." node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("10_0yhtl")]
 position = Vector2(635, 145)
@@ -281,7 +280,6 @@ offset_right = -1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="movement_label" type="Label" parent="."]
-anchors_preset = -1
 offset_left = 260.0
 offset_top = 341.0
 offset_right = 485.0

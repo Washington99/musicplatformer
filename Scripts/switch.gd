@@ -2,17 +2,16 @@ extends Area2D
 
 class_name Switch
 
-@export var is_one_time: bool = false
-@export var switch_name: String = ""
 @export var trigger_keys: Array[String]
 @export var notes_selection: Array[String]
 
 @onready var animated_notes = get_node("AnimatedNote")
 
+var switch_name: String = ""
 var player_near: bool = false
 var triggered: bool = false
 
-func _on_ready() -> void:
+func _ready() -> void:
 	randomize_trigger_keys()
 	# print(trigger_keys)
 
@@ -37,16 +36,10 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	var music_resolver: MusicResolver = area.get_parent()
 	var music_played: String = music_resolver.instrument_played + "_" + str(music_resolver.note_played)
-	# music_resolver.set_disabled(true)
 
 	if music_played in trigger_keys:
-		# triggered = true
 		$TileMapLayer.set_cell(Vector2i(0,0), 5, Vector2i(2,4))
-		# $CollisionShape2D.set_deferred("disabled", true)
 		switch_name = music_played
-		# switch_on.emit(switch_name)
-		
-		#$Label.text = music_played
 		
 		if "1" in music_played:
 			$AnimatedNote.play("green")
@@ -63,8 +56,7 @@ func _on_area_entered(area: Area2D) -> void:
 		if "12" in music_played:
 			$AnimatedNote.play("yellow")
 		
-		if !is_one_time:
-			$Timer.start()
+		$Timer.start()
 			
 	else:
 		var player: Player = music_resolver.get_parent()

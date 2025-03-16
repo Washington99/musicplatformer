@@ -3,23 +3,7 @@ extends Node2D
 @export var needed_vertices: Array[Switch]
 @export var lifeform: Lifeform
 @export var is_ordered: bool = false
-
-func _on_ready() -> void:
-	## assert(len(lifeform.song_list) == len(needed_vertices))
-	#var i: int = 0
-	#
-	##for vertex in needed_vertices:
-		##vertex.trigger_keys.clear()
-	#
-	#while i < len(lifeform.song_list):
-		#if lifeform.song_list[i] not in needed_vertices[i].trigger_keys:
-			#needed_vertices[i].trigger_keys.append(lifeform.song_list[i])
-		#i += 1
-	#
-	## print(lifeform.song_list)
 	
-	pass
-		
 
 func _process(_delta: float) -> void:
 	for vertex in needed_vertices:

@@ -15,6 +15,8 @@ var level_completed: bool = false
 
 func _ready():
 	var root = get_tree().root
+	randomize()
+	switch_seed = randi() % 12
 
 	# Using a negative index counts from the end, so this gets the last child node of `root`.
 	current_scene = root.get_child(-1)

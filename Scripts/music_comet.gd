@@ -9,6 +9,9 @@ var successfully_played: int = 0
 var errors_played = 0
 var player_near: bool = false
 
+func _ready() -> void:
+	randomized_notes_list()
+
 func _physics_process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("interact"):
 		var i: int = 0
@@ -73,5 +76,5 @@ func _on_area_entered(area: Area2D) -> void:
 		player.num_error_played += 1
 		
 func randomized_notes_list () -> void:
-	randomize()
+	# randomize()
 	notes_list.shuffle()

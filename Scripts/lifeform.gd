@@ -15,17 +15,13 @@ var player_near: bool = false
 
 func _ready():
 	animated_sprite.play("default")
-	
-func _on_ready() -> void:
 	randomize_song_list()
-	# print(song_list)
 
 func _physics_process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("interact"):
 		for audio in song_list:
 			var music_player = "res://Assets/Audio/" + audio + ".wav"
 			
-			# Logical Error here "1" is also in "10"
 			if 1 == int(audio):
 				$AnimatedNote.play("green")
 			elif 3 == int(audio):
@@ -52,19 +48,6 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		player_near = false
-	
-#func randomize_song_list () -> void:
-	#
-	#while song_list.size() < num_songs:
-		#var temp: String = (
-			#instruments_selection.pick_random() + "_" + 
-			#str(notes_selection.pick_random())
-		#)
-#
-		#if temp not in song_list:
-			#song_list.append(
-				#temp
-			#)
 
 func randomize_song_list () -> void:
 	if is_lifeform_for_vertice:
