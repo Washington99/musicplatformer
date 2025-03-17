@@ -149,7 +149,7 @@ shader = ExtResource("10_hbehh")
 size = Vector2(1152, 648)
 center_offset = Vector3(576, 324, 0)
 
-[node name="level_4" type="Node2D"]
+[node name="level_3" type="Node2D"]
 
 [node name="TileMap" type="Node2D" parent="."]
 

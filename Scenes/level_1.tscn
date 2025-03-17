@@ -149,7 +149,7 @@ shader = ExtResource("12_tde7q")
 size = Vector2(1152, 648)
 center_offset = Vector3(576, 324, 0)
 
-[node name="Level_1" type="Node2D"]
+[node name="level_1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [201.0]
 
 [node name="TileMap" type="Node2D" parent="."]
