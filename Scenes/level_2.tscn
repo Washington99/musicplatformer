@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bvhwbyt4k0yc8"]
+[gd_scene load_steps=35 format=4 uid="uid://bvhwbyt4k0yc8"]
 
 [ext_resource type="TileSet" uid="uid://bl2o7yp2wf0hx" path="res://Assets/tilemap.tres" id="1_y523b"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="2_w2qpk"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ecyf5hd6bip2" path="res://Scenes/onscreen_keyboard.tscn" id="6_r5rps"]
 [ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="9_84utj"]
 [ext_resource type="PackedScene" uid="uid://cwsju60qeuywn" path="res://Scenes/pause-menu.tscn" id="9_vntw4"]
+[ext_resource type="PackedScene" uid="uid://6ndbpkiuhh66" path="res://Scenes/sparkle.tscn" id="12_wg1h2"]
 
 [sub_resource type="Gradient" id="Gradient_xrmm0"]
 offsets = PackedFloat32Array(0.465116, 1)
@@ -255,7 +256,7 @@ position = Vector2(-166, 23)
 
 [node name="MusicComet" parent="." instance=ExtResource("4_iueeh")]
 position = Vector2(561, 223)
-notes_list = Array[String](["piano_6", "piano_8", "piano_10", "piano_12", "piano_3", "piano_5"])
+notes_list = Array[String](["piano_6", "piano_8", "piano_10", "piano_12"])
 next_scene_path = "res://Scenes/level_3.tscn"
 is_randomized = true
 
@@ -280,3 +281,7 @@ mesh = SubResource("QuadMesh_mt8c4")
 offset_left = -1.0
 offset_right = -1.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Sparkle" parent="." instance=ExtResource("12_wg1h2")]
+position = Vector2(387, 506)
+lines = Array[String](["Lifeforms near movers play their middle notes.", "Remember, the mover accepts two sequences of notes: one ascending and one descending."])

@@ -175,7 +175,6 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_5lbd2")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="TileMap/ParallaxBackground/Background 2"]
-visible = false
 position = Vector2(-10, 200)
 amount = 64
 process_material = SubResource("ParticleProcessMaterial_pwu2a")
