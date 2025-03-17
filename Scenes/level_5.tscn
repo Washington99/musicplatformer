@@ -333,7 +333,7 @@ lifeform = NodePath("Lifeform")
 position = Vector2(6.50001, 91.5)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
-song_list = Array[String](["piano_1", "piano_6", "violin_10"])
+song_list = Array[String](["piano_3", "piano_6"])
 instruments_selection = Array[String]([])
 notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 is_lifeform_for_vertice = true
@@ -349,7 +349,7 @@ lifeform = NodePath("Lifeform")
 position = Vector2(-8.5, 55)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
-song_list = Array[String](["violin_8", "violin_10"])
+song_list = Array[String](["violin_10", "violin_12"])
 instruments_selection = Array[String]([])
 notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 is_lifeform_for_vertice = true
@@ -393,22 +393,22 @@ notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch2" parent="." instance=ExtResource("11_m38g6")]
 position = Vector2(559.878, 607.291)
-trigger_keys = Array[String](["piano_6"])
+trigger_keys = Array[String](["piano_5"])
 notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch3" parent="." instance=ExtResource("11_m38g6")]
 position = Vector2(365.151, 559.781)
-trigger_keys = Array[String](["violin_10"])
+trigger_keys = Array[String](["violin_8"])
 notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch4" parent="." instance=ExtResource("11_m38g6")]
 position = Vector2(480, 335)
-trigger_keys = Array[String](["violin_8"])
+trigger_keys = Array[String](["violin_10"])
 notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch5" parent="." instance=ExtResource("11_m38g6")]
 position = Vector2(383.704, 431.817)
-trigger_keys = Array[String](["violin_10"])
+trigger_keys = Array[String](["violin_12"])
 notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch6" parent="." instance=ExtResource("11_m38g6")]
@@ -418,7 +418,7 @@ notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="switch7" parent="." instance=ExtResource("11_m38g6")]
 position = Vector2(285.119, 272.16)
-trigger_keys = Array[String](["piano_12"])
+trigger_keys = Array[String](["piano_6"])
 notes_selection = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
