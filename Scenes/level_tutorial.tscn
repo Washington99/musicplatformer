@@ -202,8 +202,8 @@ position = Vector2(460, 207)
 scale = Vector2(0.48, 0.48)
 sprite_frames = SubResource("SpriteFrames_qej7n")
 
-[node name="MusicComet" parent="TileMap" instance=ExtResource("6_pkbct")]
-position = Vector2(364, 176)
+[node name="MusicComet" parent="." instance=ExtResource("6_pkbct")]
+position = Vector2(363, 177)
 notes_list = Array[String](["piano_1", "piano_3", "piano_1"])
 next_scene_path = "res://Scenes/level_1.tscn"
 
@@ -213,7 +213,6 @@ allowed_instruments = Array[String](["piano", "violin"])
 allowed_notes = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="MessageBox" parent="player" instance=ExtResource("8_ekvtt")]
-visible = false
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("7_gjfwi")]
 level = 3
@@ -230,12 +229,12 @@ needed_vertices = [NodePath("switch")]
 lifeform = NodePath("Lifeform")
 
 [node name="Lifeform" parent="Gate" instance=ExtResource("6_4ndgs")]
-position = Vector2(36, -50)
+position = Vector2(36, -49)
 song_list = Array[String](["piano_3"])
 is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate" instance=ExtResource("12_asqfv")]
-position = Vector2(1, -49)
+position = Vector2(1, -48)
 trigger_keys = Array[String](["piano_3"])
 notes_selection = Array[String](["1", "3", "5"])
 
@@ -245,29 +244,30 @@ needed_vertices = [NodePath("switch2")]
 lifeform = NodePath("Lifeform2")
 
 [node name="Lifeform2" parent="Gate2" instance=ExtResource("6_4ndgs")]
-position = Vector2(-42, -50)
+position = Vector2(-42, -49)
 song_list = Array[String](["piano_3"])
 notes_selection = Array[String](["1", "3"])
 is_lifeform_for_vertice = true
 
 [node name="switch2" parent="Gate2" instance=ExtResource("12_asqfv")]
-position = Vector2(-1, -50)
+position = Vector2(-1, -48)
 trigger_keys = Array[String](["piano_3"])
 notes_selection = Array[String](["1", "3"])
 
 [node name="Mover" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("10_2u0h3")]
-position = Vector2(891, 366)
+position = Vector2(891, 370)
 lifeform = NodePath("Lifeform")
 dest_for_decreasing = NodePath("decreasing")
 dest_for_increasing = NodePath("increasing")
 
 [node name="Lifeform" parent="Mover" instance=ExtResource("6_4ndgs")]
-position = Vector2(-274, 16)
+z_index = 0
+position = Vector2(-274, 14)
 song_list = Array[String](["piano_3"])
 notes_selection = Array[String](["3"])
 
 [node name="decreasing" type="Node2D" parent="Mover"]
-position = Vector2(10, -206)
+position = Vector2(10, -208)
 
 [node name="increasing" type="Node2D" parent="Mover"]
 position = Vector2(-96, 11)

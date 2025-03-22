@@ -204,13 +204,13 @@ scale = Vector2(0.48, 0.48)
 sprite_frames = SubResource("SpriteFrames_ir7xb")
 
 [node name="Mover" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("2_xrnc4")]
-position = Vector2(864, 495)
+position = Vector2(864, 498)
 lifeform = NodePath("Lifeform")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
 
 [node name="Lifeform" parent="Mover" instance=ExtResource("3_6qweu")]
-position = Vector2(-48, -271)
+position = Vector2(-48, -274)
 song_list = Array[String](["piano_10"])
 notes_selection = Array[String](["8", "10"])
 
@@ -221,7 +221,7 @@ position = Vector2(-620.247, -286.744)
 position = Vector2(-373, -140)
 
 [node name="Mover2" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("2_xrnc4")]
-position = Vector2(283, 433)
+position = Vector2(283, 434)
 lifeform = NodePath("Lifeform2")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
@@ -238,13 +238,13 @@ position = Vector2(468, -219)
 position = Vector2(364, -79)
 
 [node name="Mover3" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("2_xrnc4")]
-position = Vector2(544, 286)
+position = Vector2(544, 289)
 lifeform = NodePath("Lifeform3")
 dest_for_decreasing = NodePath("low")
 dest_for_increasing = NodePath("high")
 
 [node name="Lifeform3" parent="Mover3" instance=ExtResource("3_6qweu")]
-position = Vector2(-195, -62)
+position = Vector2(-199, -65)
 song_list = Array[String](["piano_6"])
 notes_selection = Array[String](["8", "10"])
 
@@ -255,13 +255,13 @@ position = Vector2(105, -73)
 position = Vector2(-166, 23)
 
 [node name="MusicComet" parent="." instance=ExtResource("4_iueeh")]
-position = Vector2(561, 223)
+position = Vector2(561, 225)
 notes_list = Array[String](["piano_6", "piano_8", "piano_10", "piano_12"])
 next_scene_path = "res://Scenes/level_3.tscn"
 is_randomized = true
 
 [node name="player" parent="." instance=ExtResource("5_ewanq")]
-position = Vector2(353.656, 317.043)
+position = Vector2(326.572, 321.978)
 allowed_instruments = Array[String](["piano"])
 allowed_notes = Array[String](["6", "8", "10", "12"])
 level = 2

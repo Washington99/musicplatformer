@@ -203,7 +203,7 @@ needed_vertices = [NodePath("switch"), NodePath("switch2")]
 lifeform = NodePath("Lifeform")
 
 [node name="Lifeform" parent="Gate" instance=ExtResource("4_um06f")]
-position = Vector2(-8.50336, 60.4995)
+position = Vector2(-7.50336, 60.4996)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 song_list = Array[String](["violin_1", "violin_5"])
@@ -213,14 +213,14 @@ num_songs = 2
 is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate" instance=ExtResource("6_ashhn")]
-position = Vector2(-7.4986, -25.0004)
+position = Vector2(-6.9986, -25.0004)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_5", "violin_6"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 
 [node name="switch2" parent="Gate" instance=ExtResource("6_ashhn")]
-position = Vector2(-7.49597, -75.5004)
+position = Vector2(-6.99597, -75.5004)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_1", "violin_3"])
@@ -234,7 +234,7 @@ needed_vertices = [NodePath("switch"), NodePath("switch2")]
 lifeform = NodePath("Lifeform")
 
 [node name="Lifeform" parent="Gate2" instance=ExtResource("4_um06f")]
-position = Vector2(-8.5, 63.5)
+position = Vector2(-8, 63.5)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 song_list = Array[String](["violin_1", "violin_6"])
@@ -244,14 +244,14 @@ num_songs = 2
 is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate2" instance=ExtResource("6_ashhn")]
-position = Vector2(-7.99805, -25.0004)
+position = Vector2(-7.49805, -25.0004)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_5", "violin_6"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 
 [node name="switch2" parent="Gate2" instance=ExtResource("6_ashhn")]
-position = Vector2(-8, -78)
+position = Vector2(-7.5, -78)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_1", "violin_3"])
@@ -265,7 +265,7 @@ needed_vertices = [NodePath("switch"), NodePath("switch2")]
 lifeform = NodePath("Lifeform")
 
 [node name="Lifeform" parent="Gate3" instance=ExtResource("4_um06f")]
-position = Vector2(-30, -51.5)
+position = Vector2(-29.5, -51.5)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 song_list = Array[String](["violin_3", "violin_6"])
@@ -275,14 +275,14 @@ num_songs = 2
 is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate3" instance=ExtResource("6_ashhn")]
-position = Vector2(-13.5, 59)
+position = Vector2(-13, 59)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_5", "violin_6"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 
 [node name="switch2" parent="Gate3" instance=ExtResource("6_ashhn")]
-position = Vector2(-29.5, 89)
+position = Vector2(-29, 89)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_1", "violin_3"])
@@ -296,7 +296,7 @@ needed_vertices = [NodePath("switch"), NodePath("switch2")]
 lifeform = NodePath("Lifeform")
 
 [node name="Lifeform" parent="Gate4" instance=ExtResource("4_um06f")]
-position = Vector2(-9, -69)
+position = Vector2(-8, -69)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 song_list = Array[String](["violin_3", "violin_6"])
@@ -306,14 +306,14 @@ num_songs = 2
 is_lifeform_for_vertice = true
 
 [node name="switch" parent="Gate4" instance=ExtResource("6_ashhn")]
-position = Vector2(-7.99997, 52.5)
+position = Vector2(-7.49997, 52.5)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_5", "violin_6"])
 notes_selection = Array[String](["1", "3", "5", "6"])
 
 [node name="switch2" parent="Gate4" instance=ExtResource("6_ashhn")]
-position = Vector2(-8.5, -19.5)
+position = Vector2(-7.5, -19.5)
 rotation = -1.57074
 scale = Vector2(0.5, 0.5)
 trigger_keys = Array[String](["violin_1", "violin_3"])
@@ -342,7 +342,7 @@ offset_right = -1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicComet" parent="." instance=ExtResource("2_eywsk")]
-position = Vector2(719, 640)
+position = Vector2(719, 641)
 notes_list = Array[String](["violin_6", "violin_3", "violin_5", "violin_1"])
 num_notes_to_play = 4
 next_scene_path = "res://Scenes/level_4.tscn"
