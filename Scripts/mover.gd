@@ -64,7 +64,9 @@ func _on_area_entered(area: Area2D) -> void:
 		var player: Player = area.get_parent().get_parent()
 		
 		# Teleport
-		player.position = dest_for_decreasing.global_position
+		# player.position = dest_for_decreasing.global_position
+		var tween: Tween = create_tween()
+		tween.tween_property(player, "position", dest_for_decreasing.global_position, 1)
 		
 		current_state = states[0]
 		reset()
@@ -74,7 +76,9 @@ func _on_area_entered(area: Area2D) -> void:
 		var player: Player = area.get_parent().get_parent()
 		
 		# Teleport
-		player.position = dest_for_increasing.global_position
+		# player.position = dest_for_increasing.global_position
+		var tween: Tween = create_tween()
+		tween.tween_property(player, "position", dest_for_increasing.global_position, 1)
 		
 		current_state = states[0]
 		reset()
