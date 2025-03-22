@@ -11,6 +11,7 @@ var previous_level: String
 
 var levels = []
 var unlocked_levels = 1
+var tutorial_passed: bool = false
 var level_completed: bool = false
 
 func _ready():
@@ -70,6 +71,7 @@ func save_game () -> void:
 
 		"levels": levels,
 		"unlocked_levels": unlocked_levels,
+		"tutorial_passed": tutorial_passed,
 		"level_completed": level_completed
 	}
 	
@@ -103,6 +105,7 @@ func load_game () -> void:
 
 	levels = save_data.levels
 	unlocked_levels = save_data.unlocked_levels
+	tutorial_passed = save_data.tutorial_passed
 	level_completed = save_data.level_completed	
 		
 func delete_save () -> void:
@@ -115,4 +118,5 @@ func delete_save () -> void:
 		previous_level = ""
 		levels = []
 		unlocked_levels = 1
+		tutorial_passed = false
 		level_completed = false

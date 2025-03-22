@@ -81,20 +81,20 @@ func resolve_music_key () -> void:
 		note_played = 12
 		
 
-func display_note_hints (note_played: int) -> void:
-	if note_played == 1:
+func display_note_hints (note: int) -> void:
+	if note == 1:
 		$".."/AnimatedNote.play("green")
-	elif note_played == 3:
+	elif note == 3:
 		$".."/AnimatedNote.play("blue")
-	elif note_played == 5:
+	elif note == 5:
 		$".."/AnimatedNote.play("cyan")
-	elif note_played == 6:
+	elif note == 6:
 		$".."/AnimatedNote.play("red")
-	elif note_played == 8:
+	elif note == 8:
 		$".."/AnimatedNote.play("orange")
-	elif note_played == 10:
+	elif note == 10:
 		$".."/AnimatedNote.play("purple")
-	elif note_played == 12:
+	elif note == 12:
 		$".."/AnimatedNote.play("yellow")
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:

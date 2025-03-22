@@ -3,15 +3,21 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	if Global.tutorial_passed:
+		$"buttons-container/new-game-button".disabled = false
+		$"buttons-container/continue-button".disabled = false
+		
 func _on_start_pressed() -> void:
 	#Global.delete_save()
-	Global.goto_scene("res://Scenes/level_1.tscn")
+	if Global.tutorial_passed:
+		
+		Global.goto_scene("res://Scenes/level_1.tscn")
 
 
 func _on_continue_pressed() -> void:
-	Global.goto_scene("res://Scenes/level_select.tscn")
+	if Global.tutorial_passed:
+		
+		Global.goto_scene("res://Scenes/level_select.tscn")
 
 
 func _on_tutorial_pressed() -> void:

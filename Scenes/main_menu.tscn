@@ -127,6 +127,7 @@ theme = ExtResource("4_1knc7")
 theme_override_colors/font_color = Color(0.874022, 0.883178, 0.980473, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+disabled = true
 text = "NEW GAME"
 
 [node name="continue-button" type="Button" parent="buttons-container"]
@@ -135,6 +136,7 @@ theme = ExtResource("4_1knc7")
 theme_override_colors/font_color = Color(0.874022, 0.883178, 0.980473, 1)
 theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
+disabled = true
 text = "CONTINUE"
 
 [node name="tutorial-button" type="Button" parent="buttons-container"]

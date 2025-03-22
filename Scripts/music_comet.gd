@@ -55,7 +55,10 @@ func _on_area_entered(area: Area2D) -> void:
 			
 			if player.level == Global.unlocked_levels:  
 				Global.unlocked_levels += 1
-				Global.level_completed = true 
+				Global.level_completed = true
+			
+			if get_parent().name == "level_tutorial":
+				Global.tutorial_passed = true
 			
 			# Game automatically saves everytime the level finishes
 			Global.save_game()
