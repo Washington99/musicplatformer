@@ -156,6 +156,14 @@ center_offset = Vector3(576, 324, 0)
 [node name="level_tutorial" type="Node2D"]
 script = ExtResource("1_a6ka2")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("14_gvyy3")]
+offset_left = -1.0
+offset_right = -1.0
+metadata/_edit_use_anchors_ = true
+
 [node name="TileMap" type="Node2D" parent="."]
 
 [node name="Floors" type="TileMapLayer" parent="TileMap"]
@@ -170,7 +178,7 @@ motion_scale = Vector2(0.2, 0.1)
 motion_mirroring = Vector2(1152.58, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TileMap/ParallaxBackground/Background 2"]
-position = Vector2(576, 324)
+position = Vector2(576, 250)
 scale = Vector2(0.601, 0.601)
 texture = ExtResource("2_5lbd2")
 
@@ -213,19 +221,19 @@ allowed_instruments = Array[String](["piano", "violin"])
 allowed_notes = Array[String](["1", "3", "5", "6", "8", "10", "12"])
 
 [node name="MessageBox" parent="player" instance=ExtResource("8_ekvtt")]
+visible = false
 
 [node name="OnscreenKeyboard" parent="player" instance=ExtResource("7_gjfwi")]
 level = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="player/OnscreenKeyboard"]
-visible = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="player/OnscreenKeyboard/CanvasLayer"]
 material = SubResource("ShaderMaterial_xp43w")
 mesh = SubResource("QuadMesh_7fy0k")
 
 [node name="Gate" parent="." node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("10_0yhtl")]
-position = Vector2(711, 145)
+position = Vector2(711, 144)
 needed_vertices = [NodePath("switch")]
 lifeform = NodePath("Lifeform")
 
@@ -240,7 +248,7 @@ trigger_keys = Array[String](["piano_3"])
 notes_selection = Array[String](["1", "3", "5"])
 
 [node name="Gate2" parent="." node_paths=PackedStringArray("needed_vertices", "lifeform") instance=ExtResource("10_0yhtl")]
-position = Vector2(635, 145)
+position = Vector2(635, 144)
 needed_vertices = [NodePath("switch2")]
 lifeform = NodePath("Lifeform2")
 
@@ -256,14 +264,14 @@ trigger_keys = Array[String](["piano_3"])
 notes_selection = Array[String](["1", "3"])
 
 [node name="Mover" parent="." node_paths=PackedStringArray("lifeform", "dest_for_decreasing", "dest_for_increasing") instance=ExtResource("10_2u0h3")]
-position = Vector2(891, 370)
+position = Vector2(891, 368)
 lifeform = NodePath("Lifeform")
 dest_for_decreasing = NodePath("decreasing")
 dest_for_increasing = NodePath("increasing")
 
 [node name="Lifeform" parent="Mover" instance=ExtResource("6_4ndgs")]
 z_index = 0
-position = Vector2(-274, 14)
+position = Vector2(-274, 15)
 song_list = Array[String](["piano_3"])
 notes_selection = Array[String](["3"])
 
@@ -279,11 +287,11 @@ lines = Array[String](["Welcome to the tutorial! Press [F] to continue dialogue.
 
 [node name="Sparkle2" parent="." instance=ExtResource("16_j77hx")]
 position = Vector2(577.55, 377.9)
-lines = Array[String](["On this planet, you will come across these lifeforms.", "They will serve as your guide to solve the puzzles scattered around.", "Interact with them with [SPACE] and they will play certain notes.", "These notes will be your clues in moving forward!"])
+lines = Array[String](["On this planet, you will come across lifeforms like this one.", "These creatures are friendly and will help you solve the puzzles blocking your way.", "Interact with them with [SPACE] and they will play certain notes.", "These notes will be your clues in moving forward!"])
 
 [node name="Sparkle3" parent="." instance=ExtResource("16_j77hx")]
 position = Vector2(840, 377.9)
-lines = Array[String](["This device is called a mover.", "Movers will listen to two different sequences of notes.", "An ascending melodic line (moving upwards in pitch)...", "Or a descending melodic line (moving downwards in pitch)...", "Try playing \"Mi-Re-Do\" first, and then try \"Do-Re-Mi\" to see where the mover moves you!"])
+lines = Array[String](["This device is called a mover.", "Movers will listen to two different sequences of notes.", "An ascending melodic line (moving upwards in pitch)...", "Or a descending melodic line (moving downwards in pitch)...", "When you play a melody that the mover recognizes, it will change shape.", "Did you remember the note the lifeform played earlier?", "It was 're,' and this note will be the middle note of both the descending and ascending melodies.", "Try playing \"Mi-Re-Do\" first, and then try \"Do-Re-Mi\" to see where the mover moves you!"])
 
 [node name="Sparkle4" parent="." instance=ExtResource("16_j77hx")]
 position = Vector2(816.56, 106.395)
@@ -292,14 +300,6 @@ lines = Array[String](["In your journey, you may encounter laser gates blocking 
 [node name="Sparkle5" parent="." instance=ExtResource("16_j77hx")]
 position = Vector2(388.95, 165.51)
 lines = Array[String](["You found a comet fragment!", "Comet fragments like this are your final challenge every level.", "Interact with the comet with [SPACE] and listen carefully to what it's playing.", "After listening, play the same notes to move forward...", "But beware, making a mistake will shuffle the notes again!"])
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("14_gvyy3")]
-offset_left = -1.0
-offset_right = -1.0
-metadata/_edit_use_anchors_ = true
 
 [node name="movement_label" type="Label" parent="."]
 visible = false

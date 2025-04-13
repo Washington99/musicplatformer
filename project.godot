@@ -23,6 +23,7 @@ DialogManager="*res://Scripts/dialog_manager.gd"
 
 [display]
 
+window/size/mode=4
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
@@ -146,3 +147,4 @@ speak={
 
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+2d/size/mode=0
