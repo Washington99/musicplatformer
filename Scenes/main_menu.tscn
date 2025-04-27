@@ -1,12 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://5gk7oslgl8ts"]
+[gd_scene load_steps=18 format=3 uid="uid://5gk7oslgl8ts"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_umgk5"]
 [ext_resource type="FontFile" uid="uid://ccxgcjdlyno7s" path="res://Assets/PixelOperator8-Bold.ttf" id="2_jv270"]
 [ext_resource type="Texture2D" uid="uid://duh7s68g8dijn" path="res://Assets/Background-2.png" id="3_b3apx"]
 [ext_resource type="Texture2D" uid="uid://daqt08bl87b64" path="res://Assets/title bg.png" id="3_uqkbj"]
 [ext_resource type="Theme" uid="uid://do86lmib33bjy" path="res://Assets/Button Theme.tres" id="4_1knc7"]
-[ext_resource type="Texture2D" uid="uid://dyl8cd3vvnw6c" path="res://Assets/power-button.png" id="7_ddq4v"]
-[ext_resource type="StyleBox" uid="uid://cqe6nhpsknrvo" path="res://Assets/quit-button.tres" id="8_tcgbi"]
 [ext_resource type="Texture2D" uid="uid://caik1se5nk20q" path="res://Assets/title.png" id="9_jupsl"]
 [ext_resource type="Shader" path="res://Assets/Shader/crt.gdshader" id="10_lnj0m"]
 [ext_resource type="Script" path="res://Scenes/Title.gd" id="10_shhoc"]
@@ -46,9 +44,6 @@ gradient = SubResource("Gradient_ux1a2")
 width = 1
 height = 32
 fill_to = Vector2(0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1gjw"]
-texture = ExtResource("7_ddq4v")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v5iw8"]
 shader = ExtResource("10_lnj0m")
@@ -155,17 +150,6 @@ theme_override_fonts/font = ExtResource("2_jv270")
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
 
-[node name="quit-button" type="Button" parent="."]
-layout_mode = 2
-offset_left = 1074.0
-offset_top = 573.0
-offset_right = 1144.0
-offset_bottom = 640.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_e1gjw")
-theme_override_styles/hover = ExtResource("8_tcgbi")
-theme_override_styles/pressed = ExtResource("8_tcgbi")
-theme_override_styles/normal = ExtResource("8_tcgbi")
-
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(580, 175)
 scale = Vector2(0.571, 0.571)
@@ -182,4 +166,3 @@ mesh = SubResource("QuadMesh_da0va")
 [connection signal="pressed" from="buttons-container/continue-button" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="buttons-container/tutorial-button" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="buttons-container/credits-button" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="quit-button" to="." method="_on_quit_pressed"]
