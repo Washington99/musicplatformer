@@ -25,7 +25,7 @@ func _on_tutorial_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	Global.goto_scene("res://Scenes/end_credits.tscn")
 
 
 func _on_quit_pressed() -> void:
